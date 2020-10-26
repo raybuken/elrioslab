@@ -1,0 +1,2 @@
+# elcalc
+Elsword stats calculator
