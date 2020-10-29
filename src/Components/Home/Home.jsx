@@ -1,13 +1,13 @@
 
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import Stats from '../stats/Stats'
+import StatCalculator from '../stats/StatCalculator'
 
 export default function Home() {
     return(
         <div>
             <Navbar/>
-            <Stats />
+            <StatCalculator />
         </div>
     )
 }

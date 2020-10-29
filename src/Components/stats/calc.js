@@ -1,5 +1,8 @@
-import {StatList} from './statsList'
+import {statList} from './statsList'
 
-const calc = (total,actual) => {
-    
+const CalcStat = (name,actual,total) => {
+    console.log(name, actual, total)
 }
+
+
+export {CalcStat}
