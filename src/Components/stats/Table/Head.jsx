@@ -6,8 +6,8 @@ export default function Head() {
             <tr >
                 <th>Stat</th>
                 <th>Eficiencia</th>
-                <th>Actual %</th>
                 <th>Total %</th>
+                <th>Actual %</th>
                 <th>Efecto multiplicativo</th>
             </tr>
         </thead>
