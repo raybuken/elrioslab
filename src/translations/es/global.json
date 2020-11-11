@@ -1,0 +1,77 @@
+
+{
+    "navbar": {
+        "home": "Inicio",
+        "about": "Acerca",
+        "faq": "FAQ",
+        "languages": "Idiomas",
+        "spanish": "Español",
+        "english": "English"
+    },
+    "home": {
+        "welcome": "Bienvenidos a ElCalc!",
+        "description": "Diseñado para ayudar a los usuarios a calcular y resolver ciertos problemas específicos más fácilmente.",
+        "stat-calculator": "Calculadora de Stats"
+    },
+    "about":{
+        "about": "Acerca",
+        "p1": "App Web hecha por motivos de ayudar a la gente a resolver o facilitar determinados problemas en el juego, también desarrollé las aplicaciones por motivos de práctica personal y porque me gusta programar :D.",
+        "credits": "Créditos"
+    },
+    "stat-calculator": {
+        "title": "Calculadora de Stats",
+        "tooltip-total":"Porcentaje sin normalizar",
+        "tooltip-actual":"porcentaje normalizado",
+        "efficiency": "Eficiencia",
+        "mstat": "Efecto Multiplicativo ",
+        "tooltip-mstat": "Porcentaje extra para el stat actual Ej: Rigo/elrianode set's buff "
+    },
+    "faq":{
+        "title": "Preguntas Frecuentes",
+        "stat-calculator" : {
+            "q1": {
+                "question":"1. QUÉ ES LA NORMALIZACIÓN?",
+                "answer": "conforme uno va aumentando sus stats llega un punto en que esos stats que añadas reducen su eficacia dramaticamente. Cada uno de los stats (exceptuando hp y awakening time) tiene un punto de normalizacion, que no es mas que la restriccion que aplica conforme vas agregando valor actual en tus stats, cada stat tiene su propia tabla de normalización."
+            },
+            "q2": {
+                "question":"2. Cuánto necesito de maximize, critico y action speed?",
+                "answer":{
+                    "p1": "el valor recomendado puede variar dependiendo de la clase que lleves, pero partiendo de el valor ideal (sin contar con las pasivas/buffs de personajes) serian:",
+                    "p2": {
+                        "note": "NOTA: ",
+                        "text":"el action speed ideal puede depender de la clase y que tan bien interactue con sus casteos."
+                    }
+                } 
+            },
+            "q3": {
+                "question":"3. Cómo se aplican los sockets, buffs y pasivas en los stats?",
+                "answer":{
+                    "p1": "Hay muchas formas de aplicar los stats, cada efecto ya sea buff o pasivas no se presentan visualmente en tu stat actual. Dichos stats pueden llegar de 3 maneras distintas: ",
+                    "p2": {
+                        "title": "Normalizado: ",
+                        "text":"cumple con las reglas de la normalizacion, se puede asumir como un socket que aplicas en tu gear, es la fuente mas comun en casi todos los buff y/o pasivas."
+                    },
+                    "p3":{
+                        "title": "No se normaliza: ",
+                        "text":"es un stat que se suma con el valor del stat normalizado, este valor ignora las reglas de normalizacion y para el caso del action speed puede tambien ignorar el cap. Se ven en algunas pasivas de stat permanente."
+                    },
+                    "p4": {
+                        "title": "Multiplicativo: ",
+                        "text":"es un stat que amplifica el valor del stat actual en porcentaje y luego de operarse el stat sin normalizar, este valor ignora las reglas de normalizacion y para el caso del action speed puede tambien ignorar el cap. Suele verse este efecto en el set de rigomor y de elrianode en los buffs."
+                    }
+                } 
+            },
+            "q4":{
+                "question": "4. COMO SE CALCULA EL STAT MULTIPLICATIVO CON MI STAT ACTUAL?",
+                "answer":{
+                    "p1": "Con nuestra calculadora es muy facil de hacer los calculos. A través de esta formula podemos determinar el valor final con todo y buff de rigomor o de algun otro efecto que quieras probar:",
+                    "p2":{
+                        "fv": "valor_final",
+                        "cv": "valor_actual",
+                        "mv": "stat_multiplicativo"
+                    }
+                }
+            }
+        }
+    }
+}

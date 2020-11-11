@@ -1,0 +1,62 @@
+
+.w-40{
+    width: 40% ;
+}
+
+.w30{
+    width: 30%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-10{
+    width: 10%;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .t-responsive{
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+    .thead-responsive{
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .thead-responsive{
+        width: 30%;
+    }
+}
+
+
+.font-family-fantasy{
+    font-family: fantasy
+}
+
+.font-family-sans-serif{
+    font-family: sans-serif
+}
+
+
+
+.table td, .table th {
+     padding: 0.5rem;
+}
+
+
+

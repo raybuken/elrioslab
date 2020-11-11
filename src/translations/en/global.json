@@ -1,0 +1,77 @@
+
+{
+    "navbar": {
+        "home": "home",
+        "about": "about",
+        "faq": "FAQ",
+        "languages": "Languages",
+        "spanish": "Español",
+        "english": "English"
+    },
+    "home": {
+        "welcome": "Welcome to ElCalc!",
+        "description": "Designed to help users calculate and solve certain specific issues more easily.",
+        "stat-calculator": "Stats Calculator"
+    },
+    "about":{
+        "about": "Acerca",
+        "p1": "App Web hecha por motivos de ayudar a la gente a resolver o facilitar determinados problemas en el juego, también desarrollé las aplicaciones por motivos de práctica personal y porque me gusta programar :D.",
+        "credits": "Créditos"
+    },
+    "faq":{
+        "title": "Frequent Answer Question",
+        "stat-calculator" : {
+            "q1": {
+                "question":"1. What is normalizing?",
+                "answer": "When you increase your stats, there comes a point where those stats you add reduce their effectiveness dramatically. Each of the stats (except hp and awakening time) has a normalization point, which is nothing more than the restriction that applies as you add current value to your stats, each stat has its own normalization table."
+            },
+            "q2": {
+                "question":"2. How much Critical, Maximize and Action Speed you need it?",
+                "answer":{
+                    "p1": "The recommended value may vary depending on the class you take, but starting from the ideal value (without character's passives/buffs) should be: ",
+                    "p2": {
+                        "note": "NOTE: ",
+                        "text":"Action Speed recommended depends the class and how much works their castings."
+                    }
+                } 
+            },
+            "q3": {
+                "question":"3. How works your sockets,buffs and passives in your stats?",
+                "answer":{
+                    "p1": "Hay muchas formas de aplicar los stats, cada efecto ya sea buff o pasivas no se presentan visualmente en tu stat actual. Dichos stats pueden llegar de 3 maneras distintas: ",
+                    "p2": {
+                        "title": "Normalized: ",
+                        "text":"Apply current normalizing rules, you can assume as a socket when you set in your gear, is the most common source in almost all the buffs and/or passives."
+                    },
+                    "p3":{
+                        "title": "Unnormalized: ",
+                        "text":"Stat that plus with your current normalized stat, ignore the normalizing rules and action speed case can ignore the cap. Is visible in certains permanent stats passives."
+                    },
+                    "p4": {
+                        "title": "Multiplicative: ",
+                        "text":"Stat that Amplify your current value in percentage (after operate unnormalized stat), ignore the normalizing rules and action speed case can ignore the cap. Visible in Rigo/Elrianode buffs or specifics character passives"
+                    }
+                } 
+            },
+            "q4":{
+                "question": "4. How Calculate Multiplicative Stat to my current Stat?",
+                "answer":{
+                    "p1": "With our calculator is too easy to make calculations, trough this formula we determine the final value including rigo's Buff or any effect that you want check it:",
+                    "p2":{
+                        "fv": "final_value",
+                        "cv": "current_value",
+                        "mv": "multiplicative_stat"
+                    }
+                }
+            }
+        }
+    },
+    "stat-calculator": {
+        "title": "Stats Calcutator",
+        "tooltip-total":"Unnormalized percentage",
+        "tooltip-actual":"Normalized percentage",
+        "efficiency": "Efficiency",
+        "mstat": "Multiplicative Effect",
+        "tooltip-mstat": "Extra percentage for current stat Ex. Rigo/elrianode set buff"
+    }
+}

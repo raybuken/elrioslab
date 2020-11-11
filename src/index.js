@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "bootswatch/dist/flatly/bootstrap.min.css";
-// TODO: Note: Replace ^flatly^ (examples: darkly, slate, cosmo, spacelab, and superhero. See https://bootswatch.com/ for current theme names.)
+
+import 'bootstrap/dist/js/bootstrap.bundle.js'
+import "bootswatch/dist/lux/bootstrap.min.css";
+
+import './styles.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './i18n'
 ReactDOM.render(
   <React.StrictMode>
     <App />

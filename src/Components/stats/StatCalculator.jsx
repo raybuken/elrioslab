@@ -1,59 +1,29 @@
 
-import React,{useRef,useEffect} from 'react'
-import {getStatsName} from './statsList'
+import React from 'react'
+
 import Head from './Table/Head'
-import {CalcStat} from './calc'
+import Body from './Table/Body'
 
-export default function StatCalculator() {    
-    const actualStats = useRef([new Array(getStatsName.length)])
-    const totalStats = useRef([new Array(getStatsName.length)])
+import {useTranslation} from 'react-i18next'
 
-    useEffect(() => {
-        console.log(actualStats)
-    })
 
-    const onActualStatChange = (e,i) => {
-        const {name} = actualStats.current[i]
-        let newActualStat = actualStats
-        newActualStat.current[i].value = e.target.value
-        let newTotalStat = totalStats.current[i].value
-        CalcStat(name,newActualStat,newTotalStat)
-    }
+export default function StatCalculator() {
+    const [t] = useTranslation('stat-calculator')
 
-    /*const onTotalStatChange = (e,i) => {
-        const {name} = totalStats.current[i]
-        let newTotalStat = totalStats
-        newTotalStat.current[i].value = e.target.value
-        let newActualStat = ActualStats.current[i].value
-        CalcStat(name,newActualStat,newTotalStat)
-    }*/
-
-    return(
-        <div className='container'>
-            <br/>
+    return (
+        <div className='jumbotron'>
+        <div className=' container mt-3'>
+            <h1 className='display-3'>{t('title')}</h1>
+            <hr className='my-4'/>
             <div className="row">
-                <div className="col-md-10 offset-1" >
-                    <table className='table table-hover table-bordered'>
+                <div className="col-12" >
+                    <table className='table table-hover table-bordered table-responsive '>
                         <Head />
-                        <tbody>
-                            {getStatsName.map((stat, index) => (
-                                <tr key={index}>
-                                    <th>{stat}</th>
-                                    <th name={stat}>100%</th>
-                                    <th><input type="text" name={stat} ref={el => actualStats.current[index] = el} className='form-control' value={actualStats.current.value} placeholder={0} onChange={e => onActualStatChange(e,index)}/></th>
-                                        <th><input type="text" name={stat} ref={el => totalStats.current[index] = el} className='form-control'  value={totalStats.current.value} placeholder={0} onChange={e => onActualStatChange(e,index)}/></th>
-                                    <th>
-                                        <div>
-                                            <input type="checkbox" className='form-check-input' />
-                                            <input type="text" className='w-75 form-control' disabled />
-                                        </div>
-                                    </th>
-                                </tr>
-                            ))}
-                        </tbody>
+                        <Body />
                     </table>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
