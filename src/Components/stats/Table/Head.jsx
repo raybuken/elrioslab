@@ -20,23 +20,10 @@ export default function Head() {
             <tr className='text-center table-success'>
                 <th className='p-1 '><img src={magicStone} alt={'Magic Stone'} className='w-50'/></th>
                 <th>Stat</th>
-                <th>{t('efficiency')}</th>
-                <th >
-                    <span>Total % </span>
-                    <sup id='totalStat' data-toggle='tooltip' data-placement='top' data-original-title={t('tooltip-total')} >
-                        <FontAwesomeIcon className=' mb-2' color={'royalblue'} icon={faQuestionCircle} size='2x'/>
-                    </sup>
-                </th>
-                <th >
-                    <span>Actual %</span>  
-                    <sup id='actualStat' data-toggle='tooltip' data-placement='top' data-original-title={t('tooltip-actual')}>
-                        <FontAwesomeIcon className=' mb-2' color={'royalblue'} icon={faQuestionCircle} size='2x'/>
-                    </sup>
-                </th>
-                <th>{t('mstat')}
-                <sup id='mstat' data-toggle='tooltip' data-placement='top' data-original-title={t('tooltip-mstat')}>
-                    <FontAwesomeIcon className='mb-2' color={'royalblue'} icon={faQuestionCircle} size='2x'/></sup>
-                </th>
+                <th>Eficiencia</th>
+                <th>Total %</th>
+                <th>Actual %</th>
+                <th>Efecto multiplicativo</th>
             </tr>
         </thead>
     )
