@@ -53,8 +53,8 @@ export default function Reforge() {
     return (
         <div>
             <Navbar />
-            <div className='jumbotron'>
-                <div className="container">
+            <div className='container my-3'>
+                <div className="jumbotron">
                     <SocialMedia />
                     <h1 className="display-4 text-center">Reforge</h1>
                     <div className="my-4">
@@ -79,6 +79,7 @@ export default function Reforge() {
                             <ReforgeCounts result={count}/>
                         </div>
                     </div>
+                    <hr className=' my-4'/>
                     <div className='row justify-content-center'>
                         <ReforgeTable />
                     </div>

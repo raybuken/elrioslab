@@ -36,10 +36,11 @@ export default function AdaptationCalculator() {
     return (
         <div>
             <Navbar />
-            <div className="jumbotron ">
-                <div className="container">
+            <div className="container my-5">
+                <div className="jumbotron">
                     <SocialMedia />
                     <h1 className='display-4 text-center'>{t('title')}</h1>
+                    <hr className="my-3"/>
                     <form className='my-4'>
                         <div className="row">
                             <div className="col-lg-4 col-md-6 col-sm-12 mt-2">
@@ -49,7 +50,6 @@ export default function AdaptationCalculator() {
                                 <AdaptationField title={t('adaptation')} value={adaptation} adaptation={onAdaptationChange} />
                             </div>
                             <div className="col-lg-4 col-md-6 col-sm-12 mt-2">
-
                                 <p htmlFor="currentEffectiveness">{t('stat-gained')}</p>
                                 <span className='display-4 font-weight-bold'>= {currentStatGained}%</span>
                             </div>

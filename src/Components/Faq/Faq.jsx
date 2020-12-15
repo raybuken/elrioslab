@@ -13,11 +13,11 @@ export default function Faq() {
     return (
         <div>
             <Navbar />
-            <div className="container p-4">
+            <div className="container py-4">
                 <div className='jumbotron'>
                     <SocialMedia />
-                    <h1 className="display-4">{t('title')}</h1>
-                    <hr className="my-4" />
+                    <h1 className="display-4 my-3">{t('title')}</h1>
+                    <hr className="my-3" />
                     <ul className=" accordion">
                         <div className="card">
                             <StatCalcFAQ />

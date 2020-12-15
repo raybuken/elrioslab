@@ -3,7 +3,7 @@ export default function DebuffField(props) {
     return (
             <div className='w-75'>
                 <label htmlFor="debuff"> {props.title}</label>
-                <select id="debuff" className='form-control adaptation-field ' onChange={props.debuff}>
+                <select id="debuff" className='form-control adaptation-field' onChange={props.debuff}>
                     <option value="10">10%</option>
                     <option value="20">20%</option>
                     <option value="30">30%</option>

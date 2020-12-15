@@ -11,8 +11,8 @@ export default function About() {
             <Navbar />
             <div className='container jumbotron my-4'>
                 <SocialMedia />
-                <h1 className='display-2'>{t('about')}</h1>
-                <hr/>
+                <h1 className='display-2 my-4'>{t('about')}</h1>
+                <hr className='my-3'/>
                 <div>
                     <p className='display-6'>{t('p1')}</p>
                     <p className='display-6'>{t('p2')}</p>

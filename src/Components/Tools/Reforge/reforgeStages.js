@@ -36,7 +36,7 @@ const stages = [
         amethyst: 5,
         crystal: 150,
         ed: 600000,
-        attempt: 16,
+        attempt: 17,
         percentage: 6.66,
         effect: '-'
     },
@@ -46,7 +46,7 @@ const stages = [
         amethyst: 5,
         crystal: 150,
         ed: 600000,
-        attempt: 24,
+        attempt: 25,
         percentage: 4.167,
         effect: '-'
     },
@@ -56,7 +56,7 @@ const stages = [
         amethyst: 5,
         crystal: 150,
         ed: 600000,
-        attempt: 60,
+        attempt: 61,
         percentage: 1.67,
         effect: 'Specific Skill Damage +5%'
     },
@@ -66,7 +66,7 @@ const stages = [
         amethyst: 7,
         crystal: 200,
         ed: 900000,
-        attempt: 18,
+        attempt: 19,
         percentage: 5.88,
         effect: '-'
     },
@@ -76,7 +76,7 @@ const stages = [
         amethyst: 7,
         crystal: 200,
         ed: 900000,
-        attempt: 31,
+        attempt: 32,
         percentage: 3.33,
         effect: '-'
     },
@@ -86,7 +86,7 @@ const stages = [
         amethyst: 7,
         crystal: 200,
         ed: 900000,
-        attempt: 121,
+        attempt: 122,
         percentage: 0.833,
         effect: 'Critical Damage +3%'
     },
@@ -116,7 +116,7 @@ const stages = [
         amethyst: 9,
         crystal: 250,
         ed: 1200000,
-        attempt: 121,
+        attempt: 122,
         percentage: 0.833,
         effect: 'Specific Skill Damage +5%'
     },
@@ -126,7 +126,7 @@ const stages = [
         amethyst: 11,
         crystal: 300,
         ed: 1500000,
-        attempt: 24,
+        attempt: 25,
         percentage: 4.167,
         effect: '-'
     },
@@ -136,7 +136,7 @@ const stages = [
         amethyst: 11,
         crystal: 300,
         ed: 1500000,
-        attempt: 60,
+        attempt: 61,
         percentage: 1.67,
         effect: '-'
     },
@@ -146,7 +146,7 @@ const stages = [
         amethyst: 11,
         crystal: 300,
         ed: 1500000,
-        attempt: 121,
+        attempt: 122,
         percentage: 0.833,
         effect: 'Adaptation +1%'
     },
@@ -166,7 +166,7 @@ const stages = [
         amethyst: 13,
         crystal: 350,
         ed: 1800000,
-        attempt: 240,
+        attempt: 241,
         percentage: 0.4167,
         effect: '-'
     },
@@ -196,7 +196,7 @@ const stages = [
         amethyst: 15,
         crystal: 400,
         ed: 2100000,
-        attempt: 240,
+        attempt: 241,
         percentage: 0.4167,
         effect: '-'
     },
