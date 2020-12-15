@@ -1,6 +1,7 @@
 {
   "name": "elrioslab",
   "homepage": "https://elrioslab.herokuapp.com/",
+  "main": "index.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
