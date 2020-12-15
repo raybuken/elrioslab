@@ -12,7 +12,6 @@ export default function Home() {
     return (
         <div>
             <Navbar />
-            
             <div className="jumbotron mt-3">
                 <div className="container">
                     <SocialMedia />
