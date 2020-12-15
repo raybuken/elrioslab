@@ -2,6 +2,7 @@
 {
     "navbar": {
         "home": "Inicio",
+        "tools": "Herramientas",
         "about": "Acerca",
         "faq": "FAQ",
         "languages": "Idiomas",
@@ -9,14 +10,22 @@
         "english": "English"
     },
     "home": {
-        "welcome": "Bienvenidos a ElCalc!",
-        "description": "Diseñado para ayudar a los usuarios a calcular y resolver ciertos problemas específicos más fácilmente.",
+        "welcome": "Bienvenidos a Elrios Lab!",
+        "description": "Diseñado para ayudar a los usuarios a calcular y resolver ciertos problemas específicos fácilmente.",
         "stat-calculator": "Calculadora de Stats"
     },
     "about":{
         "about": "Acerca",
         "p1": "App Web hecha por motivos de ayudar a la gente a resolver o facilitar determinados problemas en el juego, también desarrollé las aplicaciones por motivos de práctica personal y porque me gusta programar :D.",
+        "p2": "Soy creador de contenido en Youtube. Subo Guías de Elsword y directos comentando contenido didactico e instructivo sobre el juego, El idioma oficial del canal es en español así que muchas cosas que discutimos la responderemos mas facil en dicho idioma.",
+        "channel": "Canal de Youtube",
+        "creator": "Creado Por",
+        "logo-design": "Diseño del Logo",
+        "reference": "Inspirado por ",
+        "gratitude": "Agradecimientos para",
+        "guildmate":"Miembros de la guild",
         "credits": "Créditos"
+
     },
     "stat-calculator": {
         "title": "Calculadora de Stats",
@@ -25,6 +34,18 @@
         "efficiency": "Eficiencia",
         "mstat": "Efecto Multiplicativo ",
         "tooltip-mstat": "Porcentaje extra para el stat actual Ej: Rigo/elrianode set's buff "
+    },
+    "adaptation": {
+        "title": "Adaptacion",
+        "debuff": "Debuff de Entorno",
+        "adaptation": "Adaptación",
+        "stat-gained": "Ganancia total"
+    },
+    "reforge": {
+        "from": "Desde",
+        "to": "Hasta",
+        "attempts": "Numero de Intentos",
+        "current-percentage": "Porcentaje Actual"
     },
     "faq":{
         "title": "Preguntas Frecuentes",
@@ -72,6 +93,30 @@
                     }
                 }
             }
+        },
+        "reforge":{
+            "q1":{
+                "question": "CUÁL SET DE RIGOMOR DEBERÍA DE ESCOGER?",
+                "p1": "Si quieres optar por algo que te de el mayor daño posible puedes elegir si o si el set de crimson, pero cabe destacar que el sage brinda algo mas de daño con la diferencia de que es mejor crimson para partys si vas de daño a full",
+                "p2": "El set Sage te sirve o para supportear o para Raid de Berthe si deseas llevar menos polarize y resistir más.",
+                "p3": "No es un set que brinda tanto daño pero es una opción muy interesante para clases que en gran parte de sus habilidades son decentes de usar y pocos problemas de cooldown acceleration como podria ser Shakti, Devi o Comet Crusader",
+                "p4": "Es mas debil que el crimson y su punto de impacto llegan un poco mas tarde que el resto de sets, si es para Berthe Raid no esta mal llevarlo pero para el resto de situaciones crimson cerulean es mejor.",
+                "p5": "No lo recomiendo, es un set que funciona en muy pocas clases y el efecto no se acerca al que brinde el crimson, en lo personal no lo recomendaria.",
+                "p6": "Set de pvp, no es muy rentable para PvE."
+            }
+        },
+        "adaptation":{
+            "q1":{
+                "title": "Qué es la adaptación?",
+                "p1": "La adaptación nos sirve para mitigar parte del debuff del Demon Realm, esto es importante ya que recuperamos ataque y HP considerablemente."
+            },
+            "q2":{
+                "title": "Cómo calcular la eficiencia de nuestra adaptacion?",
+                "p1": "Dependiendo del grado que haya de debuff la adaptacion se vuelve cada vez mas importante, por esa razón podemos calcular el multiplicador total que nos daria la adaptacion basandonos en que el ataque actual sin ocupar adaptation parte de 100% aplicamos este cálculo: ",
+                "p2": "Por cada punto de adaptatión recuperamos 1% de ataque y vida, la siguiente tabla nos muestra la ganancia maxima que podriamos conseguir de stats asumiendo que podemos sobrepasar el cap.",
+                "debuff": "Debuff de Entorno",
+                "multiplier": "Multiplicador"
+            }
         }
-    }
+    }    
 }

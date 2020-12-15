@@ -1,27 +1,28 @@
 
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
-import {useHistory} from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import logo from './logo.png'
+import Section from './Section'
+import SocialMedia from '../SocialMedia/SocialMedia'
 
 export default function Home() {
-    const history = useHistory()
+
     const [t] = useTranslation('home')
-    return(
+    return (
         <div>
-            <Navbar/>
-            <br/>
-            <div className="container">
-                <div className="jumbotron">
-                    <img src={logo} alt="ElCalc" className=' img-fluid w-50 mx-auto d-block'/>
+            <Navbar />
+            
+            <div className="jumbotron mt-3">
+                <div className="container">
+                    <SocialMedia />
+                    <img src={logo} alt="ElCalc" className=' img-fluid w-50 mx-auto d-block' />
                     <div className=' text-center'>
                         <h1 className='display-4'>{t('welcome')}</h1>
                         <p className='lead'>{t('description')}</p>
                     </div>
-                    <hr className="my-4"/>  
-                    <button className='btn btn-primary btn-lg' onClick={()=>history.push('/calc/stats')}>{t('stat-calculator')}</button>
-                    
+                    <hr className="my-4" />
+                    <Section />
                 </div>
             </div>
         </div>

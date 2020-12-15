@@ -70,10 +70,18 @@ export default function Body() {
                     <td>
                         <img src={Images[i]} alt={stat} className='w-75' />
                     </td>
-                    <td><label className='pt-2 text-capitalize'>{stat}</label></td>
-                    <td name={stat}><label className='pt-2'>{efficiency[i]}%</label></td>
-                    <td><input type="text" name={stat} ref={el => totalStats.current[i] = el} className='form-control p-1 ' value={totalStats.current.value} placeholder={0} onChange={e => onTotalStatChange(e, i)} /></td>
-                    <td><input type="text" name={stat} ref={el => actualStats.current[i] = el} className='form-control p-1 ' value={actualStats.current.value} placeholder={0} onChange={e => onActualStatChange(e, i)} /></td>
+                    <td>
+                        <label className='pt-2 text-capitalize'>{stat}</label>
+                    </td>
+                    <td name={stat}>
+                        <label className='pt-2'>{efficiency[i]}%</label>
+                    </td>
+                    <td>
+                        <input type="text" name={stat} ref={el => totalStats.current[i] = el} className='form-control p-1 ' value={totalStats.current.value} placeholder={0} onChange={e => onTotalStatChange(e, i)} />
+                    </td>
+                    <td>
+                        <input type="text" name={stat} ref={el => actualStats.current[i] = el} className='form-control p-1 ' value={actualStats.current.value} placeholder={0} onChange={e => onActualStatChange(e, i)} />
+                    </td>
                     <td className=' text-center'>
                         <div className='input-group'>
                             <div className="input-group-prepend ">

@@ -1,4 +1,4 @@
-import { statList, getStatsName } from '../../../Stats/statsList'
+import { statList, getStatsName } from '../../../Tools/Stats/statsList'
 import React, {useRef,useState } from 'react'
 
 export default function StatTable() {

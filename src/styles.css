@@ -58,5 +58,26 @@
      padding: 0.5rem;
 }
 
+.display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
+.display-6 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
+.pointer{
+    cursor: pointer;
+}
+
+.text-violet{
+    color: #4242B3!important;
+}
+
+.text-blue-green{
+    color: #219EBC!important
+}
