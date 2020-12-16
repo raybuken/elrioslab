@@ -2,7 +2,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import SocialMedia from '../SocialMedia/SocialMedia'
-import StatCalcFAQ from './Statcalc/StatCalcFAQ'
+import StatCalcFAQ from './StatCalculator/StatCalcFAQ'
 import ReforgeFAQ from './Reforge/ReforgeFAQ'
 import AdaptationFAQ from './Adaptation/AdaptationFAQ'
 
