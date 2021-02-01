@@ -56,6 +56,7 @@ export default function IgnoreDefense() {
                             <div className="col-4">
                                 <label>Ignore Defense 1</label>
                                 <input type="number" value={ignoreDef} className='form-control border-black' min='0' max='100' onChange={onChangeIgnoreDef}/>
+                                <label>Ignore Defense 2</label>
                             </div>
                         </div>
                         <div className="row">
