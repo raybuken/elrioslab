@@ -96,6 +96,27 @@
                 "debuff": "Enviromental Debuff",
                 "multiplier": "Multiplier"
             }
+        },
+        "ignore-defense":{
+            "q1":{
+                "title":"How does Defense Work?",
+                "answer":{
+                    "p1": "Defense reduce received damage, to limit the percent the game use a convertion to when we got more defense the percent is more normalize so is more complicated increase it. This is important because numeric/base defense is not the same thing that defense percent.",
+                    "p2": "To Convert from numeric defense to percent we use this formula:",
+                    "p3": "To Convert from percent to Numeric:",
+                    "p4": "Where:",
+                    "def-const": "Constant value to do the convertion, this vary depending the target lv(elrianoce above always the enemy is lv 99)",
+                    "def-base": "Defense in Numeric value.",
+                    "def-percent": "Defense in percentage value or damage reduced."
+                }
+            },
+            "q2": {
+                "title": "How much does Defense Ignore increase damage?",
+                "answer":{
+                    "p1": "Damage increase vary depending the ignore defense and enemy's numeric defense. Ignore Defense reduce the numeric/base defense, not the percent. To calculate the remain defense we use this formula:",
+                    "p2": "To calculate gained damage:"
+                }
+            }
         }
     },
     "stat-calculator": {
@@ -117,5 +138,12 @@
         "to": "To",
         "attempts": "Attemps",
         "current-percentage": "Current Percentage"
+    },
+    "ignore-defense": {
+        "defense-base": "Defense Base",
+        "defense-percentage": "Defense Percentage",
+        "current-ignore": "Current Ignore Defense",
+        "remain-defense": "Remain Defense",
+        "damage-gained": "Damage Gained"
     }
 }
