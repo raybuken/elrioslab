@@ -24,7 +24,7 @@ export default function Reforge() {
 
 
     useEffect(() => {
-        getCounts()
+        setCount(calcReforge(fromStageSelect.current.value,toStageSelect.current.value,attemptPercentage))
     },[toStage,attemptPercentage])
     
     const onFromStageChange = (e) => {
@@ -37,10 +37,6 @@ export default function Reforge() {
         setAttemptPercentage(0)
     }
 
-    const onToStageChange = () => {
-        getCounts()
-    }
-
     const setPercentage = (e) => {
         const {value} = e.target
         setAttemptPercentage(Number(value))
@@ -49,7 +45,6 @@ export default function Reforge() {
         setCount(calcReforge(fromStageSelect.current.value,toStageSelect.current.value,attemptPercentage))
     }
    
-
     return (
         <div>
             <Navbar />
@@ -67,7 +62,7 @@ export default function Reforge() {
                             </div>
                             <div className="col-md-4">
                                 <label>{t('to')}</label>
-                                <select className='form-control reforge-field' ref={toStageSelect} onChange={onToStageChange}>
+                                <select className='form-control reforge-field' ref={toStageSelect} onChange={getCounts}>
                                     {toStage.map((el, i) => <option key={i} value={el.stage}>{el.stage}</option>)}
                                 </select>
                             </div>
@@ -78,6 +73,7 @@ export default function Reforge() {
                         <div>
                             <ReforgeCounts result={count}/>
                         </div>
+                        <p className='font-italic'>{t('note')}</p>
                     </div>
                     <hr className=' my-4'/>
                     <div className='row justify-content-center'>
