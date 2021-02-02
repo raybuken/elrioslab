@@ -16,17 +16,22 @@ const getDefPercentage = (defB,level) => {
     return (defB/defMultiplier) / (1 + defB / defMultiplier)*100
 }
 
+const getIgnoreDefenseMultiplier = (ignoreDefense) => 1 -ignoreDefense/100
+const parseResult = (result) => parseFloat(result).toFixed(2)
+
 const getRemainDefense = (defB,ignoreDef,level) => {
-    const remainDef = defB*(1- ignoreDef/100)
-    return parseFloat(getDefPercentage(remainDef,level).toFixed(2))
+    const ignDef = ignoreDef.map(value => getIgnoreDefenseMultiplier(value)).reduce((acum,current) => acum * current)
+    const remainDef = defB*(1-(1 -ignDef))
+    return parseResult(getDefPercentage(remainDef,level))
 }
 
 const getDamageGained = (defP,ignoreDef) => {
     // 1/ (1 -defP * (1-(1- Def_ignore_1)) * (1 - Def_ignore_2) )
-    ignoreDef /= 100
+    const ignDef = ignoreDef.map(value => getIgnoreDefenseMultiplier(value)).reduce((acum,current) => acum * current)
     defP /= 100
-    return parseFloat(((1 / (1 - defP *(1-(1 - ignoreDef)) )) *100 -100).toFixed(2))
+    let result = ((1 / (1 - defP *(1-ignDef) ) * 100 -100))
+    ignoreDef /= 100
+    return parseResult(result)
 }
-
 
 export {getDefBase,getDefPercentage,getRemainDefense,getDamageGained}

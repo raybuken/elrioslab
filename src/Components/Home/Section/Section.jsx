@@ -8,7 +8,7 @@ import './styles.css'
 
 export default function Section() {
     return (
-        <div className="row">
+        <div className="row justify-content-center">
             <Tool link='/calc/stats' name='Stats' src={stats} alt='Stats'/>
             <Tool link='/calc/adaptation' name='Adaptation' src={adaptation} alt='Adaptation'/>
             <Tool link='/calc/reforge' name='Reforge' src={reforge} alt='Reforge'/>
