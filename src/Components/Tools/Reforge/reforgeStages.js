@@ -6,8 +6,8 @@ const stages = [
         amethyst: 3,
         crystal: 100,
         ed: 300000,
-        attempt: 14,
-        percentage: 7.7,
+        attempt: 15,
+        percentage: 7.692,
         effect: '-'
     },
     {
@@ -37,7 +37,7 @@ const stages = [
         crystal: 150,
         ed: 600000,
         attempt: 17,
-        percentage: 6.66,
+        percentage: 6.666,
         effect: '-'
     },
     {
@@ -56,8 +56,8 @@ const stages = [
         amethyst: 5,
         crystal: 150,
         ed: 600000,
-        attempt: 61,
-        percentage: 1.67,
+        attempt: 62,
+        percentage: 1.666,
         effect: 'Specific Skill Damage +5%'
     },
     {
@@ -67,7 +67,7 @@ const stages = [
         crystal: 200,
         ed: 900000,
         attempt: 19,
-        percentage: 5.88,
+        percentage: 5.882,
         effect: '-'
     },
     {
@@ -77,7 +77,7 @@ const stages = [
         crystal: 200,
         ed: 900000,
         attempt: 32,
-        percentage: 3.33,
+        percentage: 3.333,
         effect: '-'
     },
     {
@@ -136,8 +136,8 @@ const stages = [
         amethyst: 11,
         crystal: 300,
         ed: 1500000,
-        attempt: 61,
-        percentage: 1.67,
+        attempt: 62,
+        percentage: 1.666,
         effect: '-'
     },
     {
@@ -167,7 +167,7 @@ const stages = [
         crystal: 350,
         ed: 1800000,
         attempt: 241,
-        percentage: 0.4167,
+        percentage: 0.417,
         effect: '-'
     },
     {
@@ -176,8 +176,8 @@ const stages = [
         amethyst: 13,
         crystal: 350,
         ed: 1800000,
-        attempt: 501,
-        percentage: 0.2,
+        attempt: 482,
+        percentage: 0.208,
         effect: 'Critical Damage +3%'
     },
     {
@@ -197,7 +197,7 @@ const stages = [
         crystal: 400,
         ed: 2100000,
         attempt: 241,
-        percentage: 0.4167,
+        percentage: 0.417,
         effect: '-'
     },
     {
@@ -206,8 +206,8 @@ const stages = [
         amethyst: 15,
         crystal: 400,
         ed: 2100000,
-        attempt: 501,
-        percentage: 0.2,
+        attempt: 482,
+        percentage: 0.208,
         effect: '+3% Physical/Magical Attack Power'
     },
 ]

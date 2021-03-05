@@ -1,12 +1,22 @@
 import {stages} from './reforgeStages'
+import {stages as krStages} from './reforgeStagesKR'
 import {FilterByPercentages} from './FilterByPercentages'
 
-const calcReforge = (fromStage,toStage,percentage) => {
-    const currentStages = stages.filter(stage => {
-        return stage.stage > fromStage && stage.stage <= toStage
-    })
-    const filter  = FilterByPercentages(currentStages,percentage)
-   return getResults(currentStages,filter)
+const calcReforge = (fromStage,toStage,percentage,isKR) => {
+    if(isKR){
+        const currentStages = krStages.filter(stage => {
+            return stage.stage > fromStage && stage.stage <= toStage
+        })
+        const filter  = FilterByPercentages(currentStages,percentage)
+       return getResults(currentStages,filter)
+    }
+    else{
+        const currentStages = stages.filter(stage => {
+            return stage.stage > fromStage && stage.stage <= toStage
+        })
+        const filter  = FilterByPercentages(currentStages,percentage)
+       return getResults(currentStages,filter)
+    }
 }
 
 const glaciemCount = (rStages) => {
@@ -45,8 +55,6 @@ const seedCount = (rStages) => {
     }
 }
 
-
-
 const convertToLocale = el => el.toLocaleString()
 const getResults = (cStages,reducer) => {
     const {glaciem,amethyst,crystal,ed} = reducer.multipliers
@@ -58,9 +66,7 @@ const getResults = (cStages,reducer) => {
         seeds: seedCount(cStages),
         attempts: convertToLocale(clickCount(cStages,reducer.attempt))
     }
-
     return result
-    
 }
 
 export {calcReforge}
