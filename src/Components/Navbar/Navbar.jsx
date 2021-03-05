@@ -33,6 +33,7 @@ export default function Navbar() {
                                 <Link className="dropdown-item" to="/calc/stats">Stats</Link>
                                 <Link className="dropdown-item" to='/calc/adaptation'>Adaptation</Link>
                                 <Link className="dropdown-item" to="/calc/reforge">Reforge</Link>
+                                <Link className="dropdown-item" to="/calc/ignore-defense">Ignore Defense</Link>
                             </div>
                         </li>
                         <li className="nav-item">

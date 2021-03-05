@@ -2,10 +2,10 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import SocialMedia from '../SocialMedia/SocialMedia'
-import StatCalcFAQ from './Statcalc/StatCalcFAQ'
+import StatCalcFAQ from './StatCalculator/StatCalcFAQ'
 import ReforgeFAQ from './Reforge/ReforgeFAQ'
 import AdaptationFAQ from './Adaptation/AdaptationFAQ'
-
+import IgnoreDefenseFAQ from './IgnoreDefense/IgnoreDefenseFAQ'
 import {useTranslation} from 'react-i18next'
 
 export default function Faq() {
@@ -23,6 +23,7 @@ export default function Faq() {
                             <StatCalcFAQ />
                             <ReforgeFAQ /> 
                             <AdaptationFAQ />
+                            <IgnoreDefenseFAQ/>
                         </div>
                     </ul>
                 </div>
