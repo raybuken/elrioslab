@@ -8,7 +8,7 @@ export default function IgnoreDefenseFAQ() {
     const question2 = 'ignore-defense.q2'
     return (
         <div>
-            <div className="card-header bg-transparent" id='ignoreDefense'>
+            <div className="card-header bg-transparent" >
                 <h2 className="mb-0 ">
                     <button className="btn btn-link btn-block text-left shadow-none" type="button" data-toggle="collapse" data-target="#ignoreDefense" aria-expanded="true" aria-controls="ignoreDefense">
                         Ignore Defense
