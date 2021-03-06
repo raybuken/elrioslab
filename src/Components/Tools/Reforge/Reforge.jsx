@@ -29,10 +29,14 @@ export default function Reforge() {
     
     const onChangeServer = (e) => {
         const {value} = e.target
-        console.log(value)
-        value === 'KR' ? setIsKR(true) : setIsKR(false)
+        if(value === 'KR'){
+            setIsKR(true)
+            setAttemptPercentage(0)
+        } else{
+            setIsKR(false)
+            setAttemptPercentage(0)
+        }
     }
-
 
     const onFromStageChange = (e) => {
         const {value} = e.target
@@ -84,7 +88,7 @@ export default function Reforge() {
                                 </select>
                             </div>
                             <div className="col-md-4"> 
-                                <PercentagesField percentages={ CalcPercentages(fromStage+1) } percentage={attemptPercentage} setPercentage={setPercentage}/>
+                                <PercentagesField percentages={ CalcPercentages(fromStage+1,isKR) } percentage={attemptPercentage} setPercentage={setPercentage}/>
                             </div>
                         </div>
                         <div>

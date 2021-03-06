@@ -2,10 +2,6 @@
     "folders": [
         {
             "path": "."
-        },
-        {
-            "name": "elrioslab",
-            "path": "elrioslab"
         }
     ]
 }

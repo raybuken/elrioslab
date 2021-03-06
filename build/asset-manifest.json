@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.062255ee.chunk.css",
-    "main.js": "/static/js/main.6aaad575.chunk.js",
-    "main.js.map": "/static/js/main.6aaad575.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8629c847.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8629c847.js.map",
+    "main.css": "/static/css/main.f83c695a.chunk.css",
+    "main.js": "/static/js/main.b36e2717.chunk.js",
+    "main.js.map": "/static/js/main.b36e2717.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b5514a02.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b5514a02.js.map",
     "static/css/2.0f739755.chunk.css": "/static/css/2.0f739755.chunk.css",
-    "static/js/2.77a99f52.chunk.js": "/static/js/2.77a99f52.chunk.js",
-    "static/js/2.77a99f52.chunk.js.map": "/static/js/2.77a99f52.chunk.js.map",
-    "static/js/3.ebf50c81.chunk.js": "/static/js/3.ebf50c81.chunk.js",
-    "static/js/3.ebf50c81.chunk.js.map": "/static/js/3.ebf50c81.chunk.js.map",
+    "static/js/2.ad219f57.chunk.js": "/static/js/2.ad219f57.chunk.js",
+    "static/js/2.ad219f57.chunk.js.map": "/static/js/2.ad219f57.chunk.js.map",
+    "static/js/3.cffd93f7.chunk.js": "/static/js/3.cffd93f7.chunk.js",
+    "static/js/3.cffd93f7.chunk.js.map": "/static/js/3.cffd93f7.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.0f739755.chunk.css.map": "/static/css/2.0f739755.chunk.css.map",
-    "static/css/main.062255ee.chunk.css.map": "/static/css/main.062255ee.chunk.css.map",
-    "static/js/2.77a99f52.chunk.js.LICENSE.txt": "/static/js/2.77a99f52.chunk.js.LICENSE.txt",
+    "static/css/main.f83c695a.chunk.css.map": "/static/css/main.f83c695a.chunk.css.map",
+    "static/js/2.ad219f57.chunk.js.LICENSE.txt": "/static/js/2.ad219f57.chunk.js.LICENSE.txt",
     "static/media/ED.07eeec95.jpg": "/static/media/ED.07eeec95.jpg",
     "static/media/adap.335fa991.png": "/static/media/adap.335fa991.png",
     "static/media/awakening charge speed.c23ea3cd.png": "/static/media/awakening charge speed.c23ea3cd.png",
     "static/media/getFetch.cjs": "/static/media/getFetch.d7d6010d.cjs",
+    "static/media/ignore.470afb4b.png": "/static/media/ignore.470afb4b.png",
     "static/media/jump speed.a9d66787.png": "/static/media/jump speed.a9d66787.png",
     "static/media/logo.254683a8.png": "/static/media/logo.254683a8.png",
     "static/media/perfil.0ee01e33.png": "/static/media/perfil.0ee01e33.png",
@@ -25,10 +26,10 @@
     "static/media/stats.bded3baf.jpg": "/static/media/stats.bded3baf.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8629c847.js",
+    "static/js/runtime-main.b5514a02.js",
     "static/css/2.0f739755.chunk.css",
-    "static/js/2.77a99f52.chunk.js",
-    "static/css/main.062255ee.chunk.css",
-    "static/js/main.6aaad575.chunk.js"
+    "static/js/2.ad219f57.chunk.js",
+    "static/css/main.f83c695a.chunk.css",
+    "static/js/main.b36e2717.chunk.js"
   ]
 }

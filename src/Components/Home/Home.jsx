@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import logo from './logo.png'
-import Section from './Section'
+import Section from './Section/Section'
 import SocialMedia from '../SocialMedia/SocialMedia'
 
 export default function Home() {
