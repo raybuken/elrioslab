@@ -16,16 +16,16 @@ export default function About() {
                 <meta name='description' content='Elsword Calculators'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar />
             <div className='container jumbotron my-4'>
                 <SocialMedia />
-                <h1 className='display-2 my-4'>{t.about}</h1>
+                <h1 className='display-4 my-4'>{t.about}</h1>
                 <hr className='my-3'/>
                 <div>
-                    <p className='display-6'>{t.p1}</p>
-                    <p className='display-6'>{t.p2}</p>
+                    <p className='display-6 text-justify'>{t.p1}</p>
+                    <p className='display-6 text-justify'>{t.p2}</p>
                     <p>{t.channel}: <a className='text-info' href="https://youtube.com/Raybuken">Raybuken</a></p>
                     <Image src={'/about/perfil.png'} width='1000' height='700' alt="Raybuken" className='img-fluid'/>
                     <div className='text-center'>

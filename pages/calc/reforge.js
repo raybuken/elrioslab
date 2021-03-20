@@ -68,16 +68,17 @@ export default function Reforge() {
                 <meta name='description' content='Elsword Reforge Calculator'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword reforge Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar />
             <div className='container my-3'>
                 <div className="jumbotron">
                     <SocialMedia />
-                    <h1 className="display-4 text-center">Reforge</h1>
+                    <h1 className="text-center">Reforge</h1>
+                    <hr />
                     <div className="my-4">
                         <div className="row justify-content-end">
-                            <div className="form-group">
+                            <div className="col-sm-12 col-md-4 form-group">
                                 <label>Servidor</label>
                                 <select className="form-control" onChange={onChangeServer}>
                                     <option value="NA, INT, EU, TW, JP, ETC">NA, INT, EU, TW, JP, ETC</option>
@@ -109,7 +110,9 @@ export default function Reforge() {
                     </div>
                     <hr className=' my-4' />
                     <div className='row justify-content-center'>
-                        <ReforgeTable isKR={isKR} />
+                        <div className='col-md-12 col-sm-12'>
+                            <ReforgeTable isKR={isKR} />
+                        </div>
                     </div>
                 </div>
             </div>

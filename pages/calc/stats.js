@@ -11,7 +11,7 @@ export default function Stats () {
                 <meta name='description' content='Elsword Stat Calculator'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Socket Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar/>
             <StatCalculator />  

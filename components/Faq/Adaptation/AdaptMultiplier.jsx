@@ -6,8 +6,8 @@ export default function AdaptMultiplier(props) {
         <table className='table table-bordered table-striped responsive-table'>
             <thead className='thead-dark'>
                 <tr className='text-center'>
-                    <th>{translate('adaptation.q2.debuff')}</th>
-                    <th>{translate('adaptation.q2.multiplier')}</th>
+                    <th>{translate.q2.debuff}</th>
+                    <th>{translate.q2.multiplier}</th>
                 </tr>
             </thead>
             <tbody className='text-center'> 

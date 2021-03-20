@@ -43,13 +43,13 @@ export default function AdaptationCalculator() {
                 <meta name='description' content='Elsword Adaptation Calculator'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Adaptation Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar />
             <div className="container my-5">
                 <div className="jumbotron">
                     <SocialMedia />
-                    <h1 className='display-4 text-center'>{t.title}</h1>
+                    <h1 className=' text-center'>{t.title}</h1>
                     <hr className="my-3" />
                     <form className='my-4'>
                         <div className="row">

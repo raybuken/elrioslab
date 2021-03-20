@@ -2,8 +2,8 @@ import {stages} from '../reforgeStages'
 import {stages as krStages} from '../reforgeStagesKR'
 export default function ReforgeTable (props) {
     return (
-        <div>
-            <table className='table table-striped table-bordered table-responsive'>
+        <div className='table-responsive'>
+            <table className='table table-striped table-bordered table-sm'>
                 <thead className='thead-dark'>
                     <tr className='text-center'>
                         <th>Stage (to reach)</th>

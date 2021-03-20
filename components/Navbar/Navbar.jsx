@@ -15,7 +15,7 @@ export default function Navbar() {
         <>
             <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
                 <a href='/' className='navbar-brand'>
-                    <Image src='/logo.png' alt='ElriosLab' width='60' height='60' />
+                    <Image src='/logo.png' alt='ElriosLab' width='50' height='50' />
                         Elrios Lab
                 </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse" aria-controls="collapse" aria-expanded="false" aria-label="Toggle navigation">

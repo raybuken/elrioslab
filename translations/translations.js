@@ -144,7 +144,7 @@ const english = {
     },
     'ignore-defense': {
         'defense-base': "Defense Base",
-        'defense-percentage': "Defense Percentage",
+        'defense-percentage': "Def %",
         'current-ignore': "Current Ignore Defense",
         'remain-defense': "Remain Defense",
         'damage-gained': "Damage Gained"
@@ -201,7 +201,7 @@ const spanish = {
     },
     "ignore-defense": {
         "defense-base": "Defensa Base",
-        "defense-percentage": "Porcentaje de Defensa",
+        "defense-percentage": "Defensa %",
         "current-ignore": "Ignorar Defensa Actual",
         "remain-defense": "Defensa Restante",
         "damage-gained": "Daño ganado"

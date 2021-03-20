@@ -20,12 +20,10 @@ export default function StatCalcFAQ() {
             </div>
             <div className='collapse' id='statCalculator'>
                 <div className='p-4'>
-                    <div>
-                        <h2>{t.q1.question}</h2>
-                        <p>{t.q1.answer}</p>
-                        <div className='row align-content-center'>
-                            <StatTable />
-                        </div>
+                    <h2>{t.q1.question}</h2>
+                    <p>{t.q1.answer}</p>
+                    <div className='row align-content-center'>
+                        <StatTable />
                     </div>
                     <div>
                         <h2>{t.q2.question}</h2>

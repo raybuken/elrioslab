@@ -6,6 +6,7 @@ import { faTrash, faPlus, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
 import { english, spanish } from '../../translations/translations'
 import Head from 'next/head'
+
 export default function IgnoreDefense() {
     const { locale } = useRouter()
     const t = locale === 'en' ? english['ignore-defense'] : spanish['ignore-defense']
@@ -63,32 +64,32 @@ export default function IgnoreDefense() {
                 <meta name='description' content='Elsword Ignore Defense Calculator'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Ignore Defense Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar />
             <div className="container my-5">
                 <div className="jumbotron">
-                    <h1 className="text-center display-4">Ignore Defense</h1>
+                    <h1>Ignore Defense</h1>
                     <hr className="my-3" />
                     <form>
                         <div className="row">
-                            <div className="col-3">
+                            <div className="col-md-3 col-sm-6">
                                 <label>{t['defense-base']}</label>
                                 <input type="number" value={defBase} className=' form-control border-black' onChange={onChangeDefBase} />
                             </div>
-                            <div className="col-3">
+                            <div className="col-md-3 col-sm-6">
                                 <label>{t['defense-percentage']}</label>
                                 <input type="number" value={defPercentage} className='form-control border-black' min='0' max='100' onChange={onChangeDefPercentage} />
                             </div>
-                            <div className="col-6">
+                            <div className="col-md-6 col-sm-12 ">
                                 <div className="row">
                                     {ignoreDef.map((value, i) => (
-                                        <div className='col-4' key={i}>
-                                            <label>Ignore Defense {i + 1}</label>
+                                        <div className='col-lg-4 col-md-6 col-sm-6' key={i}>
+                                            <label>Ign Def {i + 1}</label>
                                             <input type="number" value={value} className='form-control border-black' min='0' max='100' onChange={e => onChangeIgnoreDef(e, i)} />
                                         </div>
                                     ))}
-                                    <div className=" col-12 mt-2">
+                                    <div className=" col-md-12 mt-2">
                                         <button type='button' className='btn btn-success mr-1' value="Add" onClick={createIgnoreDefenseField}>
                                             <FontAwesomeIcon icon={faPlus} />
                                         </button>
@@ -102,11 +103,10 @@ export default function IgnoreDefense() {
                                 </div>
                             </div>
                         </div>
-
-                        <div className="row">
+                        <div className="row my-2">
                             <div className="col align-self-center">
-                                <p className='display-4'>{t['remain-defense']}: {remainDefense}%</p>
-                                <p className='display-4'>{t['damage-gained']}: {damageGained}%</p>
+                                <h2 className='font-weight-bold'>{t['remain-defense']}: <span className='text-info'>{remainDefense}%</span></h2>
+                                <h2 className='font-weight-bold'>{t['damage-gained']}: <span className='text-info'>{damageGained}%</span></h2>
                             </div>
                         </div>
                     </form>

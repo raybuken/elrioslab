@@ -20,7 +20,7 @@ export default function StatTable() {
     return (
         <div className='p-3'>
             <div className='row '>
-                <div className='form-group col-md-6 '>
+                <div className='form-group col-md-6 col-sm-12'>
                     <label>Stat</label>
                     <select className='form-control border-black' ref={selectInput} onChange={getStatTable}>
                         {getStatsName.map((stat,i) => (
@@ -30,8 +30,8 @@ export default function StatTable() {
                 </div>
             </div>
             <div className="row">
-                <div className='col-md-10'>
-                    <table className='table table-bordered table-info text-center font-family-sans-serif' name={name}>
+                <div className='col-sm-10'>
+                    <table className='table table-bordered table-info text-center font-family-sans-serif table-responsive' name={name}>
                             <thead className=' table-success'>
                                 <tr>
                                     <td> Unnormalized Percentage </td>

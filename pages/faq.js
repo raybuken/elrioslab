@@ -20,15 +20,15 @@ export default function Faq() {
                 <meta name='description' content='Elsword Calculators'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar />
-            <div className="container py-4">
+            <div className="py-4">
                 <div className='jumbotron'>
                     <SocialMedia />
-                    <h1 className="display-4 my-3">{t.title}</h1>
+                    <h1 className="my-3">{t.title}</h1>
                     <hr className="my-3" />
-                    <ul className=" accordion">
+                    <ul className=" accordion p-1">
                         <div className="card">
                             <StatCalcFAQ />
                             <ReforgeFAQ />

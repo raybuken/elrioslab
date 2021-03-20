@@ -9,7 +9,7 @@ export default function Index(){
                 <meta name='description' content='Elsword Calculators'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Calculator'/>
                 <meta name='author' content='Raybuken'/>
-                <meta name='viewport' content='width=device-width' initial-scale='1.0'/>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Home/> 
         </div>

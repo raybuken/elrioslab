@@ -20,7 +20,7 @@ export default function Home() {
                     <Image src={'/logo.png'} width='300' height='300' layout='intrinsic' alt="ElCalc"/>
                     </div>
                     <div className=' text-center'>
-                        <h1 className='display-4'>{t.welcome}</h1>
+                        <h1>{t.welcome}</h1>
                         <p className='lead'>{t.description}</p>
                     </div>
                     <hr className="my-4" />
