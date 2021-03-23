@@ -12,7 +12,7 @@ export default function Head() {
     return (
         <thead className='font-family-sans-serif'>
             <tr className='text-center table-success'>
-                <th className='p-1'><Image src={'/tools/stats/magic_stone.png'} alt={'Magic Stone'} width='60' height='60'/></th>
+                <th className='p-1'><Image src={'/v1616513277/files/tools/stats/magic_stone_s32yab.png'} alt={'Magic Stone'} width='60' height='60'/></th>
                 <th>Stat</th>
                 <th>{t.efficiency}</th>
                 <th>Total % <FontAwesomeIcon id='totalStat' data-toggle="tooltip" data-placement="top" data-original-title={t['tooltip-total']} className=' text-info mb-3' icon={faQuestionCircle} size='2x'/></th>

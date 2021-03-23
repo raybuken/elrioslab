@@ -17,7 +17,7 @@ export default function Home() {
                 <div className="container">
                     <SocialMedia />
                     <div className="row justify-content-center">
-                    <Image src={'/logo.png'} width='300' height='300' layout='intrinsic' alt="ElCalc"/>
+                    <Image src={'/v1616513160/files/logo.png'} width='300' height='300' layout='intrinsic' alt="ElCalc"/>
                     </div>
                     <div className=' text-center'>
                         <h1>{t.welcome}</h1>

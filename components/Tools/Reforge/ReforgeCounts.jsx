@@ -12,23 +12,23 @@ export default function ReforgeCounts(props) {
         <div className='my-4'>
             <div className='row'>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/tools/reforge/ED.jpg'} alt='ED' width='50' height='50'/>
+                    <Image src={'/v1616513276/files/tools/reforge/ED_h6saxx.jpg'} alt='ED' width='50' height='50'/>
                     <label className='display-6 ml-3'> {result.ed || 0} ED</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/tools/reforge/glaciem.png'} alt='glaciem' width='50' height='50'/>
+                    <Image src={'/v1616513276/files/tools/reforge/glaciem_pg2u2l.png'} alt='glaciem' width='50' height='50'/>
                     <label className='display-6 ml-3'> x{result.glaciems || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/tools/reforge/amethyst.png'} alt='amethyst' width='50' height='50'/>
+                    <Image src={'/v1616513276/files/tools/reforge/amethyst_aced3h.png'} alt='amethyst' width='50' height='50'/>
                     <label className='display-6 ml-3'> x{result.amethyst || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/tools/reforge/magical_crystal.png'} alt='Magical Crystal' width='50' height='50'/>
+                    <Image src={'/v1616513276/files/tools/reforge/magical_crystal_vyzlmt.png'} alt='Magical Crystal' width='50' height='50'/>
                     <label className='display-6 ml-3'> x{result.crystals || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/tools/reforge/seed.png'} alt='seed' width='50' height='50'/>
+                    <Image src={'/v1616513276/files/tools/reforge/seed_xor1kb.png'} alt='seed' width='50' height='50'/>
                     <label className='display-6 ml-3'> x{result.seeds || 0}</label>
                 </div>
             </div>
