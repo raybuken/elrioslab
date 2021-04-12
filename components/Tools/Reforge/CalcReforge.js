@@ -3,7 +3,6 @@ import {stages as krStages} from './reforgeStagesKR'
 import {FilterByPercentages} from './FilterByPercentages'
 
 const calcReforge = (fromStage,toStage,percentage,isKR) => {
-    
     if(isKR){
         const currentStages = krStages.filter(stage => {
             return stage.stage > fromStage && stage.stage <= toStage
@@ -47,12 +46,12 @@ const clickCount = (rStages,reducer) => {
     return result
 }
 
-const seedCount = (rStages) => {
-    let attempts = rStages.reduce(((acum,current) => acum + current.attempt),0)
-    if(attempts <100){
+const seedCount = (clickCount) => {
+    
+    if(clickCount <=100){
         return 0
     }else {
-        return Math.ceil(( attempts - 100 ) / 10)
+        return Math.ceil(( clickCount - 100 ) / 10)
     }
 }
 
@@ -65,7 +64,7 @@ const getResults = (cStages,reducer) => {
         amethyst: convertToLocale(amethystCount(cStages) - amethyst),
         crystals: convertToLocale(crystalCount(cStages) - crystal),
         ed: convertToLocale(edCount(cStages) - ed),
-        seeds: seedCount(cStages),
+        seeds: seedCount(clickCount(cStages,reducer.attempt)),
         attempts: convertToLocale(clickCount(cStages,reducer.attempt))
     }
     return result

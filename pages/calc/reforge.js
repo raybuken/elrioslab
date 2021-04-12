@@ -81,8 +81,8 @@ export default function Reforge() {
                             <div className="col-sm-12 col-md-4 form-group">
                                 <label>Servidor</label>
                                 <select className="form-control" onChange={onChangeServer}>
-                                    <option value="NA, INT, EU, TW, JP, ETC">NA, INT, EU, TW, JP, ETC</option>
-                                    <option value="KR">KR</option>
+                                    <option value="NA, INT, EU, TW, JP, ETC">EU</option>
+                                    <option value="KR">Other Servers</option>
                                 </select>
                             </div>
                         </div>
@@ -108,12 +108,17 @@ export default function Reforge() {
                         </div>
                         <p className='font-italic'>{t.note}</p>
                     </div>
-                    <hr className=' my-4' />
-                    <div className='row justify-content-center'>
-                        <div className='col-md-12 col-sm-12'>
-                            <ReforgeTable isKR={isKR} />
+                    {
+                        /*
+                        <hr className=' my-4' />
+                        <div className='row justify-content-center'>
+                            <div className='col-md-12 col-sm-12'>
+                                <ReforgeTable isKR={isKR} />
+                            </div>
                         </div>
-                    </div>
+                        */
+                    }
+                    
                 </div>
             </div>
         </div>
