@@ -1,5 +1,5 @@
 import {stages} from '../reforgeStages'
-import {stages as krStages} from '../reforgeStagesKR'
+
 export default function ReforgeTable (props) {
     return (
         <div className='table-responsive'>
@@ -17,18 +17,6 @@ export default function ReforgeTable (props) {
                 </thead>
                 <tbody className='text-center'>
                     {
-                        props.isKR ?
-                        krStages.map((stage,i) => (
-                            <tr key={i}>
-                                <td>Stage {stage.stage}</td>
-                                <td>{stage.glaciem.toLocaleString()}</td>
-                                <td>{stage.amethyst}</td>
-                                <td>{stage.crystal.toLocaleString()}</td>
-                                <td>{stage.ed.toLocaleString()}</td>
-                                <td>{stage.effect}</td>
-                                <td>{stage.percentage}%</td>
-                            </tr>
-                        )) :
                         stages.map((stage,i) => (
                             <tr key={i}>
                                 <td>Stage {stage.stage}</td>

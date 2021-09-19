@@ -1,7 +1,7 @@
 import {CalcPercentages} from './CalcPercentages'
 
-const FilterByPercentages = (rStages,percentage,isKR) => {
-    const percentagesArray = CalcPercentages(rStages[0].stage,isKR)
+const FilterByPercentages = (rStages,percentage) => {
+    const percentagesArray = CalcPercentages(rStages[0].stage)
    return getResults(rStages[0],percentagesArray.indexOf(percentage))
 }
 

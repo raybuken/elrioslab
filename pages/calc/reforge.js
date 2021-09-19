@@ -20,26 +20,16 @@ export default function Reforge() {
 
     const fromStageSelect = useRef(null)
     const [fromStage, setFromStage] = useState(0)
-    const [isKR, setIsKR] = useState(false)
     const toStageSelect = useRef(null)
     const [toStage, setToStage] = useState(stages.map(el => el))
     const [attemptPercentage, setAttemptPercentage] = useState(0)
     const [count, setCount] = useState({})
 
     useEffect(() => {
-        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage, isKR))
-    }, [toStage, attemptPercentage, isKR])
+        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage))
+    }, [toStage, attemptPercentage])
 
-    const onChangeServer = (e) => {
-        const { value } = e.target
-        if (value === 'KR') {
-            setIsKR(true)
-            setAttemptPercentage(0)
-        } else {
-            setIsKR(false)
-            setAttemptPercentage(0)
-        }
-    }
+
 
     const onFromStageChange = (e) => {
         const { value } = e.target
@@ -56,7 +46,7 @@ export default function Reforge() {
         setAttemptPercentage(Number(value))
     }
     const getCounts = () => {
-        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage, isKR))
+        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage))
     }
 
 
@@ -77,15 +67,6 @@ export default function Reforge() {
                     <h1 className="text-center">Reforge</h1>
                     <hr />
                     <div className="my-4">
-                        <div className="row justify-content-end">
-                            <div className="col-sm-12 col-md-4 form-group">
-                                <label>Servidor</label>
-                                <select className="form-control" onChange={onChangeServer}>
-                                    <option value="NA, INT, EU, TW, JP, ETC">EU</option>
-                                    <option value="KR">Other Servers</option>
-                                </select>
-                            </div>
-                        </div>
                         <div className="row justify-content-center">
                             <div className="col-md-4">
                                 <label>{t.from}</label>
@@ -100,7 +81,7 @@ export default function Reforge() {
                                 </select>
                             </div>
                             <div className="col-md-4">
-                                <PercentagesField percentages={CalcPercentages(fromStage + 1, isKR)} percentage={attemptPercentage} setPercentage={setPercentage} />
+                                <PercentagesField percentages={CalcPercentages(fromStage + 1)} percentage={attemptPercentage} setPercentage={setPercentage} />
                             </div>
                         </div>
                         <div>

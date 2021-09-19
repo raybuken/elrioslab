@@ -1,22 +1,12 @@
 import {stages} from './reforgeStages'
-import {stages as krStages} from './reforgeStagesKR'
 import {FilterByPercentages} from './FilterByPercentages'
 
-const calcReforge = (fromStage,toStage,percentage,isKR) => {
-    if(isKR){
-        const currentStages = krStages.filter(stage => {
-            return stage.stage > fromStage && stage.stage <= toStage
-        })
-        const filter  = FilterByPercentages(currentStages,percentage,isKR)
-       return getResults(currentStages,filter)
-    }
-    else{
+const calcReforge = (fromStage,toStage,percentage) => {
         const currentStages = stages.filter(stage => {
             return stage.stage > fromStage && stage.stage <= toStage
         })
-        const filter  = FilterByPercentages(currentStages,percentage,isKR)
+        const filter  = FilterByPercentages(currentStages,percentage)
        return getResults(currentStages,filter)
-    }
 }
 
 const glaciemCount = (rStages) => {
