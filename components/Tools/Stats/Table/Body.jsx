@@ -1,103 +1,88 @@
-import React,{ useRef, useEffect, useState } from 'react'
-import { getActualStat, getTotalStat, getEfficiency, getMultiplicativeStat } from '../calc/calc'
+
+import React, { useRef, useEffect, useState } from 'react'
+import { getActualStat, getTotalStat, getEfficiency } from '../calc/calc'
 import { getStatsName } from '../statsList'
-import Images from './Images'
-import Image from 'next/image'
+import MStatField from './MStatField'
 
 export default function Body() {
 
-    const [efficiency, setEfficiency] = useState([])
-    const [finalStat, setFinalStat] = useState([])
+    const [activeStat, setActiveStat] = useState('maximize')
+    const [efficiency, setEfficiency] = useState(100)
+    const [totalStats, setTotalStats] = useState('')
+    const [actualStats, setActualStats] = useState('')
+    const selectStat = useRef()
 
-    const statLength = getStatsName.length
-    const totalStats = useRef([new Array(statLength)])
-    const actualStats = useRef([new Array(statLength)])
-    const mStatCheckBox = useRef([new Array(statLength)])
-    const mStat = useRef([new Array(statLength)])
+    const onSelectStat = () => {
+        setActiveStat(selectStat.current.value)
+        setTotalStats(0)
+        setActualStats(0)
+    }
 
-    useEffect(() => {
-        setEfficiency(new Array(statLength).fill(100))
-        setFinalStat(new Array(statLength).fill(0))
-    }, [statLength])
-
-    const onTotalStatChange = (e, i) => {
-        const { name } = totalStats.current[i]
-        const efc = [...efficiency]
+    const onTotalStatChange = (e) => {
+        const { value } = e.target
+        setTotalStats(value)
 
         //assing conversion to actual
-        actualStats.current[i].value = getActualStat(name, totalStats.current[i].value) || 0
-        efc[i] = getEfficiency(name, actualStats.current[i].value)
+        setActualStats(getActualStat(activeStat, value) || 0)
+        const efc = getEfficiency(activeStat, value)
         setEfficiency(efc)
-
-        const mStatValue = mStat.current[i].value
-        let finalStatValue = finalStat
-        finalStatValue[i] = getMultiplicativeStat(name, actualStats.current[i].value, mStatValue)
-        setFinalStat({ ...finalStatValue })
     }
 
-    const onActualStatChange = (e, i) => {
-        const { name } = actualStats.current[i]
-        const efc = [...efficiency]
+    const onActualStatChange = (e) => {
+        const { value } = e.target
+        setActualStats(value)
+
         //assign conversion to total
-        totalStats.current[i].value = getTotalStat(name, actualStats.current[i].value) || 0
-        efc[i] = getEfficiency(name, actualStats.current[i].value)
+        setTotalStats(getTotalStat(activeStat, value) || 0)
+        const efc = getEfficiency(activeStat, value)
         setEfficiency(efc)
-
-        const mStatValue = mStat.current[i].value
-        let finalStatValue = finalStat
-        finalStatValue[i] = getMultiplicativeStat(name, actualStats.current[i].value, mStatValue)
-        setFinalStat({ ...finalStatValue })
     }
 
-    const onMStatTextChange = (e, i) => {
-        const actualValue = actualStats.current[i].value
-        const mStatValue = mStat.current[i].value
-        const name = actualStats.current[i].name
-        let finalStatValue = finalStat
-
-        finalStatValue[i] = getMultiplicativeStat(name, actualValue, mStatValue)
-        setFinalStat({ ...finalStatValue })
-    }
-
-    const mStatCheckBoxChange = (e, i) => {
-        const { checked } = e.target
-        mStat.current[i].disabled = !checked
-    }
-    
     return (
-        <tbody className='font-family-fantasy'>
-            {getStatsName.map((stat, i) => (
-                <tr key={i} className='text-center table-info'>
-                    <td>
-                        <Image src={Images[i]} alt={stat} width='80' height='80'/>
-                    </td>
-                    <td>
-                        <label className='pt-2 text-capitalize'>{stat}</label>
-                    </td>
-                    <td name={stat}>
-                        <label className='pt-2'>{efficiency[i]}%</label>
-                    </td>
-                    <td>
-                        <input type="text" name={stat} ref={el => totalStats.current[i] = el} className='form-control p-1 ' value={totalStats.current.value} placeholder={0} onChange={e => onTotalStatChange(e, i)} />
-                    </td>
-                    <td>
-                        <input type="text" name={stat} ref={el => actualStats.current[i] = el} className='form-control p-1 ' value={actualStats.current.value} placeholder={0} onChange={e => onActualStatChange(e, i)} />
-                    </td>
-                    <td className=' text-center'>
-                        <div className='input-group'>
-                            <div className="input-group-prepend ">
-                                <div className="input-group-text bg-light border-0">
-                                    <input type="checkbox" ref={el => mStatCheckBox.current[i] = el} onChange={(e) => mStatCheckBoxChange(e, i)} />
+        <>
+            <div className='form-group row'>
+                <div className="col-lg-4 col-md-6 col-sm-6">
+                    <label htmlFor="">Stat</label>
+                    <select className='form-select form-control' ref={selectStat} onChange={onSelectStat} >
+                        {
+                            getStatsName.map((stat, i) => (
+                                <option value={stat} name={stat} key={i}>{stat}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+            </div>
+            <hr />
+            <div>
+                {getStatsName.map((stat, i) => {
+                    if (stat === activeStat) {
+                        return (
+                            <div key={i}>
+                                <div className="row align-items-center justify-content-lg-between">
+                                    <div className="col-md-3 col-sm-6 col-lg-3">
+                                        <label>Total %</label>
+                                        <input type="number" className=' form-control rounded border-black' name={stat} value={totalStats} placeholder={0} onChange={e => onTotalStatChange(e)} name={stat} />
+                                    </div>
+                                    <div className="col-md-3 col-sm-6 col-lg-3">
+                                        <label>Actual %</label>
+                                        <input type="number" className=' form-control rounded border-black' name={stat} value={actualStats} placeholder={0} onChange={e => onActualStatChange(e)} name={stat} />
+                                    </div>
+                                    <div className="col-md-3 col-sm-12 offset-lg-2">
+                                        <div className="row justify-content-center align-items-center p-2 h-100">
+                                            <div className="col-lg-12 text-center">
+                                                <label>Eficiencia%</label>
+                                                <p className=' h1'>{efficiency}%</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <MStatField name={activeStat} actual={actualStats} />
                             </div>
-                            <input type="text" ref={el => mStat.current[i] = el} disabled className='form-control p-1 ' onChange={e => onMStatTextChange(e, i)} min={0} max={99} />
-                            <div className="input-group-append">
-                                <label className=' input-group-text bg-warning'>= {finalStat[i]}%</label>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            ))}
-        </tbody>
+                        )
+                    }
+                })
+                }
+            </div>
+        </>
     )
 }

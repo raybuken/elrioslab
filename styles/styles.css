@@ -112,3 +112,7 @@
     border: 1px solid black !important;
 }
 
+.stat-field{
+    font-size: 2.5em !important;
+    border: 2.5px solid black;
+}

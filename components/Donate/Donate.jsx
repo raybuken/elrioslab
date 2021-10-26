@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 
 export default function Donate() {
     const router = useRouter()
-    const donateToPaypal = () => router.push('https://www.paypal.com/donate?token=bfPi93cnn1W0t26_ZT4Dy2CQViWJSQF9FC75BTdKY4wDyHX7XJ0HTiyXi3_f80c_qdleAyC8utxH6Kai')
+    const donateToPaypal = () => router.push('https://www.paypal.com/donate?token=Al6JUAZxzynKAj0N91CndpATxH1NYJ1BTcCW0l8_FzkFQaDz8qzgYTqJnbLoD3KXgEC3vb4QHoeq98v5')
 
     return (
         <img
