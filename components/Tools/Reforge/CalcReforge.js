@@ -1,13 +1,19 @@
-import {stages} from './reforgeStages'
+import {stages, stagesKR} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
 
-const calcReforge = (fromStage,toStage,percentage) => {
-        const currentStages = stages.filter(stage => {
-            return stage.stage > fromStage && stage.stage <= toStage
-        })
-        const filter  = FilterByPercentages(currentStages,percentage)
+const calcReforge = (fromStage,toStage,percentage, server) => {
+    console.log(server)
+        const currentStages = server === 'KR' ? filterStage(stagesKR, fromStage, toStage) : filterStage(stages, fromStage, toStage)
+        const filter  = FilterByPercentages(currentStages,percentage, server)
        return getResults(currentStages,filter)
 }
+
+const filterStage = (elems, from, to) =>{
+    return elems.filter(stage => {
+        return stage.stage > from && stage.stage <= to
+    })
+}
+
 
 const glaciemCount = (rStages) => {
     const result = rStages.reduce(((acum,current) => acum + (current.glaciem * current.attempt)),0)

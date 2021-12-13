@@ -5,7 +5,6 @@ import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import { stages } from '../../components/Tools/Reforge/reforgeStages'
 import { calcReforge } from '../../components/Tools/Reforge/CalcReforge'
 import ReforgeCounts from '../../components/Tools/Reforge/ReforgeCounts'
-import ReforgeTable from '../../components/Tools/Reforge/ReforgingTable/ReforgeTable'
 import { CalcPercentages } from '../../components/Tools/Reforge/CalcPercentages'
 import PercentagesField from '../../components/Tools/Reforge/PercentagesField'
 
@@ -17,6 +16,7 @@ import Head from 'next/head'
 export default function Reforge() {
     const { locale } = useRouter()
     const t = locale === 'en' ? english.reforge : spanish.reforge
+    const [server, setServer] = useState('KR')
 
     const fromStageSelect = useRef(null)
     const [fromStage, setFromStage] = useState(0)
@@ -26,10 +26,8 @@ export default function Reforge() {
     const [count, setCount] = useState({})
 
     useEffect(() => {
-        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage))
-    }, [toStage, attemptPercentage])
-
-
+        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage, server))
+    }, [toStage, attemptPercentage, server])
 
     const onFromStageChange = (e) => {
         const { value } = e.target
@@ -46,7 +44,7 @@ export default function Reforge() {
         setAttemptPercentage(Number(value))
     }
     const getCounts = () => {
-        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage))
+        setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage, server))
     }
 
 
@@ -67,7 +65,13 @@ export default function Reforge() {
                     <h1 className="text-center">Reforge</h1>
                     <hr />
                     <div className="my-4">
-                        <div className="row justify-content-center">
+                        <div className=' ml-auto w-25 m-2'>
+                            <select className='form-control' onChange={(e) => setServer(e.target.value)}>
+                                <option value='KR'>KR</option>
+                                <option value='Other Servers'>Other Servers</option>
+                            </select>
+                        </div>
+                        <div className="row">
                             <div className="col-md-4">
                                 <label>{t.from}</label>
                                 <select className='form-control reforge-field' onChange={onFromStageChange} ref={fromStageSelect}>

@@ -1,9 +1,9 @@
-import {stages} from './reforgeStages'
+import {stages, stagesKR} from './reforgeStages'
 
-const CalcPercentages = (stage,isKR) => {
+const CalcPercentages = (stage, server) => {
     //List of possible percentages 
     if (stage) {
-        let percentage = stages[stage-1].percentage
+        const percentage = server === 'KR' ? stagesKR[stage-1].percentage : stages[stage-1].percentage
         
         const result = new Array(Math.ceil(100/percentage)) // number of possible values
         let counter = 0
