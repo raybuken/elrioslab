@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
-import { stages } from '../../components/Tools/Reforge/reforgeStages'
+import { stages, stagesKR } from '../../components/Tools/Reforge/reforgeStages'
 import { calcReforge } from '../../components/Tools/Reforge/CalcReforge'
 import ReforgeCounts from '../../components/Tools/Reforge/ReforgeCounts'
 import { CalcPercentages } from '../../components/Tools/Reforge/CalcPercentages'
@@ -16,12 +16,12 @@ import Head from 'next/head'
 export default function Reforge() {
     const { locale } = useRouter()
     const t = locale === 'en' ? english.reforge : spanish.reforge
-    const [server, setServer] = useState('KR')
+    const [server, setServer] = useState('KR')  
 
     const fromStageSelect = useRef(null)
     const [fromStage, setFromStage] = useState(0)
     const toStageSelect = useRef(null)
-    const [toStage, setToStage] = useState(stages.map(el => el))
+    const [toStage, setToStage] = useState(stagesKR.map(el => el))
     const [attemptPercentage, setAttemptPercentage] = useState(0)
     const [count, setCount] = useState({})
 
@@ -31,9 +31,8 @@ export default function Reforge() {
 
     const onFromStageChange = (e) => {
         const { value } = e.target
-        let filterToStage = stages.filter(el => {
-            return el.stage > value
-        })
+        const filterToStage = server === 'KR' ? stagesKR.filter(el => el.stage > value ) : stages.filter(el => el.stage > value )
+
         setFromStage(Number(fromStageSelect.current.value))
         setToStage(filterToStage)
         setAttemptPercentage(0)
@@ -43,10 +42,15 @@ export default function Reforge() {
         const { value } = e.target
         setAttemptPercentage(Number(value))
     }
+    
     const getCounts = () => {
         setCount(calcReforge(fromStageSelect.current.value, toStageSelect.current.value, attemptPercentage, server))
     }
 
+    const onCHangeServer = (e) => {
+        const {value} = e.target
+        setServer(value)
+    }
 
     return (
         <div>
@@ -66,7 +70,7 @@ export default function Reforge() {
                     <hr />
                     <div className="my-4">
                         <div className=' ml-auto w-25 m-2'>
-                            <select className='form-control' onChange={(e) => setServer(e.target.value)}>
+                            <select name='server' className='form-control' onChange={(e) => onCHangeServer(e)}>
                                 <option value='KR'>KR</option>
                                 <option value='Other Servers'>Other Servers</option>
                             </select>
@@ -75,7 +79,7 @@ export default function Reforge() {
                             <div className="col-md-4">
                                 <label>{t.from}</label>
                                 <select className='form-control reforge-field' onChange={onFromStageChange} ref={fromStageSelect}>
-                                    {stages.map((el, i) => <option key={i} value={el.stage - 1}>{el.stage - 1}</option>)}
+                                    {stagesKR.map((el, i) => <option key={i} value={el.stage - 1}>{el.stage - 1}</option>)}
                                 </select>
                             </div>
                             <div className="col-md-4">
@@ -85,25 +89,14 @@ export default function Reforge() {
                                 </select>
                             </div>
                             <div className="col-md-4">
-                                <PercentagesField percentages={CalcPercentages(fromStage + 1)} percentage={attemptPercentage} setPercentage={setPercentage} />
+                                <PercentagesField percentages={CalcPercentages(fromStage + 1, server)} percentage={attemptPercentage} setPercentage={setPercentage} />
                             </div>
                         </div>
                         <div>
                             <ReforgeCounts result={count} />
                         </div>
                         <p className='font-italic'>{t.note}</p>
-                    </div>
-                    {
-                        /*
-                        <hr className=' my-4' />
-                        <div className='row justify-content-center'>
-                            <div className='col-md-12 col-sm-12'>
-                                <ReforgeTable isKR={isKR} />
-                            </div>
-                        </div>
-                        */
-                    }
-                    
+                    </div>                
                 </div>
             </div>
         </div>

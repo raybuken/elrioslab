@@ -2,7 +2,6 @@ import {stages, stagesKR} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
 
 const calcReforge = (fromStage,toStage,percentage, server) => {
-    console.log(server)
         const currentStages = server === 'KR' ? filterStage(stagesKR, fromStage, toStage) : filterStage(stages, fromStage, toStage)
         const filter  = FilterByPercentages(currentStages,percentage, server)
        return getResults(currentStages,filter)
