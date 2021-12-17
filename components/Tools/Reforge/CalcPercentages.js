@@ -1,8 +1,6 @@
 import {stages, stagesKR} from './reforgeStages'
 
 const CalcPercentages = (stage, server) => {
-    console.log(stage)
-    console.log(server)
     //List of possible percentages 
     if (stage) {
         const percentage = server === 'KR' ? stagesKR[stage-1].percentage : stages[stage-1].percentage
