@@ -1,9 +1,10 @@
-import {stages, stagesKR} from './reforgeStages'
+import {stages, stagesKR, stagesTenebrous} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
 
-const calcReforge = (fromStage,toStage,percentage, server) => {
-        const currentStages = server === 'KR' ? filterStage(stagesKR, fromStage, toStage) : filterStage(stages, fromStage, toStage)
-        const filter  = FilterByPercentages(currentStages,percentage, server)
+const calcReforge = (fromStage,toStage,percentage,armor, server) => {
+        //if tenebrous armor selected if not, Rigo server compare server
+        const currentStages = armor ==='Tenebrous' ? filterStage(stagesTenebrous, fromStage, toStage) : server === 'KR' ? filterStage(stagesKR, fromStage, toStage) : filterStage(stages, fromStage, toStage)
+        const filter  = FilterByPercentages(currentStages,percentage, armor, server)
        return getResults(currentStages,filter)
 }
 
@@ -12,7 +13,6 @@ const filterStage = (elems, from, to) =>{
         return stage.stage > from && stage.stage <= to
     })
 }
-
 
 const glaciemCount = (rStages) => {
     const result = rStages.reduce(((acum,current) => acum + (current.glaciem * current.attempt)),0)
