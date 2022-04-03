@@ -29,9 +29,9 @@ export default function StatCalcFAQ() {
                         <h2>{t.q2.question}</h2>
                         <p>{t.q2.answer.p1}</p>
                         <ul>
-                            <li><span className='font-weight-bold'>maximize:</span> 85~90%</li>
-                            <li><span className='font-weight-bold'>critical:</span> 95~100%</li>
-                            <li><span className='font-weight-bold'>action speed:</span> 120%</li>
+                            <li><span className='font-weight-bold'>Maximize:</span> 85~90%</li>
+                            <li><span className='font-weight-bold'>Critical:</span> 95~100%</li>
+                            <li><span className='font-weight-bold'>Action speed:</span> 120%</li>
                         </ul>
                         <p><span className='font-weight-bold text-danger'>{t.q2.answer.p2.note}</span>{t.q2.answer.p2.text}</p>
                     </div>

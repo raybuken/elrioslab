@@ -43,7 +43,6 @@
     }
 }
 
-
 .font-family-fantasy{
     font-family: fantasy
 }
@@ -84,12 +83,12 @@
 
 .img-tool:hover {
     opacity: 0.8;
-    transition: 0.8s ease-in-out;
+    transition: 0.5s ease-in-out;
     transform: scale(1.05);
 }
 
 .img-tool {
-    transition: 0.8s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
@@ -102,7 +101,6 @@
     font-size: 2.5em !important;
     border: 2.5px solid black;
 }
-
 
 .formula {
     font-size: x-large;

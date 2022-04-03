@@ -64,4 +64,12 @@ const statList = {
 
 const getStatsName = Object.keys(statList)
 
-export {statList,getStatsName}
+const toCamelCase = string => {
+    const result = string.split('')
+    result[0] = result[0].toUpperCase();
+
+    return result
+}
+
+
+export {statList,getStatsName, toCamelCase}
