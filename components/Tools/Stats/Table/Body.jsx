@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect, useState } from 'react'
 import { getActualStat, getTotalStat, getEfficiency } from '../calc/calc'
-import { getStatsName } from '../statsList'
+import { getStatsName, toCamelCase } from '../statsList'
 import MStatField from './MStatField'
 
 export default function Body() {
@@ -14,8 +14,8 @@ export default function Body() {
 
     const onSelectStat = () => {
         setActiveStat(selectStat.current.value)
-        setTotalStats(0)
-        setActualStats(0)
+        setTotalStats(null)
+        setActualStats(null)
     }
 
     const onTotalStatChange = (e) => {
@@ -46,7 +46,7 @@ export default function Body() {
                     <select className='form-select form-control' ref={selectStat} onChange={onSelectStat} >
                         {
                             getStatsName.map((stat, i) => (
-                                <option value={stat} name={stat} key={i}>{stat}</option>
+                                <option value={stat} name={stat} key={i}>{toCamelCase(stat)}</option>
                             ))
                         }
                     </select>
