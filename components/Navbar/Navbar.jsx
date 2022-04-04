@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { english, spanish } from '../../translations/translations'
+import NavItem from './NavItem'
+import DropdownItem from './DropdownItem'
 
 export default function Navbar() {
     const router = useRouter()
@@ -22,34 +24,21 @@ export default function Navbar() {
                 </button>
                 <div className='navbar-collapse collapse' id='collapse'>
                     <ul className="navbar-nav ml-auto ">
-                        <li className="nav-item">
-                            <Link href='/'><span className='nav-link pointer'>{t.home}</span></Link>
-                        </li>
+                        <NavItem href='/' name={t.home}/>
                         <li className="nav-item dropdown">
                             <span className="nav-link dropdown-toggle" id="tools" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Herramientas
                             </span>
                             <div className="dropdown-menu" aria-labelledby="tools">
-                                <div className="dropdown-item">
-                                    <Link className="dropdown-item" href="/calc/stats">Stats</Link>
-                                </div>
-                                <div className="dropdown-item">
-                                    <Link className="dropdown-item" href='/calc/adaptation'>Adaptation</Link>
-                                </div>
-                                <div className="dropdown-item">
-                                    <Link className="dropdown-item" href="/calc/reforge">Reforge</Link>
-                                </div>
-                                <div className="dropdown-item">
-                                    <Link className="dropdown-item" href="/calc/ignore-defense">Ignore Defense</Link>
-                                </div>
+                                <DropdownItem href='/tools/stats' name='Stats'/>
+                                <DropdownItem href='/tools/adaptation' name='Adaptation'/>
+                                <DropdownItem href='/tools/reforge' name='Reforge'/>
+                                <DropdownItem href='/tools/ignore-defense' name='Ignore Defense'/>
+                                <DropdownItem href='/tools/el-search-party-collection' name='El Search Party Collection'/>
                             </div>
                         </li>
-                        <li className="nav-item">
-                            <Link href='/about'><span className='nav-link pointer'>{t.about}</span></Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link href='/faq'><span className='nav-link pointer'>{t.faq}</span></Link>
-                        </li>
+                        <NavItem href='/about' name={t.about}/>
+                        <NavItem href='/faq' name={t.faq}/>
                         <li className="nav-item dropdown">
                             <a href="/" role="button" className='nav-link dropdown-toggle pointer' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {t.languages}</a>
                             <div className="dropdown-menu" >
