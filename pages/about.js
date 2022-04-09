@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
 import SocialMedia from '../components/SocialMedia/SocialMedia'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import {english,spanish} from '../translations/translations'
+import Layout from '../components/Layout/Layout'
 export default function About() {
     const {locale} = useRouter()
     const t = locale === 'en' ? english.about : spanish.about
@@ -49,7 +49,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
     )
 }

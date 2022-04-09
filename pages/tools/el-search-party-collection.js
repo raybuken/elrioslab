@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from '../../components/Navbar/Navbar'
+import Layout from '../../components/Layout/Layout'
 import ElSearchPartyCollection from '../../components/Tools/ElSearchPartyCollection/ElSearchPartyCollection'
 
 export default function ESPC() {
@@ -13,8 +13,9 @@ export default function ESPC() {
                 <meta name='author' content='Raybuken'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
-            <Navbar/>
-            <ElSearchPartyCollection/>
+            <Layout>
+                <ElSearchPartyCollection/>
+            </Layout>
         </div>
     )
 }

@@ -1,6 +1,6 @@
-import Navbar from '../../components/Navbar/Navbar'
 import StatCalculator from '../../components/Tools/Stats/StatCalculator'
 import Head from 'next/head'
+import Layout from '../../components/Layout/Layout'
 
 export default function Stats () {
     return(
@@ -13,8 +13,9 @@ export default function Stats () {
                 <meta name='author' content='Raybuken'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
-            <Navbar/>
-            <StatCalculator />  
+            <Layout>
+                <StatCalculator />  
+            </Layout>
         </div>
     )
 }

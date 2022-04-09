@@ -1,4 +1,7 @@
 
+.layout{
+    min-height: 90vh;
+}
 .w-40{
     width: 40% ;
 }
@@ -145,9 +148,3 @@
     border-width: 5px;
 }
 
-.y-divider{
-    height: 100%;
-    width: 0;
-    border-color: #eee;
-    border-width: 3px;
-}
