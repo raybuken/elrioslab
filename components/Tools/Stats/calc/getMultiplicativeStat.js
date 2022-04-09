@@ -8,7 +8,10 @@ const calcMultiplicativeStat = (name,actual,mStat) => {
     const statName = statList[name].name
 
     if(statName === 'action speed' || statName === 'movement speed' || statName === 'jump speed'){
-        actual = parseFloat(actual) + 100
+        actual = parseFloat(actual) + 100 || 100
+        if(actual > cap + 100){
+            actual = cap + 100
+        }
     }
     const result = calcMultiplier(actual, mStat)
     
