@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { getActualStat, getTotalStat, getEfficiency } from '../calc/calc'
 import { getStatsName, toCamelCase } from '../statsList'
 import MStatField from './MStatField'
@@ -43,7 +43,7 @@ export default function Body() {
             <div className='form-group row'>
                 <div className="col-lg-4 col-md-6 col-sm-6">
                     <label htmlFor="">Stat</label>
-                    <select className='form-select form-control' ref={selectStat} onChange={onSelectStat} >
+                    <select className='form-select form-control border-black' ref={selectStat} onChange={onSelectStat} >
                         {
                             getStatsName.map((stat, i) => (
                                 <option value={stat} name={stat} key={i}>{toCamelCase(stat)}</option>
