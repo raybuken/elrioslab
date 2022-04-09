@@ -45,10 +45,10 @@ export default function MStatField(props) {
                     </div>
                     <div className="row">
                         <div className='mt-2 col-sm-12 col-lg-8'>
-                            <button type='button' className='btn btn-success mr-1' value="Add" onClick={createMStatField}>
+                            <button type='button' className='btn btn-success me-1' value="Add" onClick={createMStatField}>
                                 <FontAwesomeIcon icon={faPlus} />
                             </button>
-                            <button type='button' className='btn btn-danger mr-1' value="Delete" onClick={removeMStatField}>
+                            <button type='button' className='btn btn-danger me-1' value="Delete" onClick={removeMStatField}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </button>
                             <button type='button' className='btn btn-info' value="Reset" onClick={resetMStatField}>

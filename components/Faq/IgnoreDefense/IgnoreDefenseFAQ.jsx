@@ -7,9 +7,9 @@ export default function IgnoreDefenseFAQ() {
     const t = locale === 'en' ? english.faq['ignore-defense'] : spanish.faq['ignore-defense']
     return (
         <div>
-            <div className="card-header bg-transparent" >
+            <div className="accordion-header" >
                 <h2 className="mb-0 ">
-                    <button className="btn btn-link btn-block text-left shadow-none" type="button" data-toggle="collapse" data-target="#ignoreDefense" aria-expanded="true" aria-controls="ignoreDefense">
+                    <button className="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ignoreDefense" aria-expanded="true" aria-controls="ignoreDefense">
                         Ignore Defense
                         <FontAwesomeIcon className='float-right' icon={faChevronDown} size='1x' />
                     </button>

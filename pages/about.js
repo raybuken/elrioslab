@@ -27,8 +27,9 @@ export default function About() {
                     <p className='display-6 text-justify'>{t.p1}</p>
                     <p className='display-6 text-justify'>{t.p2}</p>
                     <p>{t.channel}: <a className='text-info' href="https://youtube.com/Raybuken">Raybuken</a></p>
-                    <Image src={'/v1616513205/files/perfil.png'} width='1000' height='700' alt="Raybuken" className='img-fluid'/>
+                    
                     <div className='text-center'>
+                        <Image src={'/v1616513205/files/perfil.png'} width='1000' height='700' alt="Raybuken" className='img-fluid'/>
                         <div>
                             <h2>{t.creator}</h2>
                             <p> Raybuken (NA) </p>
