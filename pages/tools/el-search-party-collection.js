@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Navbar from '../../components/Navbar/Navbar'
 import ElSearchPartyCollection from '../../components/Tools/ElSearchPartyCollection/ElSearchPartyCollection'
 
 export default function ESPC() {

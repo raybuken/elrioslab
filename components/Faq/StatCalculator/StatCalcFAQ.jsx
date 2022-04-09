@@ -10,9 +10,9 @@ export default function StatCalcFAQ() {
 
     return (
         <>
-            <div className="card-header bg-transparent" id='statCalc'>
+            <div className="accordion-header" id='statCalc'>
                 <h2 className="mb-0 ">
-                    <button className="btn btn-link btn-block text-left shadow-none" type="button" data-toggle="collapse" data-target="#statCalculator" aria-expanded="true" aria-controls="statCalculator">
+                    <button className="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#statCalculator" aria-expanded="true" aria-controls="statCalculator">
                         Stat Calculator
                         <FontAwesomeIcon className='float-right' icon={faChevronDown} size='1x' />
                     </button>

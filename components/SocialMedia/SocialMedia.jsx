@@ -10,10 +10,10 @@ export default function SocialMedia() {
             </div>
             <div className="p-1 col col-auto">
                 <ul className='nav'>
-                    {<li className='nav-item mr-2'>
+                    {<li className='nav-item me-2'>
                         <a href="https://discord.gg/j8Hg4VBN7J" target='_blank' rel="noreferrer" className="nav-link p-0"><FontAwesomeIcon icon={faDiscord} size='2x' color='cornflowerblue'/></a> 
                     </li>}
-                    <li className='nav-item mr-2'>
+                    <li className='nav-item me-2'>
                         <a href="https://www.youtube.com/Raybuken" target='_blank' rel="noreferrer" className="nav-link p-0"><FontAwesomeIcon icon={faYoutube} size='2x' color='red' /></a>
                     </li>
                     <li className="nav-item">

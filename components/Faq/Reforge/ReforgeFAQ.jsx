@@ -9,9 +9,9 @@ export default function ReforgeFAQ() {
     const t = locale === 'en' ? english.faq['reforge'] : spanish.faq['reforge']
     return (
         <>
-            <div className="card-header bg-transparent">
+            <div className="accordion-header " id='reforge'>
                 <h2 className="mb-0 ">
-                    <button className="btn btn-link btn-block text-left shadow-none" type="button" data-toggle="collapse" data-target="#reforgeCalc" aria-expanded="true" aria-controls="reforgeCalc">
+                    <button className="btn accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#reforgeCalc" aria-expanded="true" aria-controls="reforgeCalc">
                         Reforge Calc
                     <FontAwesomeIcon className='float-right' icon={faChevronDown} size='1x' />
                     </button>
