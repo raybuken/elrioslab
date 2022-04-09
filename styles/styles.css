@@ -1,4 +1,7 @@
 
+.layout{
+    min-height: 90vh;
+}
 .w-40{
     width: 40% ;
 }
@@ -117,4 +120,10 @@
 
 .accordion-button svg{
     display: none;
+}
+
+.footer {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
+
 }
