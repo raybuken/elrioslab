@@ -19,13 +19,13 @@ export default function About() {
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Navbar />
-            <div className='container jumbotron my-4'>
+            <div className='container jumbotron my-5'>
                 <SocialMedia />
                 <h1 className='display-4 my-4'>{t.about}</h1>
                 <hr className='my-3'/>
-                <div>
-                    <p className='display-6 text-justify'>{t.p1}</p>
-                    <p className='display-6 text-justify'>{t.p2}</p>
+                <div className='mx-5'>
+                    <p className='fs-4 text-justify'>{t.p1}</p>
+                    <p className='fs-4 text-justify'>{t.p2}</p>
                     <p>{t.channel}: <a className='text-info' href="https://youtube.com/Raybuken">Raybuken</a></p>
                     
                     <div className='text-center'>
