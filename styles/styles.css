@@ -1,4 +1,7 @@
 
+.layout{
+    min-height: 90vh;
+}
 .w-40{
     width: 40% ;
 }
@@ -119,35 +122,8 @@
     display: none;
 }
 
-.jumbotron {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #f7f7f9;
-}
+.footer {
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.15);
 
-.border-1 {
-    border-width: 1px;
-}
-
-.border-2 {
-    border-width: 2px;
-}
-
-.border-3 {
-    border-width: 3px;
-}
-
-.border-4 {
-    border-width: 4px;
-}
-
-.border-5 {
-    border-width: 5px;
-}
-
-.y-divider{
-    height: 100%;
-    width: 0;
-    border-color: #eee;
-    border-width: 3px;
 }
