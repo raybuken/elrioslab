@@ -1,19 +1,21 @@
 import {statList} from '../statsList'
 
 const calcMultiplicativeStat = (name,actual,mStat) => {
-    if(actual > statList[name].normalize[4]){
-        actual = Number( statList[name].normalize[4] )
-    }
+
+    const normalizeSize = statList[name].normalize.length -1
+    const cap = statList[name].normalize[normalizeSize]
+
     const statName = statList[name].name
+
+    if(statName === 'action speed' || statName === 'movement speed' || statName === 'jump speed'){
+        actual = parseFloat(actual) + 100
+    }
     const result = calcMultiplier(actual, mStat)
     
-    if( (statName === 'maximize' || statName === 'critical' ) && result > 100){
-        return 100
-    }else if(statName === 'action speed' || statName === 'movement speed' || statName === 'jump speed'){
-        if(result > 30) {
-            return 130
-        }
-        else return 100 + Number(result)
+    if( !statList[statName].overcapWithMultiplicativeStat && result > cap){
+        return cap
+    }else if(statList[statName].overcapWithMultiplicativeStat){
+        return  Number(result)
     }
     return parseFloat(result)
 }  
@@ -23,9 +25,8 @@ const calcMultiplier = (actual,mStat) => {
     let result = Number(mStat.reduce((prev,acum) =>  prev * acum ))
     
     result *= Number(actual)
-    console.log(result)
+
     return parseFloat(result).toFixed(2)
-    
 }
 
 export{calcMultiplicativeStat}
