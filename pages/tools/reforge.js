@@ -1,14 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import {
-  stages,
-  stagesKR,
-  stagesTenebrous,
-} from "../../components/Tools/Reforge/reforgeStages";
+import { stages, stagesKR, stagesTenebrous } from "../../components/Tools/Reforge/reforgeStages";
 import { calcReforge } from "../../components/Tools/Reforge/CalcReforge";
 import ReforgeCounts from "../../components/Tools/Reforge/ReforgeCounts";
 import { CalcPercentages } from "../../components/Tools/Reforge/CalcPercentages";
 import PercentagesField from "../../components/Tools/Reforge/PercentagesField";
+import ServersField from "../../components/Tools/Reforge/ServersField";
 
 import { useRouter } from "next/router";
 import { english, spanish } from "../../translations/translations";
@@ -86,17 +83,12 @@ export default function Reforge() {
     <div>
       <Head>
         <title>Reforge</title>
-        <meta charSet="UTF-8" />
         <meta name="description" content="Elsword Reforge Calculator" />
         <meta
           name="keywords"
           content="Elsword, Raybuken, Elsword reforge Calculator"
         />
-        <meta name="author" content="Raybuken" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-        />
+
       </Head>
 
       <Layout>
@@ -111,7 +103,7 @@ export default function Reforge() {
                   <label>Armor</label>
                   <select
                     name="armor"
-                    className="form-control"
+                    className="form-control form-select select-field"
                     onChange={(e) => onChangeArmor(e)}
                   >
                     <option value="Rigomor">Rigomor</option>
@@ -119,35 +111,14 @@ export default function Reforge() {
                   </select>
                 </div>
                 <div className="col-4">
-                  {armor === "Rigomor" && (
-                    <>
-                      <label>Server</label>
-
-                      <select
-                        name="server"
-                        className="form-control"
-                        onChange={(e) => onChangeServer(e)}
-                      >
-                        {
-                          <>
-                            <option value="KR">NA/INT/KR/JP/TW</option>
-                            <option value="EU">EU</option>
-                          </>
-                        }
-                      </select>
-                    </>
-                  )}
+                  { armor === "Rigomor" && <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'NA/INT/KR/JP/TW'},{value: 'EU', content: 'EU'}]}/> }
                 </div>
               </div>
               <hr />
               <div className="row">
                 <div className="col-md-4">
                   <label>{t.from}</label>
-                  <select
-                    className="form-control reforge-field"
-                    onChange={onFromStageChange}
-                    ref={fromStageSelect}
-                  >
+                  <select className="form-control form-select reforge-field" onChange={onFromStageChange} ref={fromStageSelect}>
                     {armor === "Tenebrous"
                       ? stagesTenebrous.map((el, i) => (
                           <option key={i} value={el.stage - 1}>
@@ -158,16 +129,13 @@ export default function Reforge() {
                           <option key={i} value={el.stage - 1}>
                             {el.stage - 1}
                           </option>
-                        ))}
+                        ))
+                    }
                   </select>
                 </div>
                 <div className="col-md-4">
                   <label>{t.to}</label>
-                  <select
-                    className="form-control reforge-field"
-                    ref={toStageSelect}
-                    onChange={getCounts}
-                  >
+                  <select className=" reforge-field form-select form-control" ref={toStageSelect} onChange={getCounts}>
                     {toStage.map((el, i) => (
                       <option key={i} value={el.stage}>
                         {el.stage}
