@@ -110,9 +110,9 @@ export default function Reforge() {
                     <option value="Tenebrous">Tenebrous</option>
                   </select>
                 </div>
-                <div className="col-4">
+                {/* <div className="col-4">
                   { armor === "Rigomor" && <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'NA/INT/KR/JP/TW'},{value: 'EU', content: 'EU'}]}/> }
-                </div>
+                </div> */}
               </div>
               <hr />
               <div className="row">
@@ -145,7 +145,7 @@ export default function Reforge() {
                 </div>
                 <div className="col-md-4">
                   <PercentagesField
-                    percentages={CalcPercentages(fromStage + 1, server)}
+                    percentages={CalcPercentages(fromStage + 1, armor, server)}
                     percentage={attemptPercentage}
                     setPercentage={setPercentage}
                   />
