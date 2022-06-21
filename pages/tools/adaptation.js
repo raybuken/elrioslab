@@ -53,7 +53,6 @@ export default function AdaptationCalculator() {
         />
       </Head>
       <Layout>
-        <Navbar />
         <div className="container my-5">
           <div className="jumbotron">
             <SocialMedia />
