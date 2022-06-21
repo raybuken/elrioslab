@@ -24,6 +24,7 @@ export default function Reforge() {
   const toStageSelect = useRef(null);
   const [toStage, setToStage] = useState(stagesKR.map((el) => el));
   const [attemptPercentage, setAttemptPercentage] = useState(0);
+  const [durability, setDurability] = useState(100);
   const [count, setCount] = useState({});
 
   useEffect(() => {
@@ -32,11 +33,12 @@ export default function Reforge() {
         fromStageSelect.current.value,
         toStageSelect.current.value,
         attemptPercentage,
+        durability,
         armor,
         server
       )
     );
-  }, [toStage, attemptPercentage, armor, server]);
+  }, [toStage, attemptPercentage, durability, armor, server]);
 
   const onFromStageChange = (e) => {
     const { value } = e.target;
@@ -57,12 +59,18 @@ export default function Reforge() {
     setAttemptPercentage(Number(value));
   };
 
+  const onChangeDurability = (e) => {
+    const {value} = e.target;
+    setDurability(Number(value))
+  }
+
   const getCounts = () => {
     setCount(
       calcReforge(
         fromStageSelect.current.value,
         toStageSelect.current.value,
         attemptPercentage,
+        durability,
         armor,
         server
       )
@@ -82,7 +90,7 @@ export default function Reforge() {
   return (
     <div>
       <Head>
-        <title>Reforge</title>
+        <title>{t.reforge}</title>
         <meta name="description" content="Elsword Reforge Calculator" />
         <meta
           name="keywords"
@@ -95,12 +103,12 @@ export default function Reforge() {
         <div className="container my-3">
           <div className="jumbotron">
             <SocialMedia />
-            <h1 className="text-center">Reforge</h1>
+            <h1 className="text-center">{t.reforge}</h1>
             <hr />
             <div className="my-4">
               <div className=" row justify-content-between mb-3">
                 <div className="col-4">
-                  <label>Armor</label>
+                  <label>{t.armor}</label>
                   <select
                     name="armor"
                     className="form-control form-select select-field"
@@ -116,7 +124,7 @@ export default function Reforge() {
               </div>
               <hr />
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <label>{t.from}</label>
                   <select className="form-control form-select reforge-field" onChange={onFromStageChange} ref={fromStageSelect}>
                     {armor === "Tenebrous"
@@ -133,7 +141,7 @@ export default function Reforge() {
                     }
                   </select>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <label>{t.to}</label>
                   <select className=" reforge-field form-select form-control" ref={toStageSelect} onChange={getCounts}>
                     {toStage.map((el, i) => (
@@ -143,18 +151,21 @@ export default function Reforge() {
                     ))}
                   </select>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-3">
                   <PercentagesField
                     percentages={CalcPercentages(fromStage + 1, armor, server)}
                     percentage={attemptPercentage}
                     setPercentage={setPercentage}
                   />
                 </div>
+                <div className="col-md-3">
+                  <label>{t.durability}</label>
+                  <input className="reforge-field form-control" type='number' min={0} max={100} defaultValue={durability} onChange={(e) => onChangeDurability(e)}/>
+                </div>
               </div>
               <div>
                 <ReforgeCounts result={count} armor={armor} />
               </div>
-              <p className="font-italic">{t.note}</p>
             </div>
           </div>
         </div>

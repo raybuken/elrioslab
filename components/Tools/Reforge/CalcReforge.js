@@ -1,11 +1,11 @@
 import {stages, stagesKR, stagesTenebrous} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
 
-const calcReforge = (fromStage,toStage,percentage,armor, server) => {
+const calcReforge = (fromStage,toStage,percentage, durability, armor, server) => {
         //if tenebrous armor selected if not, Rigo server compare server
         const currentStages = armor ==='Tenebrous' ? filterStage(stagesTenebrous, fromStage, toStage) : server === 'KR' ? filterStage(stagesKR, fromStage, toStage) : filterStage(stages, fromStage, toStage)
         const filter  = FilterByPercentages(currentStages,percentage, armor, server)
-       return getResults(currentStages,filter)
+       return getResults(currentStages,filter, durability)
 }
 
 const filterStage = (elems, from, to) =>{
@@ -41,17 +41,17 @@ const clickCount = (rStages,reducer) => {
     return result
 }
 
-const seedCount = (clickCount) => {
-    
-    if(clickCount <=100){
+const seedCount = (clickCount, durability) => {
+    console.log(durability)
+    if(clickCount <=durability){
         return 0
     }else {
-        return Math.ceil(( clickCount - 100 ) / 10)
+        return Math.ceil(( clickCount - durability ) / 10)
     }
 }
 
 const convertToLocale = el => el.toLocaleString()
-const getResults = (cStages,reducer) => {
+const getResults = (cStages,reducer, durability) => {
     const {glaciem,amethyst,crystal,ed} = reducer.multipliers
 
     const result = { 
@@ -59,7 +59,7 @@ const getResults = (cStages,reducer) => {
         amethyst: convertToLocale(amethystCount(cStages) - amethyst),
         crystals: convertToLocale(crystalCount(cStages) - crystal),
         ed: convertToLocale(edCount(cStages) - ed),
-        seeds: seedCount(clickCount(cStages,reducer.attempt)),
+        seeds: seedCount(clickCount(cStages,reducer.attempt), durability),
         attempts: convertToLocale(clickCount(cStages,reducer.attempt))
     }
     return result
