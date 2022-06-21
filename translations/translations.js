@@ -136,10 +136,13 @@ const english = {
         'stat-gained': "Current Stat Gained"
     },
     reforge: {
+        reforge: "Reforge",
+        armor: "Armor",
         from: "From",
         to: "To",
         attempts: "Attemps",
         'current-percentage': "Current Percentage",
+        "durability": "Durability",
         note: "*Max Number of Chlorite seeds asuming the piece with 100% durability."
     },
     'ignore-defense': {
@@ -151,6 +154,7 @@ const english = {
     }
 }
 
+//Spanish
 const spanish = {
     "navbar": {
         "home": "Inicio",
@@ -193,10 +197,13 @@ const spanish = {
         "stat-gained": "Ganancia total"
     },
     "reforge": {
+        reforge: "Forja",
+        armor: "Armadura",
         "from": "Desde",
         "to": "Hasta",
         "attempts": "Numero de Intentos",
         "current-percentage": "Porcentaje Actual",
+        "durability": "Durabilidad",
         "note": "*El Número máximo de usos de Chlorite seeds es asumiendo que la pieza tiene 100% de durability."
     },
     "ignore-defense": {
