@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getDefBase, getDefPercentage, getRemainDefense, getDamageGained } from '../../components/Tools/IgnoreDefense/calcDefense'
+import { getDefBase, getDefPercentage, getTotalIgnoreDefense, getRemainDefense, getDamageGained } from '../../components/Tools/IgnoreDefense/calcDefense'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPlus, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
@@ -13,6 +13,7 @@ export default function IgnoreDefense() {
     const [defBase, setDefBase] = useState(0)
     const [defPercentage, setDefPercentage] = useState(0)
     const [ignoreDef, setIgnoreDef] = useState([0])
+    const [totalIgnoreDefense, setTotalIgnoreDefense] = useState(0);
     const [remainDefense, setRemainDefense] = useState(0)
     const [damageGained, setDamageGained] = useState(0)
 
@@ -20,6 +21,7 @@ export default function IgnoreDefense() {
     useEffect(() => {
         setRemainDefense(getRemainDefense(defBase, ignoreDef, 99))
         setDamageGained(getDamageGained(defPercentage, ignoreDef))
+        setTotalIgnoreDefense((100 - getTotalIgnoreDefense(ignoreDef)*100).toFixed(2))
     }, [defPercentage, defBase, ignoreDef])
 
     const currentValue = (e) => {
@@ -33,13 +35,31 @@ export default function IgnoreDefense() {
     }
 
     const onChangeDefPercentage = (e) => {
-        setDefPercentage(currentValue(e))
-        setDefBase(getDefBase(currentValue(e), 99))
+        let number = Number(currentValue(e))
+        const MAX_LEVEL = 99
+
+        if(number > 99.99){
+            number = 99.99
+        }else if(number < 0){
+            number = 0
+        }
+
+        setDefPercentage(number)
+        setDefBase(getDefBase(number, MAX_LEVEL))
     }
 
     const onChangeIgnoreDef = (e, position) => {
         const newValue = [...ignoreDef]
-        newValue[position] = parseFloat(currentValue(e)) || ''
+
+        let number = Number(currentValue(e));
+
+        if(number > 100){
+            number = 100
+        }else if(number < 0){
+            number = 0
+        }
+
+        newValue[position] = parseFloat(number) || ''
         setIgnoreDef(newValue)
     }
 
@@ -75,11 +95,11 @@ export default function IgnoreDefense() {
                             <div className="row">
                                 <div className="col-md-3 col-sm-6">
                                     <label>{t['defense-base']}</label>
-                                    <input type="number" value={defBase} className=' form-control border-black' onChange={onChangeDefBase} />
+                                    <input type="number" min={0} step={1000} value={defBase} className=' form-control border-black' onChange={onChangeDefBase} />
                                 </div>
                                 <div className="col-md-3 col-sm-6">
                                     <label>{t['defense-percentage']}</label>
-                                    <input type="number" value={defPercentage} className='form-control border-black' min='0' max='100' onChange={onChangeDefPercentage} />
+                                    <input type="number" min={0} max={99.99} value={defPercentage} className='form-control border-black' onChange={onChangeDefPercentage} />
                                 </div>
                                 <div className="col-md-6 col-sm-12 ">
                                     <div className="row">
@@ -105,6 +125,8 @@ export default function IgnoreDefense() {
                             </div>
                             <div className="row my-2">
                                 <div className="col align-self-center">
+                                    <h2 className='font-weight-bold'>{t['total-ignore-defense']}: <span className='text-info'>{totalIgnoreDefense}%</span></h2>
+
                                     <h2 className='font-weight-bold'>{t['remain-defense']}: <span className='text-info'>{remainDefense}%</span></h2>
                                     <h2 className='font-weight-bold'>{t['damage-gained']}: <span className='text-info'>{damageGained}%</span></h2>
                                 </div>
