@@ -136,21 +136,26 @@ const english = {
         'stat-gained': "Current Stat Gained"
     },
     reforge: {
+        reforge: "Reforge",
+        armor: "Armor",
         from: "From",
         to: "To",
         attempts: "Attemps",
         'current-percentage': "Current Percentage",
+        "durability": "Durability",
         note: "*Max Number of Chlorite seeds asuming the piece with 100% durability."
     },
     'ignore-defense': {
-        'defense-base': "Defense Base",
-        'defense-percentage': "Def %",
+        'defense-base': "Defense Base (Numeric)",
+        'defense-percentage': "Defense %",
         'current-ignore': "Current Ignore Defense",
+        'total-ignore-defense':"Total Of Ignore Defense",
         'remain-defense': "Remain Defense",
         'damage-gained': "Damage Gained"
     }
 }
 
+//Spanish
 const spanish = {
     "navbar": {
         "home": "Inicio",
@@ -193,16 +198,20 @@ const spanish = {
         "stat-gained": "Ganancia total"
     },
     "reforge": {
+        reforge: "Forja",
+        armor: "Armadura",
         "from": "Desde",
         "to": "Hasta",
         "attempts": "Numero de Intentos",
         "current-percentage": "Porcentaje Actual",
+        "durability": "Durabilidad",
         "note": "*El Número máximo de usos de Chlorite seeds es asumiendo que la pieza tiene 100% de durability."
     },
     "ignore-defense": {
-        "defense-base": "Defensa Base",
+        "defense-base": "Defensa Base (Numérica)",
         "defense-percentage": "Defensa %",
         "current-ignore": "Ignorar Defensa Actual",
+        "total-ignore-defense":"Total De Ignorar Defensa",
         "remain-defense": "Defensa Restante",
         "damage-gained": "Daño ganado"
     },

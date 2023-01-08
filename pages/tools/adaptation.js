@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import DebuffField from "../../components/Tools/Adaptation/DebuffField";
 import AdaptationField from "../../components/Tools/Adaptation/AdaptationField";
@@ -32,7 +31,7 @@ export default function AdaptationCalculator() {
     let char = value.split("").reverse();
     char = char.toString();
     if ((char.charCodeAt(0) >= 48 && char.charCodeAt(0) <= 57) || !value) {
-      value > 45 ? setAdaptation(45) : setAdaptation(value);
+      value > 55 ? setAdaptation(55) : setAdaptation(value);
     }
   };
 
@@ -53,7 +52,6 @@ export default function AdaptationCalculator() {
         />
       </Head>
       <Layout>
-        <Navbar />
         <div className="container my-5">
           <div className="jumbotron">
             <SocialMedia />

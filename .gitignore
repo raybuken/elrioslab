@@ -5,3 +5,4 @@
 *.log
 *.code-workspace
 /.vscode
+yarn.lock

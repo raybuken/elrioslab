@@ -5,11 +5,11 @@ import Image from 'next/image'
 export default function Tool(props) {
     const router = useRouter()
     return (
-        <div className="col-md-4 col-sm-12">
-            <figure className="figure" onClick={() => router.push(props.link)}>
-                <h2 className='text-center pointer'>{props.name}</h2>
-                <hr className='mx-auto border-black bg-dark w-25' />
-                <Image src={props.src} width='400' height='400' alt={props.alt} className='figure-img img-fluid rounded img-tool' />
+        <div className="col-xl-3 col-lg-4 col-md-6 col-12">
+            <h2 className='text-center fs-5 pointer'>{props.name}</h2>
+            <hr className='mx-auto border-black bg-dark w-25' />
+            <figure className="figure img-tool" onClick={() => router.push(props.link)}>
+                <Image src={props.src} layout='fill' objectFit='cover' alt={props.alt} className='rounded' />
             </figure>
         </div>
     )

@@ -12,15 +12,12 @@ const CalcPercentages = (stage, armor, server) => {
             counter =(percentage*i).toString().match(regEx)
             counter = Number(counter[0])
             if(counter >= 100){
-                result[i] = 100    
+                result[i] = 100
                 break
             } 
             else{
-                result[i] = counter    
+                result[i] = counter
             } 
-            if( counter === 100){
-                break
-            }
         }
         return result
     }

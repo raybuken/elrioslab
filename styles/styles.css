@@ -19,8 +19,6 @@
     width: 10%;
 }
 
-
-
 @media screen and (max-width: 992px) {
     .t-responsive{
         display: block;
@@ -30,15 +28,12 @@
     }
 }
 
-
-
 @media screen and (max-width: 992px) {
 
     .thead-responsive{
         width: 60%;
     }
 }
-
 
 @media screen and (max-width: 1200px) {
 
@@ -55,22 +50,8 @@
     font-family: sans-serif;
 }
 
-
-
 .table td, .table th {
      padding: 0.5rem;
-}
-
-.display-5 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 1.2;
-}
-
-.display-6 {
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1.2;
 }
 
 .pointer{
@@ -92,8 +73,12 @@
 }
 
 .img-tool {
+    position: relative;
+    width: 100%;
+    height: 400px;
     transition: 0.5s;
     cursor: pointer;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 .adaptation-field{
@@ -103,7 +88,8 @@
 
 .reforge-field{
     font-size: 2.5em !important;
-    border: 2.5px solid black;
+    border: 2.5px solid black !important;
+    border-radius: 5px !important;
 }
 
 .formula {
@@ -207,6 +193,10 @@
 .collection-grid .collection-slot-selected{
     border: 1px solid white;
     box-shadow: inset 0px 0px 2px 2px rgba(65, 165, 232, 1);
+}
+.select-field{
+    border: 1px solid black !important;
+    border-radius: 5px !important;
 }
 
 .collection-filter{
@@ -359,4 +349,9 @@
     .synergy-empty-slot, .synergy-slot-container .collection-slot{
         margin-top: 15px;
     }
+}
+.reforge-count .reforge-material{
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.2;
 }
