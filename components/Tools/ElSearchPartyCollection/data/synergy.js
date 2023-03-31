@@ -60,6 +60,13 @@ export const synergy = [
         ]
     },
     {
+        name: 'Step of Communion',
+        characters: [1],
+        effect: [
+            ['Healing Item Effect +8%']
+        ]
+    },
+    {
         name: 'Agile',
         characters:[2, 4],
         effect:[
@@ -148,24 +155,32 @@ export const synergy = [
         name: '1st Path',
         characters:[3, 6],
         effect:[
-            ["1st Path Character All Skill Damage +3%"],
-            ["1st Path Character All Skill Damage +5%","When using an Active Force Skill, casts Diffused Wonder Wall (Cooldown 30s)"]
+            ["1st Path Character All Skill Damage +3%", "When using an Active Force Skill, casts Diffused Wonder Wall (Cooldown 30s)"],
+            ["1st Path Character All Skill Damage +5%", "When using an Active Force Skill, casts Diffused Wonder Wall (Cooldown 30s)"]
         ]
     },
     {
         name: '2nd Path',
         characters:[3, 6],
         effect:[
-            ["2nd Path Character All Skill Damage +3%"],
-            ["2nd Path Character All Skill Damage +5%","When using an Active Force Skill, casts Cloudy Sunshower (Cooldown 30s)"]
+            ["2nd Path Character All Skill Damage +3%", "When using an Active Force Skill, casts Cloudy Sunshower (Cooldown 30s)"],
+            ["2nd Path Character All Skill Damage +5%", "When using an Active Force Skill, casts Cloudy Sunshower (Cooldown 30s)"]
         ]
     },
     {
         name: '3rd Path',
         characters:[3, 6],
         effect:[
-            ["3rd Path Character All Skill Damage +3%"],
-            ["3rd Path Character All Skill Damage +5%","When using an Active Force Skill, casts Diffused Broken Seal of Time (Cooldown 30s)"]
+            ["3rd Path Character All Skill Damage +3%", "When using an Active Force Skill, casts Diffused Broken Seal of Time (Cooldown 30s)"],
+            ["3rd Path Character All Skill Damage +5%", "When using an Active Force Skill, casts Diffused Broken Seal of Time (Cooldown 30s)"]
+        ]
+    },
+    {
+        name: '4th Path',
+        characters: [3, 6],
+        effect:[
+            ["4th Path Character All Skill Damage +3%"],
+            ["4th Path Character All Skill Damage +5%"],
         ]
     },
     {
@@ -180,7 +195,7 @@ export const synergy = [
         name: "Mechanical Engineering",
         characters:[1],
         effect:[
-            ["All Master Skill Cooldown Decrease 5%", "4th Path Character All Skill Damage +3%"]
+            ["All Master Skill Cooldown Decrease 5%"]
         ]
     },
     {
@@ -197,4 +212,18 @@ export const synergy = [
             ["While in midair, skill damage +4% (Skill must be cast while in midair)"]
         ]
     },
+    {
+        name: 'Distorted Gaze',
+        characters:[2],
+        effect:[
+            ['Deals additional continuous damage that is 2% of damage dealt for 3 seconds. (Dungeon)']
+        ]
+    },
+    {
+        name: 'King of Pranks',
+        characters: [1],
+        effect: [
+            ['Make sure you apologize after doing something bad!']
+        ]
+    }
 ]
