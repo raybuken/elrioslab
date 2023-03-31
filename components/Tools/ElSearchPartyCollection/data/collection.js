@@ -30,7 +30,7 @@ const collection = [
         alias: 'GN',
         effect: 'Hyper Active Skill Damage',
         stages: [3,4,5],
-        synergies: []
+        synergies: ["4th Path","Sharp", "Bringer of Justice"]
     },
 
     //Aisha
@@ -65,7 +65,7 @@ const collection = [
         alias: 'LA',
         effect: 'Consumable Cooldown Decrease (Max 30%)',
         stages: [6,8,10],
-        synergies: []
+        synergies: ["4th Path", "Researcher", "One Who Yearns"]
     },
 
     //Rena
@@ -100,7 +100,7 @@ const collection = [
         alias: 'PR',
         effect: 'All skill damage',
         stages: [0.5,0.75,1],
-        synergies: []
+        synergies: ["4th Path", "Blessing of Spirit", "Magical Specialist"]
     },
 
 
@@ -136,7 +136,7 @@ const collection = [
         alias: 'RV',
         effect: 'Additional Damage',
         stages: [2,3,5],
-        synergies: []
+        synergies: ["4th Path", "One Who Yearns", "Physical Specialist"]
     },
 
     //Eve
@@ -171,7 +171,7 @@ const collection = [
         alias: 'CA',
         effect: 'Polarize (Max 45%)',
         stages: [0.4,0.8,1.2],
-        synergies: []
+        synergies: ["4th Path", "Sharp", "Distorted Gaze"]
     },
 
     //Chung
@@ -206,7 +206,7 @@ const collection = [
         alias: 'DA',
         effect: 'Action speed',
         stages: [2,3,5],
-        synergies: []
+        synergies: ["4th Path", "It's Fine Cuz It Hurts", "Angel of the Battlefield"]
     },
 
     //Ara
@@ -241,7 +241,7 @@ const collection = [
         alias: 'SR',
         effect: 'EXP Gain',
         stages: [1, 2, 3],
-        synergies: []
+        synergies: ["4th Path", "It's Fine Cuz It Hurts", "Step of Communion"]
     },
 
     //Elesis
@@ -276,7 +276,7 @@ const collection = [
         alias: 'AD',
         effect: 'Awakening Duration increase',
         stages: [5,6,8],
-        synergies: []
+        synergies: ["4th Path", "Agile", "Sharp"]
     },
 
     //Add
@@ -311,7 +311,7 @@ const collection = [
         alias: 'OM',
         effect: 'Master skill cooldown decrease',
         stages: [0.5,1,2],
-        synergies: []
+        synergies: ["4th Path", "Researcher", "Physical Specialist"]
     },
 
     //Luciel
@@ -346,7 +346,7 @@ const collection = [
         alias: 'DeM',
         effect: 'Adaptation',
         stages: [0.5, 0.75, 5],
-        synergies: []
+        synergies: ["4th Path", "Demon", "It's Fine Cuz It Hurts"]
     },
 
     //Rose
@@ -381,7 +381,7 @@ const collection = [
         alias: 'PO',
         effect: 'Bravery Skill Damage',
         stages: [0.5, 1, 1.5],
-        synergies: ['Mechanical Engineering', 'Researcher', 'Nasod Research']
+        synergies: ["4th Path", 'Mechanical Engineering', 'Researcher']
     },
 
     //Ain
@@ -409,6 +409,14 @@ const collection = [
         effect: 'Damage dealt to Boss Monsters',
         stages: [2, 3, 5],
         synergies: ['3rd Path', 'Time and Space', 'One Who Yearns']
+    },
+    {
+        character: 'Ain',
+        class: 'Opferung',
+        alias: 'OP',
+        effect: 'Damage dealt by Boss Monster',
+        stages: [2, 3, 5],
+        synergies: ['4th Path', 'One Who Yearns', 'Distorted Gaze']
     },
 
     //Laby
@@ -443,7 +451,7 @@ const collection = [
         alias: 'TP',
         effect: 'Mp Cost',
         stages: [1, 1.5, 2],
-        synergies: []
+        synergies: ['4th Path', 'Magical Specialist', 'King of Pranks']
     },
 
     //Noah
@@ -471,6 +479,14 @@ const collection = [
         effect: 'Ignore Physical Defense',
         stages: [0.4, 0.8, 1.2],
         synergies: ['3rd Path', "It's Fine Cuz It Hurts", 'Sharp']
+    },
+    {
+        character: 'Noah',
+        class: 'Morpheus',
+        alias: 'MO',
+        effect: 'Physical/Magical Attack Power',
+        stages: [50,75,100],
+        synergies: ['4th Path', 'Titan Slayer', 'Distorted Gaze']
     },
 ]
 
