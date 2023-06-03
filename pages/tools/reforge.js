@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import { stages, stagesKR, stagesTenebrous } from "../../components/Tools/Reforge/reforgeStages";
+import { stages, stagesKR, stagesTenebrous, stagesTenebrousKR } from "../../components/Tools/Reforge/reforgeStages";
 import { calcReforge } from "../../components/Tools/Reforge/CalcReforge";
 import ReforgeCounts from "../../components/Tools/Reforge/ReforgeCounts";
 import { CalcPercentages } from "../../components/Tools/Reforge/CalcPercentages";
@@ -16,13 +16,13 @@ import Layout from "../../components/Layout/Layout";
 export default function Reforge() {
   const { locale } = useRouter();
   const t = locale === "en" ? english.reforge : spanish.reforge;
-  const [armor, setArmor] = useState("Rigomor");
+  const [armor, setArmor] = useState("Tenebrous");
   const [server, setServer] = useState("KR");
 
   const fromStageSelect = useRef(null);
   const [fromStage, setFromStage] = useState(0);
   const toStageSelect = useRef(null);
-  const [toStage, setToStage] = useState(stagesKR.map((el) => el));
+  const [toStage, setToStage] = useState(stagesTenebrousKR.map((el) => el));
   const [attemptPercentage, setAttemptPercentage] = useState(0);
   const [durability, setDurability] = useState(100);
   const [count, setCount] = useState({});
@@ -44,10 +44,12 @@ export default function Reforge() {
     const { value } = e.target;
     const filterToStage =
       armor === "Tenebrous"
-        ? stagesTenebrous.filter((el) => el.stage > value)
+        ? server === "KR" 
+          ? stagesTenebrousKR.filter((el) => el.stage > value)
+          : stagesTenebrous.filter((el) => el.stage > value)
         : server === "KR"
-        ? stagesKR.filter((el) => el.stage > value)
-        : stages.filter((el) => el.stage > value);
+          ? stagesKR.filter((el) => el.stage > value)
+          : stages.filter((el) => el.stage > value);
 
     setFromStage(Number(fromStageSelect.current.value));
     setToStage(filterToStage);
@@ -118,9 +120,9 @@ export default function Reforge() {
                     <option value="Tenebrous">Tenebrous</option>
                   </select>
                 </div>
-                {/* <div className="col-4">
-                  { armor === "Rigomor" && <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'NA/INT/KR/JP/TW'},{value: 'EU', content: 'EU'}]}/> }
-                </div> */}
+                <div className="col-4">
+                  <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'KR'},{value: 'Others', content: 'Other servers'}]}/>
+                </div>
               </div>
               <hr />
               <div className="row">
