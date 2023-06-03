@@ -36,7 +36,6 @@ const calcMultiplicativeStat = (name,actual,mStats) => {
 
 const calcFinalDamageReduction = (actual, mStats) => {
     const mStat = mStats.map(el => 1 - (el/100)).concat(1 - actual/100)
-    console.log(mStat)
     let multiplier = getMultiplier(mStat)
     const result = (1 - multiplier)*100
     return parseFloat(result).toFixed(2)

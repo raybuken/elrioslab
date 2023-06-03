@@ -1,11 +1,14 @@
-import {stages, stagesKR, stagesTenebrous} from './reforgeStages'
+import {stages, stagesKR, stagesTenebrous, stagesTenebrousKR} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
 
 const calcReforge = (fromStage,toStage,percentage, durability, armor, server) => {
-        //if tenebrous armor selected if not, Rigo server compare server
-        const currentStages = armor ==='Tenebrous' ? filterStage(stagesTenebrous, fromStage, toStage) : server === 'KR' ? filterStage(stagesKR, fromStage, toStage) : filterStage(stages, fromStage, toStage)
-        const filter  = FilterByPercentages(currentStages,percentage, armor, server)
-       return getResults(currentStages,filter, durability)
+    //if tenebrous armor selected if not, Rigo server compare server
+    const setStages = armor === 'Tenebrous' ? stagesTenebrous : stages
+    const setStagesKR = armor === 'Tenebrous' ? stagesTenebrousKR : stagesKR
+    const currentStages = server === 'KR' ? filterStage(setStagesKR, fromStage, toStage) : filterStage(setStages, fromStage, toStage)
+
+    const filter  = FilterByPercentages(currentStages,percentage, armor, server)
+    return getResults(currentStages,filter, durability)
 }
 
 const filterStage = (elems, from, to) =>{
@@ -42,7 +45,6 @@ const clickCount = (rStages,reducer) => {
 }
 
 const seedCount = (clickCount, durability) => {
-    console.log(durability)
     if(clickCount <=durability){
         return 0
     }else {

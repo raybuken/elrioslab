@@ -1,10 +1,14 @@
-import {stages, stagesKR, stagesTenebrous} from './reforgeStages'
+import {stages, stagesKR, stagesTenebrous, stagesTenebrousKR} from './reforgeStages'
 
 const CalcPercentages = (stage, armor, server) => {
     //List of possible percentages 
     if (stage) {
         //if tenebrous armor selected if not, Rigo server compare server
-        const percentage = armor === 'Tenebrous' ? stagesTenebrous[stage-1].percentage : server === 'KR' ? stagesKR[stage-1].percentage : stages[stage-1].percentage
+        const setStages = armor === 'Tenebrous' ? stagesTenebrous : stages
+        const setStagesKR = armor === 'Tenebrous' ? stagesTenebrousKR : stagesKR
+
+        const percentage = server === 'KR' ? setStagesKR[stage-1].percentage : setStages[stage-1].percentage
+
         const result = new Array(Math.ceil(100/percentage)) // number of possible values
         let counter = 0
         let regEx = /(\d+(\.\d{1,4})*)/g // asegura que el elemento tenga maximo 4 digitos despues del punto
