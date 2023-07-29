@@ -15,7 +15,7 @@ const getAtkGain = (debuff,adaptation) => {
     return calcAtkGain(debuff,adaptation)
 }
 
-const calcAtkGain = (debuff,adaptation) =>  convertNumber( (1 - debuff/100 + adaptation/100) / (1- debuff/100) * 100) 
+const calcAtkGain = (debuff,adaptation) =>  convertNumber( (1 - debuff/100 + adaptation/100) / (1- debuff/100) * 100 - 100)
 
 const convertNumber = (number) => parseFloat(number.toFixed(2))
 
