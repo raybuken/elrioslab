@@ -133,7 +133,7 @@ const english = {
         title: "Adaptation",
         debuff: "Enviromental Debuff",
         adaptation: "adaptation",
-        'stat-gained': "Current Stat Gained"
+        'stat-gained': "Damage Gained"
     },
     reforge: {
         reforge: "Reforge",
@@ -195,7 +195,7 @@ const spanish = {
         "title": "Adaptacion",
         "debuff": "Debuff de Entorno",
         "adaptation": "Adaptación",
-        "stat-gained": "Ganancia total"
+        "stat-gained": "Daño ganado"
     },
     "reforge": {
         reforge: "Forja",

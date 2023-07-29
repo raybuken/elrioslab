@@ -13,11 +13,10 @@ export default function AdaptationCalculator() {
   const t = locale === "en" ? english.adaptation : spanish.adaptation;
   const [debuff, setDebuff] = useState(10);
   const [adaptation, setAdaptation] = useState(0);
-  const [currentStatGained, setCurrentDebuff] = useState(0);
+  const [currentStatGained, setCurrentStatGained] = useState(0);
 
   useEffect(() => {
-    const getAdaptResult = () =>
-      setCurrentDebuff(getAtkGain(debuff, adaptation));
+    const getAdaptResult = () => setCurrentStatGained(getAtkGain(debuff, adaptation));
     getAdaptResult();
   }, [debuff, adaptation]);
 
