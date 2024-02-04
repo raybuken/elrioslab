@@ -12,6 +12,7 @@ import { english, spanish } from "../../translations/translations";
 
 import Head from "next/head";
 import Layout from "../../components/Layout/Layout";
+import ReforgeFeeField from "../../components/Tools/Reforge/ReforgeFeeField";
 
 export default function Reforge() {
   const { locale } = useRouter();
@@ -25,6 +26,7 @@ export default function Reforge() {
   const [toStage, setToStage] = useState(stagesTenebrousKR.map((el) => el));
   const [attemptPercentage, setAttemptPercentage] = useState(0);
   const [durability, setDurability] = useState(100);
+  const [feeAmount, setFeeAmount] = useState(0)
   const [count, setCount] = useState({});
 
   useEffect(() => {
@@ -34,11 +36,12 @@ export default function Reforge() {
         toStageSelect.current.value,
         attemptPercentage,
         durability,
+        feeAmount,
         armor,
         server
       )
     );
-  }, [toStage, attemptPercentage, durability, armor, server]);
+  }, [toStage, attemptPercentage, durability, armor, server, feeAmount]);
 
   const onFromStageChange = (e) => {
     const { value } = e.target;
@@ -66,6 +69,12 @@ export default function Reforge() {
     setDurability(Number(value))
   }
 
+  const updateFeeAmount = e => {
+    const {value} = e.target
+
+    setFeeAmount(Number(value))
+  }
+
   const getCounts = () => {
     setCount(
       calcReforge(
@@ -73,6 +82,7 @@ export default function Reforge() {
         toStageSelect.current.value,
         attemptPercentage,
         durability,
+        feeAmount,
         armor,
         server
       )
@@ -121,12 +131,12 @@ export default function Reforge() {
                   </select>
                 </div>
                 <div className="col-4">
-                  <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'KR'},{value: 'Others', content: 'Other servers'}]}/>
+                  {/* <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'KR'},{value: 'Others', content: 'Other servers'}]}/> */}
                 </div>
               </div>
               <hr />
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-12 col-md-6 col-lg-3 mt-2">
                   <label>{t.from}</label>
                   <select className="form-control form-select reforge-field" onChange={onFromStageChange} ref={fromStageSelect}>
                     {armor === "Tenebrous"
@@ -143,7 +153,7 @@ export default function Reforge() {
                     }
                   </select>
                 </div>
-                <div className="col-md-3">
+                <div className="col-12 col-md-6 col-lg-3 mt-2">
                   <label>{t.to}</label>
                   <select className=" reforge-field form-select form-control" ref={toStageSelect} onChange={getCounts}>
                     {toStage.map((el, i) => (
@@ -153,17 +163,18 @@ export default function Reforge() {
                     ))}
                   </select>
                 </div>
-                <div className="col-md-3">
+                <div className="col-12 col-md-6 col-lg-3 mt-2">
                   <PercentagesField
                     percentages={CalcPercentages(fromStage + 1, armor, server)}
                     percentage={attemptPercentage}
                     setPercentage={setPercentage}
                   />
                 </div>
-                <div className="col-md-3">
+                <div className="col-12 col-md-6 col-lg-3 mt-2">
                   <label>{t.durability}</label>
                   <input className="reforge-field form-control" type='number' min={0} max={100} defaultValue={durability} onChange={(e) => onChangeDurability(e)}/>
                 </div>
+                <ReforgeFeeField updateFeeAmount={updateFeeAmount}/>
               </div>
               <div>
                 <ReforgeCounts result={count} armor={armor} />

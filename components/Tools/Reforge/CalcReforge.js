@@ -1,14 +1,14 @@
 import {stages, stagesKR, stagesTenebrous, stagesTenebrousKR} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
 
-const calcReforge = (fromStage,toStage,percentage, durability, armor, server) => {
+const calcReforge = (fromStage,toStage,percentage, durability, feeAmount, armor, server) => {
     //if tenebrous armor selected if not, Rigo server compare server
     const setStages = armor === 'Tenebrous' ? stagesTenebrous : stages
     const setStagesKR = armor === 'Tenebrous' ? stagesTenebrousKR : stagesKR
     const currentStages = server === 'KR' ? filterStage(setStagesKR, fromStage, toStage) : filterStage(setStages, fromStage, toStage)
 
     const filter  = FilterByPercentages(currentStages,percentage, armor, server)
-    return getResults(currentStages,filter, durability)
+    return getResults(currentStages,filter, durability, feeAmount)
 }
 
 const filterStage = (elems, from, to) =>{
@@ -37,6 +37,8 @@ const edCount = (rStages) => {
     return result
 }
 
+const getFeeDiscount = (fee) => (100 - fee) / 100
+
 const clickCount = (rStages,reducer) => {
     reducer = rStages[0].attempt - reducer
     let result = rStages.reduce(((acum,current) => acum + current.attempt),0)
@@ -53,14 +55,15 @@ const seedCount = (clickCount, durability) => {
 }
 
 const convertToLocale = el => el.toLocaleString()
-const getResults = (cStages,reducer, durability) => {
+const getResults = (cStages,reducer, durability, feeAmount = 0) => {
     const {glaciem,amethyst,crystal,ed} = reducer.multipliers
+    const feeDiscount = getFeeDiscount(feeAmount)
 
     const result = { 
         glaciems: convertToLocale(glaciemCount(cStages) - glaciem),
         amethyst: convertToLocale(amethystCount(cStages) - amethyst),
         crystals: convertToLocale(crystalCount(cStages) - crystal),
-        ed: convertToLocale(edCount(cStages) - ed),
+        ed: convertToLocale((edCount(cStages) - ed) * feeDiscount),
         seeds: seedCount(clickCount(cStages,reducer.attempt), durability),
         attempts: convertToLocale(clickCount(cStages,reducer.attempt))
     }
