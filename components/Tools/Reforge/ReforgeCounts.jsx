@@ -13,7 +13,7 @@ export default function ReforgeCounts(props) {
             <div className='row'>
                 <div className="col-lg-4 col-md-6 my-1">
                     <Image src={'/v1616513276/files/tools/reforge/ED_h6saxx.jpg'} alt='ED' width='50' height='50'/>
-                    <label className='reforge-material ms-3'> {result.ed || 0} ED</label>
+                    <label className='reforge-material ms-3'> x{result.ed || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
                     <Image src={armor === 'Tenebrous' ? '/v1640647371/files/tools/reforge/tasma_aura_jshmp8.png' : '/v1616513276/files/tools/reforge/glaciem_pg2u2l.png'} alt='glaciem' width='50' height='50'/>

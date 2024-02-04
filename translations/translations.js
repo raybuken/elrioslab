@@ -143,6 +143,7 @@ const english = {
         attempts: "Attemps",
         'current-percentage': "Current Percentage",
         "durability": "Durability",
+        fee: "Fee",
         note: "*Max Number of Chlorite seeds asuming the piece with 100% durability."
     },
     'ignore-defense': {
@@ -205,6 +206,7 @@ const spanish = {
         "attempts": "Numero de Intentos",
         "current-percentage": "Porcentaje Actual",
         "durability": "Durabilidad",
+        fee: "Descuento",
         "note": "*El Número máximo de usos de Chlorite seeds es asumiendo que la pieza tiene 100% de durability."
     },
     "ignore-defense": {
