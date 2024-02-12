@@ -299,6 +299,10 @@
     user-select: none;
     display: flex;
     justify-content: space-between;
+
+}
+.fw-muted{
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .synergy-effect span{
