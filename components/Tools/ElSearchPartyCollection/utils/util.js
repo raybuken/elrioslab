@@ -21,9 +21,9 @@ export const getLastSessionSynergyData = (dispatch, synergyParam) => {
 }
 
 export const parseClassesSelectedParamToList = synergyParam => {
-    const parsedSynergyParam = synergyParam.split(" ")
+    const parsedSynergyParam = synergyParam.split(" ").slice(0, 6)
     const classesSelected = parsedSynergyParam.map(character => collection.find(el => el.alias === character || null))
-
+    
     return classesSelected
 }
 

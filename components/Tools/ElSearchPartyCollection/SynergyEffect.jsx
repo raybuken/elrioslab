@@ -14,7 +14,7 @@ function SynergyEffect({effect, removeFilters, filterByEffect, filterEffectSelec
 
     return (
         <li 
-         className={`synergy-effect ${currentStage ? 'fw-bold' : 'text-muted'} ${filterEffectSelected === effect.name && 'synergy-effect-selected' }`} 
+         className={`synergy-effect ${currentStage ? 'fw-bold' : 'fw-muted'}${filterEffectSelected === effect.name ? ' synergy-effect-selected' : ''}`} 
          onClick={() => filterEffectSelected === effect.name ? removeFilters() : filterByEffect(effect.name)}
          ref={effectRef}
          onMouseEnter={() => setShow(true)}
