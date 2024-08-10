@@ -1,36 +1,38 @@
+import { COLLECTION, SYNERGY } from '../../../../constants/constants';
+
 const collection = [
     //Elsword
     {
         character: 'Elsword',
         class: 'Knigth Emperor',
         alias: 'KE',
-        effect: 'Tenacity Skill Damage',
+        effect: COLLECTION.TENACITY_DAMAGE,
         stages: [0.5,1.0,1.5],
-        synergies: ['1st Path', 'Instinctual Movement', 'Bringer of Justice']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.INSTINCTUAL_MOVEMENT, SYNERGY.BRINGER_OF_JUSTICE]
     },
     {
         character: 'Elsword',
         class: 'Rune Master',
         alias: 'RM',
-        effect: 'Strength Skill Damage',
+        effect: COLLECTION.STRENGTH_DAMAGE,
         stages: [0.5,1.0,1.5],
-        synergies: ['2nd Path', 'Attribute Master', 'Magical Specialist']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.ATTRIBUTE_MASTER, SYNERGY.MAGICAL_SPECIALIST]
     },
     {
         character: 'Elsword',
         class: 'Inmortal',
         alias: 'IM',
-        effect: 'Bravery Skill Damage',
+        effect: COLLECTION.BRAVERY_DAMAGE,
         stages: [0.5,1.0,1.5],
-        synergies: ['3rd Path', 'Agile', 'Titan Slayer']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.AGILE, SYNERGY.TITAN_SLAYER]
     },
     {
         character: 'Elsword',
         class: 'Genesis',
         alias: 'GN',
-        effect: 'Hyper Active Skill Damage',
+        effect: COLLECTION.HA_DAMAGE,
         stages: [3,4,5],
-        synergies: ["4th Path","Sharp", "Bringer of Justice"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.SHARP, SYNERGY.BRINGER_OF_JUSTICE]
     },
 
     //Aisha
@@ -39,33 +41,33 @@ const collection = [
         character: 'Aisha',
         class: 'Aether Sage',
         alias: 'AeS',
-        effect: 'Magical Attack Power',
+        effect: COLLECTION.MAGICAL_ATTACK_PLAIN,
         stages: [100,150,200],
-        synergies: ['1st Path', 'Researcher', 'Attribute Master']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.RESEARCHER, SYNERGY.ATTRIBUTE_MASTER]
     },
     {
         character: 'Aisha',
         class: 'Oz Sorcerer',
         alias: 'OZ',
-        effect: 'Physical/Magical Attack Power',
+        effect: COLLECTION.MIXED_ATTACK_PLAIN,
         stages: [50,75,100],
-        synergies: ['2nd Path', 'Blessing of Mana', 'One Who Yearns']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.BLESSING_OF_MANA, SYNERGY.ONE_WHO_YEARNS]
     },
     {
         character: 'Aisha',
         class: 'Metamorphy',
         alias: 'MtM',
-        effect: 'Physical Attack Power',
+        effect: COLLECTION.PHYSICAL_ATTACK_PLAIN,
         stages: [100, 150, 200],
-        synergies: ['3rd Path', 'Physical Specialist', 'Time and Space']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.PHYSICAL_SPECIALIST, SYNERGY.TIME_AND_SPACE]
     },
     {
         character: 'Aisha',
         class: 'Lord Azoth',
         alias: 'LA',
-        effect: 'Consumable Cooldown Decrease (Max 30%)',
+        effect: COLLECTION.CONSUMABLE_COOLDOWN,
         stages: [6,8,10],
-        synergies: ["4th Path", "Researcher", "One Who Yearns"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.RESEARCHER, SYNERGY.ONE_WHO_YEARNS]
     },
 
     //Rena
@@ -74,33 +76,33 @@ const collection = [
         character: 'Rena',
         class: 'Anemos',
         alias: 'AN',
-        effect: 'Movement Speed',
+        effect: COLLECTION.MOVEMENT_SPEED,
         stages: [5, 6, 8],
-        synergies: ['1st Path', 'Blessing of Spirit', 'Agile']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.BLESSING_OF_SPIRIT, SYNERGY.AGILE]
     },
     {
         character: 'Rena',
         class: 'Daybreaker',
         alias: 'DaB',
-        effect: 'Jump Speed',
+        effect: COLLECTION.JUMP_SPEED,
         stages: [5, 6, 8],
-        synergies: ['2nd Path', 'Blessing of Spirit', 'Sharp']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.BLESSING_OF_SPIRIT, SYNERGY.SHARP]
     },
     {
         character: 'Rena',
         class: 'Twilight',
         alias: 'TW',
-        effect: 'Action Speed',
+        effect: COLLECTION.ACTION_SPEED,
         stages: [2, 3, 5],
-        synergies: ['3rd Path', 'Blessing of Spirit', 'Physical Specialist']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.BLESSING_OF_SPIRIT, SYNERGY.PHYSICAL_SPECIALIST]
     },
     {
         character: 'Rena',
         class: 'Prophetess',
         alias: 'PR',
-        effect: 'All skill damage',
+        effect: COLLECTION.ALL_SKILL_DAMAGE,
         stages: [0.5,0.75,1],
-        synergies: ["4th Path", "Blessing of Spirit", "Magical Specialist"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.BLESSING_OF_SPIRIT, SYNERGY.MAGICAL_SPECIALIST]
     },
 
 
@@ -110,33 +112,33 @@ const collection = [
         character: 'Raven',
         class: 'Furious Blade',
         alias: 'FB',
-        effect: 'Active Skill',
+        effect: COLLECTION.ACTIVE_DAMAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['1st Path', 'Instinctual Movement', 'Agile']
+        synergies: [SYNERGY.FIRST_PATH, 'Instinctual Movement', SYNERGY.AGILE]
     },
     {
         character: 'Raven',
         class: 'Rage Hearts',
         alias: 'RH',
-        effect: 'Command Attack Damage',
+        effect: COLLECTION.COMMAND_DAMAGE,
         stages: [1, 1.5, 2],
-        synergies: ['2nd Path', 'Magical Specialist', 'Fist Fight']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.MAGICAL_SPECIALIST, SYNERGY.FIST_FIGHT]
     },
     {
         character: 'Raven',
         class: 'Nova Imperator',
         alias: 'NI',
-        effect: 'Damage increase in proportion to HP lost',
+        effect: COLLECTION.DAMAGE_BY_HP_LOST,
         stages: [2, 3, 4],
-        synergies: ['3rd Path', "It's Fine Cuz It Hurts", 'Titan Slayer']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.ITS_FINE_CUZ_IT_HURTS, SYNERGY.TITAN_SLAYER]
     },
     {
         character: 'Raven',
         class: 'Revenant',
         alias: 'RV',
-        effect: 'Additional Damage',
+        effect: COLLECTION.ADDITIONAL_DAMAGE,
         stages: [2,3,5],
-        synergies: ["4th Path", "One Who Yearns", "Physical Specialist"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.ONE_WHO_YEARNS, SYNERGY.PHYSICAL_SPECIALIST]
     },
 
     //Eve
@@ -145,33 +147,33 @@ const collection = [
         character: 'Eve',
         class: 'Code: Ultimate',
         alias: 'CU',
-        effect: 'Magical Attack Power %',
+        effect: COLLECTION.MAGICAL_ATTACK_PERCENTAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['1st Path', 'Nasod Research', 'Sharp']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.NASOD_RESEARCH, SYNERGY.SHARP]
     },
     {
         character: 'Eve',
         class: 'Code: Esencia',
         alias: 'CE',
-        effect: 'Physical Attack Power %',
+        effect: COLLECTION.PHYSICAL_ATTACK_PERCENTAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['2nd Path', 'Nasod Research', 'Researcher']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.NASOD_RESEARCH, SYNERGY.RESEARCHER]
     },
     {
         character: 'Eve',
         class: 'Code: Sariel',
         alias: 'CS',
-        effect: 'Physical/Magical Attack Power %',
+        effect: COLLECTION.MIXED_ATTACK_PERCENTAGE,
         stages: [0.25, 0.5, 0.75],
-        synergies: ['3rd Path', 'Nasod Research', 'Angel of the Battlefield']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.NASOD_RESEARCH, SYNERGY.ANGEL_OF_BATTLEFIELD]
     },
     {
         character: 'Eve',
         class: 'Code: Antithese',
         alias: 'CA',
-        effect: 'Polarize (Max 45%)',
+        effect: COLLECTION.POLARIZE,
         stages: [0.4,0.8,1.2],
-        synergies: ["4th Path", "Sharp", "Distorted Gaze"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.SHARP, SYNERGY.DISTORTED_GAZE]
     },
 
     //Chung
@@ -180,33 +182,33 @@ const collection = [
         character: 'Chung',
         class: 'Comet Crusader',
         alias: 'CC',
-        effect: 'Awakening Charge Speed',
+        effect: COLLECTION.AWAKENING_CHARGE_SPEED,
         stages: [5, 6, 8],
-        synergies: ['1st Path', 'Bringer of Justice', 'Attribute Master']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.BRINGER_OF_JUSTICE, SYNERGY.ATTRIBUTE_MASTER]
     },
     {
         character: 'Chung',
         class: 'Fatal Phantom',
         alias: 'FP',
-        effect: 'Awakening Duration',
+        effect: COLLECTION.AWAKENING_DURATION,
         stages: [5, 6, 8],
-        synergies: ['2nd Path', 'Agile', 'Magical Specialist']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.AGILE, SYNERGY.MAGICAL_SPECIALIST]
     },
     {
         character: 'Chung',
         class: 'Centurion',
         alias: 'CeT',
-        effect: 'Damage dealt by Boss Monster',
+        effect: COLLECTION.DAMAGE_DEALT_BY_BOSS_MONSTER,
         stages: [2, 3, 5],
-        synergies: ['3rd Path', 'Researcher', 'Titan Slayer']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.RESEARCHER, SYNERGY.TITAN_SLAYER]
     },
     {
         character: 'Chung',
         class: 'Dius Aer',
         alias: 'DA',
-        effect: 'Action speed',
+        effect: COLLECTION.ACTION_SPEED,
         stages: [2,3,5],
-        synergies: ["4th Path", "It's Fine Cuz It Hurts", "Angel of the Battlefield"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.ITS_FINE_CUZ_IT_HURTS, SYNERGY.ANGEL_OF_BATTLEFIELD]
     },
 
     //Ara
@@ -215,33 +217,33 @@ const collection = [
         character: 'Ara',
         class: 'Apsara',
         alias: 'Aps',
-        effect: 'Physical Defense',
+        effect: COLLECTION.PHYSICAL_DEFENSE,
         stages: [200, 300, 500],
-        synergies: ['1st Path', 'Bringer of Justice', 'Accomplished Steps']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.BRINGER_OF_JUSTICE, SYNERGY.ACCOMPLISHED_STEPS]
     },
     {
         character: 'Ara',
         class: 'Devi',
         alias: 'DV',
-        effect: 'Magical Defense',
+        effect: COLLECTION.MAGICAL_DEFENSE,
         stages: [200, 300, 500],
-        synergies: ['2nd Path', 'One Who Yearns', 'Abundant Steps']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.ONE_WHO_YEARNS, SYNERGY.ABUNDANT_STEPS]
     },
     {
         character: 'Ara',
         class: 'Shakti',
         alias: 'SK',
-        effect: 'All Resistances',
+        effect: COLLECTION.ALL_RESISTANCES,
         stages: [10, 20, 30],
-        synergies: ['3rd Path', 'Blessing of Mana', 'Adept Steps']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.BLESSING_OF_MANA, SYNERGY.ADEPT_STEPS]
     },
     {
         character: 'Ara',
         class: 'Surya',
         alias: 'SR',
-        effect: 'EXP Gain',
+        effect: COLLECTION.EXP_GAIN,
         stages: [1, 2, 3],
-        synergies: ["4th Path", "It's Fine Cuz It Hurts", "Step of Communion"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.ITS_FINE_CUZ_IT_HURTS, SYNERGY.STEP_OF_COMUNION]
     },
 
     //Elesis
@@ -250,33 +252,33 @@ const collection = [
         character: 'Elesis',
         class: 'Empire Sword',
         alias: 'ES',
-        effect: 'Command Attack Damage',
+        effect: COLLECTION.COMMAND_DAMAGE,
         stages: [1, 1.5, 2],
-        synergies: ['1st Path', 'Instinctual Movement', 'Bringer of Justice']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.INSTINCTUAL_MOVEMENT, SYNERGY.BRINGER_OF_JUSTICE]
     },
     {
         character: 'Elesis',
         class: 'Flame Lord',
         alias: 'FL',
-        effect: 'All Weapon Attributes Activacion Chance',
+        effect: COLLECTION.WEAPON_ATTRIBUTE_ACTIVATION,
         stages: [0.5, 1, 2],
-        synergies: ['2nd Path', 'Attribute Master', 'Sharp']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.ATTRIBUTE_MASTER, SYNERGY.SHARP]
     },
     {
         character: 'Elesis',
         class: 'Bloody Queen',
         alias: 'BQ',
-        effect: 'Damage increase in proportion to HP lost',
+        effect: COLLECTION.DAMAGE_BY_HP_LOST,
         stages: [2, 3, 4],
-        synergies: ['3rd Path', "It's Fine Cuz It Hurts", 'One Who Yearns']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.ITS_FINE_CUZ_IT_HURTS, SYNERGY.ONE_WHO_YEARNS]
     },
     {
         character: 'Elesis',
         class: 'Adrestia',
         alias: 'AD',
-        effect: 'Awakening Duration increase',
+        effect: COLLECTION.AWAKENING_DURATION,
         stages: [5,6,8],
-        synergies: ["4th Path", "Agile", "Sharp"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.AGILE, SYNERGY.SHARP]
     },
 
     //Add
@@ -285,33 +287,33 @@ const collection = [
         character: 'Add',
         class: 'Doom Bringer',
         alias: 'DB',
-        effect: 'Tenacity Skill Cooldown',
+        effect: COLLECTION.TENACITY_COOLDOWN,
         stages: [1, 1.5, 2],
-        synergies: ['1st Path', 'Magical Specialist', 'Fist Fight']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.MAGICAL_SPECIALIST, SYNERGY.FIST_FIGHT]
     },
     {
         character: 'Add',
         class: 'Dominator',
         alias: 'DoM',
-        effect: 'Strength Skill Cooldown',
+        effect: COLLECTION.STRENGTH_COOLDOWN,
         stages: [1, 1.5, 2],
-        synergies: ['2nd Path', 'Researcher', 'Nasod Research']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.RESEARCHER, SYNERGY.NASOD_RESEARCH]
     },
     {
         character: 'Add',
         class: 'Mad Paradox',
         alias: 'MP',
-        effect: 'Bravery Skill Cooldown',
+        effect: COLLECTION.BRAVERY_COOLDOWN,
         stages: [1, 1.5, 2],
-        synergies: ['3rd Path', "Time and Space", 'One Who Yearns']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.TIME_AND_SPACE, SYNERGY.ONE_WHO_YEARNS]
     },
     {
         character: 'Add',
         class: 'Overmind',
         alias: 'OM',
-        effect: 'Master skill cooldown decrease',
+        effect: COLLECTION.MASTER_SKILL_COOLDOWN,
         stages: [0.5,1,2],
-        synergies: ["4th Path", "Researcher", "Physical Specialist"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.RESEARCHER, SYNERGY.PHYSICAL_SPECIALIST]
     },
 
     //Luciel
@@ -320,33 +322,33 @@ const collection = [
         character: 'Luciel',
         class: 'Catastrophe',
         alias: 'CaT',
-        effect: 'Critical',
+        effect: COLLECTION.CRITICAL,
         stages: [2, 3, 5],
-        synergies: ['1st Path', 'Demon', 'Physical Specialist']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.DEMON, SYNERGY.PHYSICAL_SPECIALIST]
     },
     {
         character: 'Luciel',
         class: 'Innocent',
         alias: 'IN',
-        effect: 'Maximize',
+        effect: COLLECTION.MAXIMIZE,
         stages: [2, 3, 5],
-        synergies: ['2nd Path', 'Demon', 'Sharp']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.DEMON, SYNERGY.SHARP]
     },
     {
         character: 'Luciel',
         class: 'Diangelion',
         alias: 'DiA',
-        effect: 'Damage Reduction',
-        stages: [2, 3, 5],
-        synergies: ['3rd Path', 'Demon', 'One Who Yearns']
+        effect: COLLECTION.DAMAGE_REDUCTION,
+        stages: [2, 3, 5],  
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.DEMON, SYNERGY.ONE_WHO_YEARNS]
     },
     {
         character: 'Luciel',
         class: 'Demersio',
         alias: 'DeM',
-        effect: 'Adaptation',
+        effect: COLLECTION.ADAPTATION,
         stages: [0.5, 0.75, 5],
-        synergies: ["4th Path", "Demon", "It's Fine Cuz It Hurts"]
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.DEMON, SYNERGY.ITS_FINE_CUZ_IT_HURTS]
     },
 
     //Rose
@@ -355,33 +357,33 @@ const collection = [
         character: 'Rose',
         class: 'Tempest Buster',
         alias: 'TB',
-        effect: 'Active Skill Damage',
+        effect: COLLECTION.ACTIVE_DAMAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['1st Path', 'Sharp', 'Titan Slayer']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.SHARP, SYNERGY.TITAN_SLAYER]
     },
     {
         character: 'Rose',
         class: 'Black Massacre',
         alias: 'BM',
-        effect: 'Tenacity Skill Damage',
+        effect: COLLECTION.TENACITY_DAMAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['2nd Path', 'Physical Specialist', 'One Who Yearns']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.PHYSICAL_SPECIALIST, SYNERGY.ONE_WHO_YEARNS]
     },
     {
         character: 'Rose',
         class: 'Minerva',
         alias: 'MN',
-        effect: 'Strength Skill Damage',
+        effect: COLLECTION.STRENGTH_DAMAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['3rd Path', 'Agile', 'Angel of the Battlefield']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.AGILE, SYNERGY.ANGEL_OF_BATTLEFIELD]
     },
     {
         character: 'Rose',
         class: 'Prime Operator',
         alias: 'PO',
-        effect: 'Bravery Skill Damage',
+        effect: COLLECTION.BRAVERY_DAMAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ["4th Path", 'Mechanical Engineering', 'Researcher']
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.MECHANICAL_ENGINEERING, SYNERGY.RESEARCHER]
     },
 
     //Ain
@@ -390,33 +392,33 @@ const collection = [
         character: 'Ain',
         class: 'Richter',
         alias: 'RT',
-        effect: 'Awakening Charge Speed',
+        effect: COLLECTION.AWAKENING_CHARGE_SPEED,
         stages: [5, 6, 8],
-        synergies: ['1st Path', 'Bringer of Justice', 'Titan Slayer']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.BRINGER_OF_JUSTICE, SYNERGY.TITAN_SLAYER]
     },
     {
         character: 'Ain',
         class: 'Bluhen',
         alias: 'BL',
-        effect: 'Recovery Item Effect',
+        effect: COLLECTION.RECOVERY_ITEM_EFFECT,
         stages: [2, 4, 6],
-        synergies: ['2nd Path', 'Magical Specialist', "It's Fine Cuz It Hurts"]
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.MAGICAL_SPECIALIST, SYNERGY.ITS_FINE_CUZ_IT_HURTS]
     },
     {
         character: 'Ain',
         class: 'Herrscher',
         alias: 'HR',
-        effect: 'Damage dealt to Boss Monsters',
+        effect: COLLECTION.DAMAGE_DEALT_TO_BOSS_MONSTERS,
         stages: [2, 3, 5],
-        synergies: ['3rd Path', 'Time and Space', 'One Who Yearns']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.TIME_AND_SPACE, SYNERGY.ONE_WHO_YEARNS]
     },
     {
         character: 'Ain',
         class: 'Opferung',
         alias: 'OP',
-        effect: 'Damage dealt by Boss Monster',
+        effect: COLLECTION.DAMAGE_DEALT_BY_BOSS_MONSTER,
         stages: [2, 3, 5],
-        synergies: ['4th Path', 'One Who Yearns', 'Distorted Gaze']
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.ONE_WHO_YEARNS, SYNERGY.DISTORTED_GAZE]
     },
 
     //Laby
@@ -425,33 +427,33 @@ const collection = [
         character: 'Laby',
         class: 'Eternity Winner',
         alias: 'EW',
-        effect: 'Double Attack Chance',
+        effect: COLLECTION.DOUBLE_ATTACK,
         stages: [0.5, 1, 2],
-        synergies: ['1st Path', 'Fist Fight', 'Sharp']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.FIST_FIGHT, SYNERGY.SHARP]
     },
     {
         character: 'Laby',
         class: 'Radiant Soul',
         alias: 'RaS',
-        effect: 'Magical Attack Power %',
+        effect: COLLECTION.MAGICAL_ATTACK_PERCENTAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['2nd Path', 'Blessing of Mana', "It's Fine Cuz It Hurts"]
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.BLESSING_OF_MANA, SYNERGY.ITS_FINE_CUZ_IT_HURTS]
     },
     {
         character: 'Laby',
         class: 'Nisha Labyrinth',
         alias: 'NL',
-        effect: 'Physical Attack Power %',
+        effect: COLLECTION.PHYSICAL_ATTACK_PERCENTAGE,
         stages: [0.5, 1, 1.5],
-        synergies: ['3rd Path', 'Physical Specialist', "Laby's Friend"]
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.PHYSICAL_SPECIALIST, SYNERGY.LABY_FRIEND]
     },
     {
         character: 'Laby',
         class: 'Twins Picaro',
         alias: 'TP',
-        effect: 'Mp Cost',
+        effect: COLLECTION.MP_COST,
         stages: [1, 1.5, 2],
-        synergies: ['4th Path', 'Magical Specialist', 'King of Pranks']
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.MAGICAL_SPECIALIST, SYNERGY.KING_OF_PRANKS]
     },
 
     //Noah
@@ -460,33 +462,66 @@ const collection = [
         character: 'Noah',
         class: 'Liberator',
         alias: 'LB',
-        effect: 'Critical Damage',
+        effect: COLLECTION.CRITICAL_DAMAGE,
         stages: [0.5, 1, 2],
-        synergies: ['1st Path', 'Agile', 'Physical Specialist']
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.AGILE, SYNERGY.PHYSICAL_SPECIALIST]
     },
     {
         character: 'Noah',
         class: 'Celestia',
         alias: 'CL',
-        effect: 'Ignore Magical Defense',
+        effect: COLLECTION.IGNORE_MAGICAL_DEFENSE,
         stages: [0.4, 0.8, 1.2],
-        synergies: ['2nd Path', 'Researcher', 'Titan Slayer']
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.RESEARCHER, SYNERGY.TITAN_SLAYER]
     },
     {
         character: 'Noah',
         class: 'Nyx Pieta',
         alias: 'NP',
-        effect: 'Ignore Physical Defense',
+        effect: COLLECTION.IGNORE_PHYSICAL_DEFENSE,
         stages: [0.4, 0.8, 1.2],
-        synergies: ['3rd Path', "It's Fine Cuz It Hurts", 'Sharp']
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.ITS_FINE_CUZ_IT_HURTS, SYNERGY.SHARP]
     },
     {
         character: 'Noah',
         class: 'Morpheus',
         alias: 'MO',
+        effect: COLLECTION.MIXED_ATTACK_PLAIN,
+        stages: [50,75,100],
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.TITAN_SLAYER, SYNERGY.DISTORTED_GAZE]
+    },
+    //Lithia
+    {
+        character: 'Lithia',
+        class: 'Gembliss',
+        alias: 'GB',
+        effect: COLLECTION.DROP_RATE,
+        stages: [0.5, 1, 2],
+        synergies: [SYNERGY.FIRST_PATH, SYNERGY.NASOD_RESEARCH, SYNERGY.TITAN_SLAYER]
+    },
+    {
+        character: 'Lithia',
+        class: 'Avarice',
+        alias: 'AV',
+        effect: COLLECTION.ED_GAIN,
+        stages: [0.4, 0.8, 1.2],
+        synergies: [SYNERGY.SECOND_PATH, SYNERGY.PHYSICAL_SPECIALIST, SYNERGY.ITS_FINE_CUZ_IT_HURTS]
+    },
+    {
+        character: 'Lithia',
+        class: 'Achlys',
+        alias: 'AL',
+        effect: COLLECTION.HA_DAMAGE,
+        stages: [0.4, 0.8, 1.2],
+        synergies: [SYNERGY.THIRD_PATH, SYNERGY.MAGICAL_SPECIALIST, SYNERGY.SHARP]
+    },
+    {
+        character: 'Lithia',
+        class: 'Mischief',
+        alias: 'MC',
         effect: 'Physical/Magical Attack Power',
         stages: [50,75,100],
-        synergies: ['4th Path', 'Titan Slayer', 'Distorted Gaze']
+        synergies: [SYNERGY.FOURTH_PATH, SYNERGY.ONE_WHO_YEARNS, SYNERGY.DISTORTED_GAZE]
     },
 ]
 
