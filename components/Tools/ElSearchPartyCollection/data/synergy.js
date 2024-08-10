@@ -17,7 +17,7 @@ export const synergy = [
     },
     {
         name: 'Blessing of Spirit',
-        characters:[3],
+        characters:[2],
         effect:[
             ['Max HP +80000 (PvP +32000)'],
         ]
