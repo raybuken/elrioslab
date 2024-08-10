@@ -130,7 +130,7 @@ export const synergy = [
     },
     {
         name: 'Instinctual Movement',
-        characters:[3],
+        characters:[2],
         effect:[
             ['Elsword, Raven, Elesis will be able to double jump']
         ]
