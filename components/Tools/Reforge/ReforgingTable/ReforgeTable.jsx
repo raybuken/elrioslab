@@ -1,4 +1,4 @@
-import {stages} from '../reforgeStages'
+import { ARMOR, REFORGE_STAGES, SERVERS } from '../../../../constants/constants'
 
 export default function ReforgeTable (props) {
     return (
@@ -17,7 +17,7 @@ export default function ReforgeTable (props) {
                 </thead>
                 <tbody className='text-center'>
                     {
-                        stages.map((stage,i) => (
+                        REFORGE_STAGES[ARMOR.RIGOMOR][SERVERS.KR].map((stage,i) => (
                             <tr key={i}>
                                 <td>Stage {stage.stage}</td>
                                 <td>{stage.glaciem.toLocaleString()}</td>
