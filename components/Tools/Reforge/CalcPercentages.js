@@ -1,13 +1,10 @@
-import {stages, stagesKR, stagesTenebrous, stagesTenebrousKR} from './reforgeStages'
+import { REFORGE_STAGES } from '../../../constants/constants'
 
 const CalcPercentages = (stage, armor, server) => {
     //List of possible percentages 
     if (stage) {
-        //if tenebrous armor selected if not, Rigo server compare server
-        const setStages = armor === 'Tenebrous' ? stagesTenebrous : stages
-        const setStagesKR = armor === 'Tenebrous' ? stagesTenebrousKR : stagesKR
-
-        const percentage = server === 'KR' ? setStagesKR[stage-1].percentage : setStages[stage-1].percentage
+        const setStages = REFORGE_STAGES[armor][server]
+        const percentage = setStages[stage-1].percentage
 
         const result = new Array(Math.ceil(100/percentage)) // number of possible values
         let counter = 0

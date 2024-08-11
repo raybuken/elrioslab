@@ -1,11 +1,10 @@
-import {stages, stagesKR, stagesTenebrous, stagesTenebrousKR} from './reforgeStages'
 import {FilterByPercentages} from './FilterByPercentages'
+import { REFORGE_STAGES, SERVERS } from '../../../constants/constants'
+
 
 const calcReforge = (fromStage,toStage,percentage, durability, feeAmount, armor, server) => {
-    //if tenebrous armor selected if not, Rigo server compare server
-    const setStages = armor === 'Tenebrous' ? stagesTenebrous : stages
-    const setStagesKR = armor === 'Tenebrous' ? stagesTenebrousKR : stagesKR
-    const currentStages = server === 'KR' ? filterStage(setStagesKR, fromStage, toStage) : filterStage(setStages, fromStage, toStage)
+    const setStages = REFORGE_STAGES[armor][server] || SERVERS.KR
+    const currentStages = filterStage(setStages, fromStage, toStage)
 
     const filter  = FilterByPercentages(currentStages,percentage, armor, server)
     return getResults(currentStages,filter, durability, feeAmount)
