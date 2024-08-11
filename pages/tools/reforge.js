@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import { stages, stagesKR, stagesTenebrous, stagesTenebrousKR } from "../../components/Tools/Reforge/reforgeStages";
 import { calcReforge } from "../../components/Tools/Reforge/CalcReforge";
 import ReforgeCounts from "../../components/Tools/Reforge/ReforgeCounts";
 import { CalcPercentages } from "../../components/Tools/Reforge/CalcPercentages";
@@ -14,16 +13,19 @@ import Head from "next/head";
 import Layout from "../../components/Layout/Layout";
 import ReforgeFeeField from "../../components/Tools/Reforge/ReforgeFeeField";
 
+import { ARMOR, REFORGE_STAGES, SERVERS } from '../../constants/constants'
+
 export default function Reforge() {
   const { locale } = useRouter();
   const t = locale === "en" ? english.reforge : spanish.reforge;
-  const [armor, setArmor] = useState("Tenebrous");
-  const [server, setServer] = useState("KR");
+  const [armor, setArmor] = useState(ARMOR.EXASCALE);
+  const [server, setServer] = useState(SERVERS.KR);
+  const [serverList, setServerList] = useState(Object.keys(REFORGE_STAGES[armor]))
 
   const fromStageSelect = useRef(null);
   const [fromStage, setFromStage] = useState(0);
   const toStageSelect = useRef(null);
-  const [toStage, setToStage] = useState(stagesTenebrousKR.map((el) => el));
+  const [toStage, setToStage] = useState(REFORGE_STAGES[armor][server].map((el) => el));
   const [attemptPercentage, setAttemptPercentage] = useState(0);
   const [durability, setDurability] = useState(100);
   const [feeAmount, setFeeAmount] = useState(0)
@@ -43,16 +45,10 @@ export default function Reforge() {
     );
   }, [toStage, attemptPercentage, durability, armor, server, feeAmount]);
 
+
   const onFromStageChange = (e) => {
     const { value } = e.target;
-    const filterToStage =
-      armor === "Tenebrous"
-        ? server === "KR" 
-          ? stagesTenebrousKR.filter((el) => el.stage > value)
-          : stagesTenebrous.filter((el) => el.stage > value)
-        : server === "KR"
-          ? stagesKR.filter((el) => el.stage > value)
-          : stages.filter((el) => el.stage > value);
+    const filterToStage = REFORGE_STAGES[armor][server].filter((el) => el.stage > value)
 
     setFromStage(Number(fromStageSelect.current.value));
     setToStage(filterToStage);
@@ -91,12 +87,15 @@ export default function Reforge() {
 
   const onChangeArmor = (e) => {
     const { value } = e.target;
+    const newServerList = Object.keys(REFORGE_STAGES[value])
     setArmor(value);
+    setServerList(newServerList)
+    setServer(newServerList[0])
   };
 
   const onChangeServer = (e) => {
     const { value } = e.target;
-    setServer(value);
+    setServer(SERVERS[value]);
   };
 
   return (
@@ -119,19 +118,25 @@ export default function Reforge() {
             <hr />
             <div className="my-4">
               <div className=" row justify-content-between mb-3">
-                <div className="col-4">
+                <div className="col-md-4 col-6">
                   <label>{t.armor}</label>
                   <select
                     name="armor"
                     className="form-control form-select select-field"
                     onChange={(e) => onChangeArmor(e)}
+                    defaultValue={ARMOR.EXASCALE}
                   >
-                    <option value="Rigomor">Rigomor</option>
-                    <option value="Tenebrous">Tenebrous</option>
+                    {Object.keys(ARMOR).map((armor, key) => (
+                        <option key={key} value={ARMOR[armor]}>{ARMOR[armor]}</option>
+                    ))}
                   </select>
                 </div>
-                <div className="col-4">
-                  {/* <ServersField onChange={onChangeServer} servers={[{value: 'KR', content: 'KR'},{value: 'Others', content: 'Other servers'}]}/> */}
+                <div className="col-md-4 col-6">
+                  { <ServersField 
+                      onChange={onChangeServer} 
+                      servers={serverList.map(key => ({value: key, content: SERVERS[key]}))}
+                      defaultValue={SERVERS.KR} /> 
+                  }
                 </div>
               </div>
               <hr />
@@ -139,13 +144,7 @@ export default function Reforge() {
                 <div className="col-12 col-md-6 col-lg-3 mt-2">
                   <label>{t.from}</label>
                   <select className="form-control form-select reforge-field" onChange={onFromStageChange} ref={fromStageSelect}>
-                    {armor === "Tenebrous"
-                      ? stagesTenebrous.map((el, i) => (
-                          <option key={i} value={el.stage - 1}>
-                            {el.stage - 1}
-                          </option>
-                        ))
-                      : stagesKR.map((el, i) => (
+                    {REFORGE_STAGES[armor][server].map((el, i) => (
                           <option key={i} value={el.stage - 1}>
                             {el.stage - 1}
                           </option>

@@ -1,3 +1,6 @@
+import { REFORGE_STAGES_MAPPING } from '../components/Tools/Reforge/reforgeStages'
+
+
 export const COLLECTION = {
     TENACITY_DAMAGE: "Tenacity Skill Damage",
     STRENGTH_DAMAGE: "Strength Skill Damage",
@@ -79,4 +82,65 @@ export const SYNERGY = {
     LABY_FRIEND: "Laby's Friend",
     KING_OF_PRANKS: "King of Pranks",
     SHARP: "Sharp"
+}
+
+export const ARMOR = {
+    RIGOMOR: "Rigomor",
+    TENEBROUS: "Tenebrous",
+    EXASCALE: "Exascale"
+}
+
+export const SERVERS = {
+    EU: 'EU',
+    KR: 'KR',
+    ['Other servers']: "Other servers",
+}
+
+export const REFORGE_STAGES = {
+    [ARMOR.RIGOMOR]: {
+        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesKR,
+        [SERVERS['Other servers']]: REFORGE_STAGES_MAPPING.stages,
+        [SERVERS.EU]: REFORGE_STAGES_MAPPING.stages
+    },
+    [ARMOR.TENEBROUS]: {
+        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesTenebrousKR,
+        [SERVERS['Other servers']]: REFORGE_STAGES_MAPPING.stagesTenebrous,
+        [SERVERS.EU]: REFORGE_STAGES_MAPPING.stagesTenebrous
+    },
+    [ARMOR.EXASCALE]: {
+        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesExascale
+    }
+}
+
+export const REFORGE_MATERIAL_ASSETS = {
+    [ARMOR.RIGOMOR]: {
+        glaciem: {
+            src: '/v1616513276/files/tools/reforge/glaciem_pg2u2l.png',
+            alt: 'glaciem'
+        },
+        amethyst: {
+            src: '/v1616513276/files/tools/reforge/amethyst_aced3h.png',
+            alt: 'amethyst'
+        } 
+    },
+    [ARMOR.TENEBROUS]: {
+        glaciem: {
+            src: '/v1640647371/files/tools/reforge/tasma_aura_jshmp8.png',
+            alt: 'Tasma aura'
+        },
+        amethyst: {
+            src: '/v1640647371/files/tools/reforge/tenebrous_aura_wi9fap.png',
+            alt: 'Tenebrous Aura'
+        }
+    },
+    [ARMOR.EXASCALE]: {
+        glaciem: {
+            src: '/v1723353703/files/tools/reforge/shwuvwkqkvjxiovixplo.png',
+            alt: 'Jetrium Steel'
+        },
+        amethyst: {
+            src: '/v1723353688/files/tools/reforge/invdd2pqrksoh9wsuqqx.png',
+            alt: 'Purified Exikel'
+        }
+    }
 }

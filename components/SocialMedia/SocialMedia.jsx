@@ -13,7 +13,7 @@ export default function SocialMedia() {
                     <SocialIcon src='https://discord.gg/j8Hg4VBN7J' icon={faDiscord} color='cornflowerblue'/>
                     <SocialIcon src='https://www.youtube.com/Raybuken' icon={faYoutube} color='red'/>
                     <SocialIcon src='https://www.twitch.tv/Raybuken' icon={faTwitch} color='#a970ff'/>
-                    <SocialIcon src='https://www.facebook.com/Raybuken' icon={faFacebook} color='#385898'/>
+                    <SocialIcon src='https://www.facebook.com/RaybukenGamer' icon={faFacebook} color='#385898'/>
                 </ul>
             </div>
         </div>
