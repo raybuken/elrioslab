@@ -115,31 +115,31 @@ export const REFORGE_STAGES = {
 export const REFORGE_MATERIAL_ASSETS = {
     [ARMOR.RIGOMOR]: {
         glaciem: {
-            src: '/v1616513276/files/tools/reforge/glaciem_pg2u2l.png',
+            src: 'https://res.cloudinary.com/elrioslab/image/upload//v1616513276/files/tools/reforge/glaciem_pg2u2l.png',
             alt: 'glaciem'
         },
         amethyst: {
-            src: '/v1616513276/files/tools/reforge/amethyst_aced3h.png',
+            src: 'https://res.cloudinary.com/elrioslab/image/upload//v1616513276/files/tools/reforge/amethyst_aced3h.png',
             alt: 'amethyst'
         } 
     },
     [ARMOR.TENEBROUS]: {
         glaciem: {
-            src: '/v1640647371/files/tools/reforge/tasma_aura_jshmp8.png',
+            src: 'https://res.cloudinary.com/elrioslab/image/upload/v1640647371/files/tools/reforge/tasma_aura_jshmp8.png',
             alt: 'Tasma aura'
         },
         amethyst: {
-            src: '/v1640647371/files/tools/reforge/tenebrous_aura_wi9fap.png',
+            src: 'https://res.cloudinary.com/elrioslab/image/upload//v1640647371/files/tools/reforge/tenebrous_aura_wi9fap.png',
             alt: 'Tenebrous Aura'
         }
     },
     [ARMOR.EXASCALE]: {
         glaciem: {
-            src: '/v1723353703/files/tools/reforge/shwuvwkqkvjxiovixplo.png',
+            src: 'https://res.cloudinary.com/elrioslab/image/upload/v1723353703/files/tools/reforge/shwuvwkqkvjxiovixplo.png',
             alt: 'Jetrium Steel'
         },
         amethyst: {
-            src: '/v1723353688/files/tools/reforge/invdd2pqrksoh9wsuqqx.png',
+            src: 'https://res.cloudinary.com/elrioslab/image/upload/v1723353688/files/tools/reforge/invdd2pqrksoh9wsuqqx.png',
             alt: 'Purified Exikel'
         }
     }

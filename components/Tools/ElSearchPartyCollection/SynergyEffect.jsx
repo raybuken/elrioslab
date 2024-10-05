@@ -21,7 +21,12 @@ function SynergyEffect({effect, removeFilters, filterByEffect, filterEffectSelec
          onMouseLeave={() => setShow(false)}
         >
             <div className='d-flex align-items-center'>
-                <Image src={encodeURI("v1673159305/files/tools/synergy/Effect/" + effect.name)} width={16} height={16}  />
+                <Image 
+                    src={encodeURI("https://res.cloudinary.com/elrioslab/image/upload/v1673159305/files/tools/synergy/Effect/" + effect.name)} 
+                    width={16} 
+                    height={16}
+                    alt={effect.name} 
+                />
                 <span className='ps-2'> {effect.name}</span>
             </div>
             
@@ -31,7 +36,7 @@ function SynergyEffect({effect, removeFilters, filterByEffect, filterEffectSelec
                     <Tooltip id={`tooltip-synergy-effect-${effect.name}`} {...props}>
                         <>
                             <div className="d-flex justify-content-center align-items-center">
-                                <Image src={encodeURI("v1673159305/files/tools/synergy/Effect/" + effect.name)} alt={effect.name} title={effect.name} width={16} height={16} />
+                                <Image src={encodeURI("https://res.cloudinary.com/elrioslab/image/upload/v1673159305/files/tools/synergy/Effect/" + effect.name)} alt={effect.name} title={effect.name} width={16} height={16} />
                                 <span className='ms-2'>{effect.name}</span>
                             </div>
                             
