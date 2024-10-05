@@ -4,7 +4,12 @@ module.exports = {
         defaultLocale: 'es'
     },
     images:{
-        loader: 'cloudinary',
-        path: 'https://res.cloudinary.com/elrioslab/image/upload/'
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+                pathname: '/elrioslab/image/upload/**'
+            }
+        ]
     }
 }

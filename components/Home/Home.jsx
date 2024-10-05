@@ -17,7 +17,13 @@ export default function Home() {
                     <div className="container">
                         <SocialMedia />
                         <div className="row justify-content-center">
-                            <Image src={'/v1616513160/files/logo.png'} width='300' height='300' layout='fixed' alt="ElCalc" />
+                            <Image 
+                                src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513160/files/logo.png'} 
+                                width='300' 
+                                height='300' 
+                                alt="Elrioslab"
+                                className='img-fixed w-auto h-100' 
+                            />
                         </div>
                         <div className=' text-center'>
                             <h1>{t.welcome}</h1>

@@ -38,11 +38,12 @@ export default function About() {
 
             <div className="text-center">
               <Image
-                src={"/v1616513205/files/perfil.png"}
+                src={"https://res.cloudinary.com/elrioslab/image/upload/v1616513205/files/perfil.png"}
                 width="1000"
                 height="700"
                 alt="Raybuken"
-                className="img-fluid"
+                priority={true}
+                className="img-fluid w-100"
               />
               <div>
                 <h2>{t.creator}</h2>

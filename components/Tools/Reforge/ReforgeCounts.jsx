@@ -14,7 +14,7 @@ export default function ReforgeCounts(props) {
         <div className='my-4 reforge-count'>
             <div className='row'>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/v1616513276/files/tools/reforge/ED_h6saxx.jpg'} alt='ED' width='50' height='50'/>
+                    <Image src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513276/files/tools/reforge/ED_h6saxx.jpg'} alt='ED' width='50' height='50'/>
                     <label className='reforge-material ms-3'> x{result.ed || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
@@ -26,11 +26,11 @@ export default function ReforgeCounts(props) {
                     <label className='reforge-material ms-3'> x{result.amethyst || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/v1616513276/files/tools/reforge/magical_crystal_vyzlmt.png'} alt='Magical Crystal' width='50' height='50'/>
+                    <Image src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513276/files/tools/reforge/magical_crystal_vyzlmt.png'} alt='Magical Crystal' width='50' height='50'/>
                     <label className='reforge-material ms-3'> x{result.crystals || 0}</label>
                 </div>
                 <div className="col-lg-4 col-md-6 my-1">
-                    <Image src={'/v1616513276/files/tools/reforge/seed_xor1kb.png'} alt='seed' width='50' height='50'/>
+                    <Image src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513276/files/tools/reforge/seed_xor1kb.png'} alt='seed' width='50' height='50'/>
                     <label className='reforge-material ms-3'> x{result.seeds || 0}</label>
                 </div>
             </div>

@@ -9,7 +9,13 @@ export default function Tool(props) {
             <h2 className='text-center fs-5 pointer'>{props.name}</h2>
             <hr className='mx-auto border-black bg-dark w-25' />
             <figure className="figure img-tool" onClick={() => router.push(props.link)}>
-                <Image src={props.src} layout='fill' objectFit='cover' alt={props.alt} className='rounded' />
+                <Image 
+                    src={props.src} 
+                    fill
+                    sizes='400px'
+                    alt={props.alt} 
+                    priority={true} 
+                    className='rounded img-cover img-auto' />
             </figure>
         </div>
     )

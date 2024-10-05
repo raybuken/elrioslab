@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { english, spanish } from '../../translations/translations'
 import Head from 'next/head'
 import Layout from '../../components/Layout/Layout'
+import SocialMedia from '../../components/SocialMedia/SocialMedia'
 
 export default function IgnoreDefense() {
     const { locale } = useRouter()
@@ -89,6 +90,7 @@ export default function IgnoreDefense() {
             <Layout>
                 <div className="container my-5">
                     <div className="jumbotron">
+                        <SocialMedia />
                         <h1>Ignore Defense</h1>
                         <hr className="my-3" />
                         <form>
