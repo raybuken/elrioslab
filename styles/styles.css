@@ -376,6 +376,10 @@
     border: 1px solid black !important;
 }
 
+.form-check .form-check-input {
+    border: 1px solid black;
+}
+
 .img-fixed{
     object-fit: contain;
 }

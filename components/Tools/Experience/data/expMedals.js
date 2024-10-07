@@ -1,0 +1,1 @@
+export const EXP_MEDALS = [30, 50, 100, 150, 200]
