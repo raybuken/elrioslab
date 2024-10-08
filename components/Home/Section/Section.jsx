@@ -9,6 +9,7 @@ export default function Section() {
             <Tool link='/tools/reforge' name='Reforge' src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513205/files/reforge_gba2fa.png'} alt='Reforge'/>
             <Tool link='/tools/ignore-defense' name='Ignore Defense' src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513205/files/ignore_y0cssw.png'} alt='Ignore Defense'/>
             <Tool link='/tools/el-search-party-collection' name='Collection and synergy' src={'https://res.cloudinary.com/elrioslab/image/upload/v1649022227/files/el-search-party-collection.png'} alt='El search party collection'/>
+            <Tool link='/tools/experience' name='Experience' src={'https://res.cloudinary.com/elrioslab/image/upload/v1728355880/files/experience-banner_qgqocz.png'} alt="Experience" />
         </div>
     )
 }

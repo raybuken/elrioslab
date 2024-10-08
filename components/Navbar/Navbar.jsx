@@ -32,6 +32,7 @@ export default function Navbar() {
                                     <DropdownItem href='/tools/reforge' name='Reforge' />
                                     <DropdownItem href='/tools/ignore-defense' name='Ignore Defense' />
                                     <DropdownItem href='/tools/el-search-party-collection' name='El Search Party Collection' />
+                                    <DropdownItem href='/tools/experience' name='Experience' />
                                 </div>
                             </li>
                             <NavItem href='/about' name={t.about} />

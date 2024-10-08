@@ -153,6 +153,26 @@ const english = {
         'total-ignore-defense':"Total Of Ignore Defense",
         'remain-defense': "Remain Defense",
         'damage-gained': "Damage Gained"
+    },
+    experience: {
+        'experience-calculator': 'Experience Calculator',
+        'experience-on-mobs': "Experience on mobs",
+        'dungeon': 'Dungeon',
+        'base-experience': "Base Experience (Character stats)",
+        'guild-skill': 'Guild Skill (+15% EXP)',
+        'additional-options': 'Additional Options',
+        'guild-contract': "Guild Contract",
+        'server-buff': "Server Buff",
+        'mvp': "MVP",
+        'guild-banner': 'Guild Banner',
+        'exp-medal': 'EXP Medal',
+        'none': 'None',
+        'field-buff': 'Field Buff',
+        'random-mission': 'Random Mission',
+        'total': 'Total Experience',
+        'select-dungeon': 'Select a dungeon',
+        'warning': 'Warning:',
+        'experience-aproximation-warning': "Total value is an aproximation. This could be slightly different in-game"
     }
 }
 
@@ -216,6 +236,26 @@ const spanish = {
         "total-ignore-defense":"Total De Ignorar Defensa",
         "remain-defense": "Defensa Restante",
         "damage-gained": "Daño ganado"
+    },
+    experience: {
+        'experience-calculator': 'Calculadora de experiencia',
+        'experience-on-mobs': "Experiencia en monstruos",
+        'dungeon': 'Escenario',
+        'base-experience': "Experienca base (Estadisticas en personaje)",
+        'guild-skill': 'Habilidad de gremio (+15% EXP)',
+        'additional-options': 'Opciones adicionales',
+        'guild-contract': "Contrato de gremio",
+        'server-buff': "Buff de Servidor",
+        'mvp': "MVP",
+        'guild-banner': 'Bandera de gremio',
+        'exp-medal': 'Medalla de EXP',
+        'none': 'Ninguno',
+        'field-buff': 'Buff de campo',
+        'random-mission': 'Mision aleatoria',
+        'total': 'Experiencia Total',
+        'select-dungeon': 'Elige un escenario',
+        'warning': 'Nota:',
+        'experience-aproximation-warning': "El valor final es una aproximacion. Puede llegar a variar un poco en el juego."
     },
     "faq": {
         "title": "Preguntas Frecuentes",
