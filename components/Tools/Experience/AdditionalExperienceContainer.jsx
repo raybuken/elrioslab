@@ -11,7 +11,6 @@ function DungeonExperienceContainer({onChangeInput}) {
 
     return (
         <div className='dungeon-multipliers'>
-            <h2>{t['additional-options']}</h2>
             <div className="row">
                 <div className="col-12 pb-2">
                     <div className="form-check">

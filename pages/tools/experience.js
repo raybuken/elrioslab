@@ -13,7 +13,7 @@ function experience() {
             <meta name='keywords' content='Elsword, Raybuken, Elsword Experience Calculator'/>
         </Head>
         <Layout>
-            <div className='jumbotron'>
+            <div className='jumbotron mb-0' style={{minHeight: '90vh'}}>
                 <SocialMedia />
                 <div className='container'>
                     <ExperienceCalculatorWrapper />

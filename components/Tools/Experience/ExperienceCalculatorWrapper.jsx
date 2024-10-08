@@ -63,7 +63,6 @@ function ExperienceCalculatorWrapper() {
                 <FinalExperienceResult total={totalReceivedEXP}/>
             </div>
         </div>
-
     )
 }
 
