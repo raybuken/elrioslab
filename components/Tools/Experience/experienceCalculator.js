@@ -2,6 +2,7 @@ import { dungeons } from './data/dungeons';
 import { EXP_MEDALS } from './data/expMedals';
 import { FIELD_BUFFS } from './data/fieldBuffs';
 import { RANDOM_MISSIONS } from './data/randomMission';
+import { SERVER_BUFFS } from './data/serverBuffs';
 
 const MULTIPLIER_VALUES = {
     GUILD_SKILL: 15,
@@ -12,7 +13,8 @@ const MULTIPLIER_VALUES = {
     CLEAR_DUNGEON_BONUS: 30,
     MVP_BONUS: 10,
     FIELD_BUFFS: FIELD_BUFFS,
-    RANDOM_MISSIONS: RANDOM_MISSIONS
+    RANDOM_MISSIONS: RANDOM_MISSIONS,
+    SERVER_BUFFS: SERVER_BUFFS,
 }
 
 export const getMobMultiplier = (multipliers) => {
@@ -24,14 +26,18 @@ export const getMobMultiplier = (multipliers) => {
     return 1 + (expStat + guildSkill + guildBanner + guildContract) / 100
 }
 
+const getServerBuff = (serverBuff) => {
+    return MULTIPLIER_VALUES.SERVER_BUFFS.some(buff => buff.value === Number(serverBuff)) ? Number(serverBuff) : 0
+}
+
 export const getDungeonMultiplier = (multipliers) => {
     const guildContract = multipliers.guildContract ? MULTIPLIER_VALUES.GUILD_CONTRACT : 0
-    const expEvent = multipliers.expEvent ? MULTIPLIER_VALUES.EXP_EVENT : 0
+    const serverBuff = getServerBuff(multipliers.serverBuff)
     const expMedal = MULTIPLIER_VALUES.EXP_MEDALS.includes(Number(multipliers.expMedal)) ? Number(multipliers.expMedal) : 0
     const mvp = multipliers.mvp ? MULTIPLIER_VALUES.MVP_BONUS : 0
     const fieldBuffs = MULTIPLIER_VALUES.FIELD_BUFFS.includes(Number(multipliers.fieldBuff)) ? Number(multipliers.fieldBuff) : 0
     
-    return 1 + (MULTIPLIER_VALUES.CLEAR_DUNGEON_BONUS + mvp + expMedal + guildContract + expEvent + fieldBuffs) / 100
+    return 1 + (MULTIPLIER_VALUES.CLEAR_DUNGEON_BONUS + mvp + expMedal + guildContract + serverBuff + fieldBuffs) / 100
 }
 
 export const getRandomMissionMultiplier = (multipliers) => {
