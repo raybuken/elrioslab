@@ -26,6 +26,10 @@ function MobExperienceContainer({dungeons, updateDungeon, onChangeInput}) {
                         <label className='form-check-label' htmlFor="guildSkill">{t['guild-skill']}</label>
                         <input className='form-check-input' type="checkbox" name="guildSkill" id="guildSkill" onChange={onChangeInput} />
                     </div>
+                    <div className="form-check">
+                        <label className='form-check-label' htmlFor="guildFountain">{t['guild-fountain']}</label>
+                        <input className='form-check-input' type="checkbox" name="guildFountain" id="guildFountain" onChange={onChangeInput} />
+                    </div>
                 </div>
             </div>
         </div>

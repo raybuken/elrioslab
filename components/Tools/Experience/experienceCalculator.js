@@ -15,6 +15,7 @@ const MULTIPLIER_VALUES = {
     FIELD_BUFFS: FIELD_BUFFS,
     RANDOM_MISSIONS: RANDOM_MISSIONS,
     SERVER_BUFFS: SERVER_BUFFS,
+    GUILD_FOUNTAIN: 10,
 }
 
 export const getMobMultiplier = (multipliers) => {
@@ -22,8 +23,9 @@ export const getMobMultiplier = (multipliers) => {
     const guildSkill = multipliers.guildSkill ? MULTIPLIER_VALUES.GUILD_SKILL : 0
     const guildBanner = multipliers.guildBanner ? MULTIPLIER_VALUES.GUILD_BANNER : 0
     const guildContract = multipliers.guildContract ? MULTIPLIER_VALUES.GUILD_CONTRACT : 0
+    const guildFountain = multipliers.guildFountain ? MULTIPLIER_VALUES.GUILD_FOUNTAIN : 0
 
-    return 1 + (expStat + guildSkill + guildBanner + guildContract) / 100
+    return 1 + (expStat + guildSkill + guildBanner + guildContract + guildFountain) / 100
 }
 
 const getServerBuff = (serverBuff) => {
