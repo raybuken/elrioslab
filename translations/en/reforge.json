@@ -1,0 +1,11 @@
+{
+    "reforge": "Reforge",
+    "armor": "Armor",
+    "from": "From",
+    "to": "To",
+    "attempts": "Attemps",
+    "current-percentage": "Current Percentage",
+    "durability": "Durability",
+    "fee": "Fee",
+    "note": "*Max Number of Chlorite seeds asuming the piece with 100% durability."
+}

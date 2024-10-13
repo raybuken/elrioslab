@@ -1,0 +1,8 @@
+{
+        "title": "Stats Calcutator",
+        "tooltip-total": "Unnormalized percentage",
+        "tooltip-actual": "Normalized percentage",
+        "efficiency": "Efficiency",
+        "mstat": "Multiplicative Effect",
+        "tooltip-mstat": "Extra percentage for current stat Ex. Rigo/elrianode set buff"
+}

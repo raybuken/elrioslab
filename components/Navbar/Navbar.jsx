@@ -1,13 +1,14 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { english, spanish } from '../../translations/translations'
 import NavItem from './NavItem'
 import DropdownItem from './DropdownItem'
+import { useTranslations } from 'next-intl'
 
 export default function Navbar() {
     const router = useRouter()
-    const { locale, pathname } = router
-    const t = locale === 'en' ? english.navbar : spanish.navbar
+    const { pathname } = router
+    const t = useTranslations()
+
     const selectLanguage = (lang) => {
         router.push(pathname, pathname, { locale: lang })
     }
@@ -24,7 +25,7 @@ export default function Navbar() {
                             <NavItem href='/' name={t.home} />
                             <li className="nav-item dropdown">
                                 <span className="nav-link dropdown-toggle" id="tools" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Herramientas
+                                    {t('navbar.tools')}
                                 </span>
                                 <div className="dropdown-menu" data-bs-popper="none" aria-labelledby="tools">
                                     <DropdownItem href='/tools/stats' name='Stats' />
@@ -35,13 +36,13 @@ export default function Navbar() {
                                     <DropdownItem href='/tools/experience' name='Experience' />
                                 </div>
                             </li>
-                            <NavItem href='/about' name={t.about} />
-                            <NavItem href='/faq' name={t.faq} />
+                            <NavItem href='/about' name={t('navbar.about')} />
+                            <NavItem href='/faq' name={t('navbar.faq')} />
                             <li className="nav-item dropdown">
-                                <a href="/" role="button" className='nav-link dropdown-toggle pointer' data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {t.languages}</a>
+                                <a href="/" role="button" className='nav-link dropdown-toggle pointer' data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {t('navbar.languages')}</a>
                                 <div className="dropdown-menu" >
-                                    <span className="btn dropdown-item" href="#" onClick={() => selectLanguage('es')}>{t.spanish}</span>
-                                    <span className="btn dropdown-item" href="#" onClick={() => selectLanguage('en')}>{t.english}</span>
+                                    <span className="btn dropdown-item" href="#" onClick={() => selectLanguage('es')}>{t('navbar.spanish')}</span>
+                                    <span className="btn dropdown-item" href="#" onClick={() => selectLanguage('en')}>{t('navbar.english')}</span>
                                 </div>
                             </li>
                         </ul>

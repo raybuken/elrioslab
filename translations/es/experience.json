@@ -1,0 +1,20 @@
+{
+    "experience-calculator": "Calculadora de experiencia",
+    "experience-on-mobs": "Experiencia en monstruos",
+    "dungeon": "Escenario",
+    "base-experience": "Experienca base (Estadisticas en personaje)",
+    "guild-skill": "Habilidad de gremio (+15% EXP)",
+    "additional-options": "Opciones adicionales",
+    "guild-contract": "Contrato de gremio",
+    "server-buff": "Buff de Servidor",
+    "mvp": "MVP",
+    "guild-banner": "Bandera de gremio",
+    "exp-medal": "Medalla de EXP",
+    "none": "Ninguno",
+    "field-buff": "Buff de campo",
+    "random-mission": "Mision aleatoria",
+    "total": "Experiencia Total",
+    "select-dungeon": "Elige un escenario",
+    "warning": "Nota:",
+    "experience-aproximation-warning": "El valor final es una aproximacion. Puede llegar a variar un poco en el juego."
+}

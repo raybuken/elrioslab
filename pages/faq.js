@@ -4,17 +4,31 @@ import StatCalcFAQ from "../components/Faq/StatCalculator/StatCalcFAQ";
 import ReforgeFAQ from "../components/Faq/Reforge/ReforgeFAQ";
 import AdaptationFAQ from "../components/Faq/Adaptation/AdaptationFAQ";
 import IgnoreDefenseFAQ from "../components/Faq/IgnoreDefense/IgnoreDefenseFAQ";
-import { useRouter } from "next/router";
-import { english, spanish } from "../translations/translations";
 import Head from "next/head";
 import Layout from "../components/Layout/Layout";
+import { useTranslations } from "next-intl";
+
+export async function getStaticProps(context) {
+  const faq = (await import(`../translations/${context.locale}/faq.json`)).default
+  const common = (await import(`../translations/${context.locale}/common.json`)).default
+
+  return {
+      props: {
+          messages: {
+              ...faq, ...common
+          }
+      }
+  }
+}
+
+
 export default function Faq() {
-  const { locale } = useRouter();
-  const t = locale === "en" ? english.faq : spanish.faq;
+  const t = useTranslations();
+
   return (
     <div>
       <Head>
-        <title>Elrios Lab - {t.title}</title>
+        <title>Elrios Lab - {t('title')}</title>
         <meta charSet="UTF-8" />
         <meta name="description" content="Elsword Calculators" />
         <meta name="keywords" content="Elsword, Raybuken, Elsword Calculator" />
@@ -28,7 +42,7 @@ export default function Faq() {
         <div className="py-4">
           <div className="jumbotron container">
             <SocialMedia />
-            <h1 className="my-3">{t.title}</h1>
+            <h1 className="my-3">{t('title')}</h1>
             <hr className="my-3" />
             <ul className=" accordion p-1 id='faq-accordion'">
               <div className="accordion-item">

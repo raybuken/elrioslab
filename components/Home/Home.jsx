@@ -1,15 +1,14 @@
 
 import React from 'react'
-import { useRouter } from 'next/router'
-import { english, spanish } from '../../translations/translations'
 import Image from 'next/image'
 import Section from './Section/Section'
 import SocialMedia from '../SocialMedia/SocialMedia'
 import Layout from '../Layout/Layout'
+import { useTranslations } from 'next-intl'
 
 export default function Home() {
-    const { locale } = useRouter()
-    const t = locale === 'en' ? english.home : spanish.home
+    const t = useTranslations()
+
     return (
         <div>
             <Layout>
@@ -26,8 +25,8 @@ export default function Home() {
                             />
                         </div>
                         <div className=' text-center'>
-                            <h1>{t.welcome}</h1>
-                            <p className='lead'>{t.description}</p>
+                            <h1>{t('welcome')}</h1>
+                            <p className='lead'>{t('description')}</p>
                         </div>
                         <hr className="my-4" />
                         <Section />

@@ -1,0 +1,20 @@
+{
+    "experience-calculator": "Experience Calculator",
+    "experience-on-mobs": "Experience on mobs",
+    "dungeon": "Dungeon",
+    "base-experience": "Base Experience (Character stats)",
+    "guild-skill": "Guild Skill (+15% EXP)",
+    "additional-options": "Additional Options",
+    "guild-contract": "Guild Contract",
+    "server-buff": "Server Buff",
+    "mvp": "MVP",
+    "guild-banner": "Guild Banner",
+    "exp-medal": "EXP Medal",
+    "none": "None",
+    "field-buff": "Field Buff",
+    "random-mission": "Random Mission",
+    "total": "Total Experience",
+    "select-dungeon": "Select a dungeon",
+    "warning": "Warning:",
+    "experience-aproximation-warning": "Total value is an aproximation. This could be slightly different in-game"
+}

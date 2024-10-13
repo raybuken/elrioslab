@@ -1,0 +1,11 @@
+{
+    "reforge": "Forja",
+    "armor": "Armadura",
+    "from": "Desde",
+    "to": "Hasta",
+    "attempts": "Numero de Intentos",
+    "current-percentage": "Porcentaje Actual",
+    "durability": "Durabilidad",
+    "fee": "Descuento",
+    "note": "*El Número máximo de usos de Chlorite seeds es asumiendo que la pieza tiene 100% de durability."
+}

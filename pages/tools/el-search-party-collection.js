@@ -6,6 +6,15 @@ import { useEffect, useReducer, useState } from 'react'
 import {reducer, initialValue} from '../../scripts/reducers/espcReducer'
 import { getLastSessionSynergyData, parseClassesSelectedListToParam } from '../../components/Tools/ElSearchPartyCollection/utils/util'
 import AlertContext from '../../components/Context/AlertContext'
+import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
+
+export async function getStaticProps(context) {
+    return {
+      props: {
+        messages: await getTranslationMessages(context, "el-search-party-collection"),
+      },
+    };
+  }
 
 export default function ESPC() {
     const [classesSelected, dispatch] = useReducer(reducer, initialValue)

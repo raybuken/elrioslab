@@ -1,0 +1,94 @@
+{
+    "title": "Preguntas Frecuentes",
+    "stat-calculator": {
+        "q1": {
+            "question": "1. QUÉ ES LA NORMALIZACIÓN?",
+            "answer": "conforme uno va aumentando sus stats llega un punto en que esos stats que añadas reducen su eficacia dramaticamente. Cada uno de los stats (exceptuando hp y awakening time) tiene un punto de normalizacion, que no es mas que la restriccion que aplica conforme vas agregando valor actual en tus stats, cada stat tiene su propia tabla de normalización."
+        },
+        "q2": {
+            "question": "2. Cuánto necesito de maximize, critico y action speed?",
+            "answer": {
+                "p1": "el valor recomendado puede variar dependiendo de la clase que lleves, pero partiendo de el valor ideal (sin contar con las pasivas/buffs de personajes) serian:",
+                "p2": {
+                    "note": "NOTA: ",
+                    "text": "el action speed ideal puede depender de la clase y que tan bien interactue con sus casteos."
+                }
+            }
+        },
+        "q3": {
+            "question": "3. Cómo se aplican los sockets, buffs y pasivas en los stats?",
+            "answer": {
+                "p1": "Hay muchas formas de aplicar los stats, cada efecto ya sea buff o pasivas no se presentan visualmente en tu stat actual. Dichos stats pueden llegar de 3 maneras distintas: ",
+                "p2": {
+                    "title": "Normalizado: ",
+                    "text": "cumple con las reglas de la normalizacion, se puede asumir como un socket que aplicas en tu gear, es la fuente mas comun en casi todos los buff y/o pasivas."
+                },
+                "p3": {
+                    "title": "No se normaliza: ",
+                    "text": "es un stat que se suma con el valor del stat normalizado, este valor ignora las reglas de normalizacion y para el caso del action speed puede tambien ignorar el cap. Se ven en algunas pasivas de stat permanente."
+                },
+                "p4": {
+                    "title": "Multiplicativo: ",
+                    "text": "es un stat que amplifica el valor del stat actual en porcentaje y luego de operarse el stat sin normalizar, este valor ignora las reglas de normalizacion y para el caso del action speed puede tambien ignorar el cap. Suele verse este efecto en el set de rigomor y de elrianode en los buffs."
+                }
+            }
+        },
+        "q4": {
+            "question": "4. COMO SE CALCULA EL STAT MULTIPLICATIVO CON MI STAT ACTUAL?",
+            "answer": {
+                "p1": "Con nuestra calculadora es muy facil de hacer los calculos. A través de esta formula podemos determinar el valor final con todo y buff de rigomor o de algun otro efecto que quieras probar:",
+                "p2": {
+                    "fv": "valor_final",
+                    "cv": "valor_actual",
+                    "mv": "stat_multiplicativo"
+                }
+            }
+        }
+    },
+    "reforge": {
+        "q1": {
+            "question": "CUÁL SET DE RIGOMOR DEBERÍA DE ESCOGER?",
+            "p1": "Si quieres optar por algo que te de el mayor daño posible puedes elegir si o si el set de crimson, pero cabe destacar que el sage brinda algo mas de daño con la diferencia de que es mejor crimson para partys si vas de daño a full",
+            "p2": "El set Sage te sirve o para supportear o para Raid de Berthe si deseas llevar menos polarize y resistir más.",
+            "p3": "No es un set que brinda tanto daño pero es una opción muy interesante para clases que en gran parte de sus habilidades son decentes de usar y pocos problemas de cooldown acceleration como podria ser Shakti, Devi o Comet Crusader",
+            "p4": "Es mas debil que el crimson y su punto de impacto llegan un poco mas tarde que el resto de sets, si es para Berthe Raid no esta mal llevarlo pero para el resto de situaciones crimson cerulean es mejor.",
+            "p5": "No lo recomiendo, es un set que funciona en muy pocas clases y el efecto no se acerca al que brinde el crimson, en lo personal no lo recomendaria.",
+            "p6": "Set de pvp, no es muy rentable para PvE."
+        }
+    },
+    "adaptation": {
+        "q1": {
+            "title": "Qué es la adaptación?",
+            "p1": "La adaptación nos sirve para mitigar parte del debuff del Demon Realm, esto es importante ya que recuperamos ataque y HP considerablemente."
+        },
+        "q2": {
+            "title": "Cómo calcular la eficiencia de nuestra adaptacion?",
+            "p1": "Dependiendo del grado que haya de debuff la adaptacion se vuelve cada vez mas importante, por esa razón podemos calcular el multiplicador total que nos daria la adaptacion basandonos en que el ataque actual sin ocupar adaptation parte de 100% aplicamos este cálculo: ",
+            "p2": "Por cada punto de adaptatión recuperamos 1% de ataque y vida, la siguiente tabla nos muestra la ganancia maxima que podriamos conseguir de stats asumiendo que podemos sobrepasar el cap.",
+            "debuff": "Debuff de Entorno",
+            "multiplier": "Multiplicador"
+        }
+    },
+    "ignore-defense": {
+        "q1": {
+            "title": "Cómo funciona la Defensa?",
+            "answer": {
+                "p1": "La defensa hace que reduzca el daño que te causen, para limitar el porcentaje de defensa se utiliza una conversion para que conforme vas sacando mas defensa el porcentaje irá costando mas en aumentarlo. Es importante saberlo porque una cosa es la defensa numerica/base y otra cosa es la defensa porcentual.",
+                "p2": "Para convertir de defensa numerica a la defensa porcentual utilizamos esta formula:",
+                "p3": "Para convertir de defensa porcentual a defensa numerica utilizamos esta formulilla:",
+                "p4": "Donde:",
+                "def-const": "Valor constante para la conversion, esto varia de acuerdo al nivel del objetivo (elrianode para arriba son lv 99 siempre)",
+                "def-base": "Defensa en valor numerico.",
+                "def-percent": "Defensa en valor porcentual o Daño que mitiga."
+            }
+        },
+        "q2": {
+            "title": "Cuánto Daño ganas con el Ignore Defense?",
+            "answer": {
+                "p1": "La ganacia de daño varia dependiendo del ignore defense y la cantidad de defensa base del enemigo. El Ignore Defensa afecta a la defensa base, NO a la porcentual. Para calcular la defensa restante utilizamos esta formula:",
+                "p2": "Para calcular el Daño Ganado:",
+                "p3": "El Ignore defense y los debuffs de reducción de defensa se acumulan multiplicativamente. para juntarlo en la formula simplemente usamos este formato:"
+            }
+        }
+    }
+}

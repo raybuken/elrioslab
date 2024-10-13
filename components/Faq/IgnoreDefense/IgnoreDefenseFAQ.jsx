@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-import { useRouter } from 'next/router'
-import { english, spanish } from '../../../translations/translations'
+import { useTranslations } from 'next-intl'
 export default function IgnoreDefenseFAQ() {
-    const { locale } = useRouter()
-    const t = locale === 'en' ? english.faq['ignore-defense'] : spanish.faq['ignore-defense']
+    const t = useTranslations('ignore-defense')
+
     return (
         <div>
             <div className="accordion-header" >
@@ -18,26 +17,26 @@ export default function IgnoreDefenseFAQ() {
             <div className='collapse' id='ignoreDefense'>
                 <div className='p-4'>
                     <div>
-                        <h2>1. {t.q1.title}</h2>
-                        <p>{t.q1.answer.p1}</p>
-                        <p>{t.q1.answer.p2}</p>
+                        <h2>1. {t('q1.title')}</h2>
+                        <p>{t('q1.answer.p1')}</p>
+                        <p>{t('q1.answer.p2')}</p>
                         <p className=' font-italic text-center formula'>(<span className='text-success'>Def_Base</span> / <span className='text-info'>Def_const</span>) / (1 + (<span className='text-success'>Def_Base </span> / <span className='text-info'>Def_const</span>))</p>
-                        <p>{t.q1.answer.p3}:</p>
+                        <p>{t('q1.answer.p3')}:</p>
                         <p className=' font-italic text-center formula'><span className='text-info'>Def_const</span> * <span className='text-danger'>Def_percent</span> / (1 - <span className='text-danger'>Def_percent</span>)</p>
-                        <p>{t.q1.answer.p4} </p>
+                        <p>{t('q1.answer.p4')} </p>
                         <ul>
-                            <li><span className='text-info'>Def_const</span> = {t.q1.answer['def-const']}: 258.6436 + Level * 39.3526.</li>
-                            <li><span className='text-success'>Def_Base</span> = {t.q1.answer['def-base']}</li>
-                            <li><span className='text-danger'>Def_percent</span> = {t.q1.answer['def-percent']}</li>
+                            <li><span className='text-info'>Def_const</span> = {t('q1.answer.def-const')}: 258.6436 + Level * 39.3526.</li>
+                            <li><span className='text-success'>Def_Base</span> = {t('q1.answer.def-base')}</li>
+                            <li><span className='text-danger'>Def_percent</span> = {t('q1.answer.def-percent')}</li>
                         </ul>
                     </div>
                     <div>
-                        <h2>2. {t.q2.title}</h2>
-                        <p>{t.q2.answer.p1}</p>
+                        <h2>2. {t('q2.title')}</h2>
+                        <p>{t('q2.answer.p1')}</p>
                         <p className='formula text-center'><span className='text-success'>Def_Base</span> * (1- <span className='text-info'>Ignore_Defense</span>/100)</p>
-                        <p>{t.q2.answer.p2}</p>
+                        <p>{t('q2.answer.p2')}</p>
                         <p className='formula text-center'>(1 / (1 - <span className='text-danger'>Def_percent</span> * <span className='text-info'>Ignore_Defense</span>)) *100</p>
-                        <p>El Ignore defense y los debuffs de reducción de defensa se acumulan multiplicativamente. para juntarlo en la formula simplemente usamos este formato:</p>
+                        <p>{t('q2.answer.p3')}</p>
                         <p className='formula text-center'>1 / (1 - <span className='text-danger'>def_percent</span> *(1 - (1 - <span className='text-info'>defense_ignore_1</span>)*(1 - <span className=" text-warning">defense_ignore_2</span>)* ... ) *100</p>
                     </div>
                 </div>

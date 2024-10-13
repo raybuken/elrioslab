@@ -1,6 +1,16 @@
 import StatCalculator from '../../components/Tools/Stats/StatCalculator'
 import Head from 'next/head'
 import Layout from '../../components/Layout/Layout'
+import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
+
+export async function getStaticProps(context) {
+    return {
+        props: {
+            messages: await getTranslationMessages(context, "stats")
+        }
+    }
+}
+
 
 export default function Stats () {
     return(
