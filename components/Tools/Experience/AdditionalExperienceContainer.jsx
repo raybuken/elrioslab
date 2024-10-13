@@ -2,13 +2,11 @@ import React from 'react'
 import { EXP_MEDALS } from './data/expMedals'
 import { FIELD_BUFFS } from './data/fieldBuffs'
 import { RANDOM_MISSIONS } from './data/randomMission'
-import { english, spanish } from '../../../translations/translations'
-import { useRouter } from 'next/router'
 import { SERVER_BUFFS } from './data/serverBuffs'
+import { useTranslations } from 'next-intl'
 
 function DungeonExperienceContainer({ onChangeInput }) {
-    const { locale } = useRouter()
-    const t = locale === 'en' ? english.experience : spanish.experience
+    const t = useTranslations()
 
     return (
         <div className='dungeon-multipliers'>
@@ -17,23 +15,23 @@ function DungeonExperienceContainer({ onChangeInput }) {
                     <div className="row">
                         <div className="col-12 col-md-4 pb-2">
                             <div className="form-check">
-                                <label className='form-check-label' htmlFor="guildContract">{t['guild-contract']}</label>
+                                <label className='form-check-label' htmlFor="guildContract">{t('guild-contract')}</label>
                                 <input className='form-check-input' type="checkbox" name="guildContract" id="guildContract" onChange={onChangeInput} />
                             </div>
                             <div className="form-check">
-                                <label className='form-check-label' htmlFor="mvp">{t.mvp}</label>
+                                <label className='form-check-label' htmlFor="mvp">{t('mvp')}</label>
                                 <input className='form-check-input' type="checkbox" name="mvp" id="mvp" onChange={onChangeInput} />
                             </div>
                             <div className="form-check">
-                                <label className='form-check-label' htmlFor="guildBanner">{t['guild-banner']}</label>
+                                <label className='form-check-label' htmlFor="guildBanner">{t('guild-banner')}</label>
                                 <input className='form-check-input' type="checkbox" name="guildBanner" id="guildBanner" onChange={onChangeInput} />
                             </div>
                         </div>
                         <div className="form-group col-12 col-md-4">
-                            <legend className='col-form-label p-0 fw-bold'>{t['exp-medal']}</legend>
+                            <legend className='col-form-label p-0 fw-bold'>{t('exp-medal')}</legend>
                             <div className='form-check form-check-inline'>
                                 <input className='form-check-input' type="radio" name="expMedal" id="expMedal_none" value={''} defaultChecked onChange={onChangeInput} />
-                                <label htmlFor="expMedal_none">{t.none}</label>
+                                <label htmlFor="expMedal_none">{t('none')}</label>
                             </div>
 
                             {EXP_MEDALS.map((medal, i) => (
@@ -45,10 +43,10 @@ function DungeonExperienceContainer({ onChangeInput }) {
 
                         </div>
                         <div className="form-group col-12 col-md-4">
-                            <legend className='col-form-label p-0 fw-bold'>{t['field-buff']}</legend>
+                            <legend className='col-form-label p-0 fw-bold'>{t('field-buff')}</legend>
                             <div className='form-check form-check-inline'>
                                 <input className='form-check-input' type="radio" name="fieldBuff" id="fieldBuff_none" value={''} defaultChecked onChange={onChangeInput} />
-                                <label htmlFor="fieldBuff_none">{t.none}</label>
+                                <label htmlFor="fieldBuff_none">{t('none')}</label>
                             </div>
 
                             {
@@ -64,9 +62,9 @@ function DungeonExperienceContainer({ onChangeInput }) {
                 </div>
 
                 <div className="form-group col-12 col-md-4">
-                    <label className='form-check-label fw-bold' htmlFor="serverBuff">{t['server-buff']}</label>
+                    <label className='form-check-label fw-bold' htmlFor="serverBuff">{t('server-buff')}</label>
                     <select className='form-select form-control' name="serverBuff" id="serverBuff" onChange={onChangeInput}>
-                        <option value="">{t.none}</option>
+                        <option value="">{t('none')}</option>
                         {
                             SERVER_BUFFS.map(buff => (
                                 <option key={buff.value} value={buff.value}>{buff.name}</option>
@@ -75,9 +73,9 @@ function DungeonExperienceContainer({ onChangeInput }) {
                     </select>
                 </div>
                 <div className="form-group col-12 col-md-4">
-                    <label className='fw-bold' htmlFor="randomMission">{t['random-mission']}</label>
+                    <label className='fw-bold' htmlFor="randomMission">{t('random-mission')}</label>
                     <select className='form-select form-control' name="randomMission" id="randomMission" onChange={onChangeInput}>
-                        <option value="">{t.none}</option>
+                        <option value="">{t('none')}</option>
                         {RANDOM_MISSIONS.map(randomMission => (
                             <option key={randomMission} value={randomMission}>{randomMission}%</option>
                         ))}

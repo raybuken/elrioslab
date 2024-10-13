@@ -2,15 +2,22 @@ import React, { useState, useEffect } from 'react'
 import { getDefBase, getDefPercentage, getTotalIgnoreDefense, getRemainDefense, getDamageGained } from '../../components/Tools/IgnoreDefense/calcDefense'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPlus, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
-import { useRouter } from 'next/router'
-import { english, spanish } from '../../translations/translations'
 import Head from 'next/head'
 import Layout from '../../components/Layout/Layout'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
+import { useTranslations } from 'next-intl'
+import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
+
+export async function getStaticProps(context) {
+    return {
+      props: {
+        messages: await getTranslationMessages(context, "ignore-defense"),
+      },
+    };
+  }
 
 export default function IgnoreDefense() {
-    const { locale } = useRouter()
-    const t = locale === 'en' ? english['ignore-defense'] : spanish['ignore-defense']
+    const t = useTranslations()
     const [defBase, setDefBase] = useState(0)
     const [defPercentage, setDefPercentage] = useState(0)
     const [ignoreDef, setIgnoreDef] = useState([0])
@@ -96,11 +103,11 @@ export default function IgnoreDefense() {
                         <form>
                             <div className="row">
                                 <div className="col-md-3 col-sm-6">
-                                    <label>{t['defense-base']}</label>
+                                    <label>{t('defense-base')}</label>
                                     <input type="number" min={0} step={1000} value={defBase} className=' form-control border-black' onChange={onChangeDefBase} />
                                 </div>
                                 <div className="col-md-3 col-sm-6">
-                                    <label>{t['defense-percentage']}</label>
+                                    <label>{t('defense-percentage')}</label>
                                     <input type="number" min={0} max={99.99} value={defPercentage} className='form-control border-black' onChange={onChangeDefPercentage} />
                                 </div>
                                 <div className="col-md-6 col-sm-12 ">
@@ -127,10 +134,10 @@ export default function IgnoreDefense() {
                             </div>
                             <div className="row my-2">
                                 <div className="col align-self-center">
-                                    <h2 className='font-weight-bold'>{t['total-ignore-defense']}: <span className='text-info'>{totalIgnoreDefense}%</span></h2>
+                                    <h2 className='font-weight-bold'>{t('total-ignore-defense')}: <span className='text-info'>{totalIgnoreDefense}%</span></h2>
 
-                                    <h2 className='font-weight-bold'>{t['remain-defense']}: <span className='text-info'>{remainDefense}%</span></h2>
-                                    <h2 className='font-weight-bold'>{t['damage-gained']}: <span className='text-info'>{damageGained}%</span></h2>
+                                    <h2 className='font-weight-bold'>{t('remain-defense')}: <span className='text-info'>{remainDefense}%</span></h2>
+                                    <h2 className='font-weight-bold'>{t('damage-gained')}: <span className='text-info'>{damageGained}%</span></h2>
                                 </div>
                             </div>
                         </form>

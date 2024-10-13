@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "home": "Inicio",
+        "tools": "Herramientas",
+        "about": "Acerca",
+        "faq": "FAQ",
+        "languages": "Idiomas",
+        "spanish": "Español",
+        "english": "English"
+    }
+}

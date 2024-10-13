@@ -1,14 +1,13 @@
 
-import { useRouter } from 'next/router'
-import {english,spanish} from '../../../translations/translations'
+import { useTranslations } from 'next-intl'
 
 export default function PercentagesField (props) {
-    const {percentages,setPercentage, percentage} = props
-    const {locale} = useRouter()
-    const t = locale === 'en' ? english.reforge : spanish.reforge
+    const {percentages,setPercentage, percentage} = props    
+    const t = useTranslations()
+
     return(
         <div>
-            <label>{t['current-percentage']}</label>
+            <label>{t('current-percentage')}</label>
             <select className='form-control form-select reforge-field' onChange={setPercentage} value={percentage}>
                 {percentages.map((percentage,i) => (
                     <option key={i} value={percentage} >{percentage}%</option>

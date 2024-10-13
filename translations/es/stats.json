@@ -1,0 +1,8 @@
+{
+    "title": "Calculadora de Stats",
+    "tooltip-total": "Porcentaje sin normalizar",
+    "tooltip-actual": "porcentaje normalizado",
+    "efficiency": "Eficiencia",
+    "mstat": "Efecto Multiplicativo ",
+    "tooltip-mstat": "Porcentaje extra para el stat actual Ej: Rigo/elrianode set's buff "
+}

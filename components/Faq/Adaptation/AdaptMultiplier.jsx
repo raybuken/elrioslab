@@ -1,13 +1,15 @@
+import { useTranslations } from 'next-intl'
 import {getMultiplier} from './MultiplierData'
 
-export default function AdaptMultiplier(props) {
-    const {translate} = props
+export default function AdaptMultiplier() {
+    const t = useTranslations("adaptation")
+
     return(
         <table className='table table-bordered table-striped responsive-table'>
             <thead className='thead-dark'>
                 <tr className='text-center'>
-                    <th>{translate.q2.debuff}</th>
-                    <th>{translate.q2.multiplier}</th>
+                    <th>{t('q2.debuff')}</th>
+                    <th>{t('q2.multiplier')}</th>
                 </tr>
             </thead>
             <tbody className='text-center'> 

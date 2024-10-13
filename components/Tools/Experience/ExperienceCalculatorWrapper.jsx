@@ -4,12 +4,10 @@ import { dungeons } from './data/dungeons'
 import FinalExperienceResult from './FinalExperienceResult'
 import MobExperienceContainer from './MobExperienceContainer'
 import DungeonExperienceContainer from './AdditionalExperienceContainer.jsx'
-import { english, spanish } from '../../../translations/translations'
-import { useRouter } from 'next/router.js'
+import { useTranslations } from 'next-intl'
 
 function ExperienceCalculatorWrapper() {
-    const { locale } = useRouter()
-    const t = locale === 'en' ? english.experience : spanish.experience
+    const t = useTranslations()
     const [dungeon, setDungeon] = useState("")
     const [multipliers, setMultipliers] = useState({})
     const [totalReceivedEXP, setTotalReceivedEXP] = useState(0)

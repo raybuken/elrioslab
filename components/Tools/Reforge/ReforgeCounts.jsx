@@ -1,13 +1,11 @@
 
 
 import Image from 'next/image'
-import { useRouter } from 'next/router'
-import {english,spanish} from '../../../translations/translations'
 import { REFORGE_MATERIAL_ASSETS } from '../../../constants/constants'
+import { useTranslations } from 'next-intl'
 export default function ReforgeCounts(props) {
     const {result, armor} = props
-    const {locale} = useRouter()
-    const t = locale === 'en' ? english.reforge : spanish.reforge
+    const t = useTranslations()
     const reforgeMaterialAsset = REFORGE_MATERIAL_ASSETS[armor]
 
     return (
@@ -36,7 +34,7 @@ export default function ReforgeCounts(props) {
             </div>
             <div className="row">
                 <div className="col align-self-end">
-                    <p className='text-right'>{t.attempts}: {result.attempts || 0}</p>
+                    <p className='text-right'>{t('attempts')}: {result.attempts || 0}</p>
                 </div>
             </div>
         </div>

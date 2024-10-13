@@ -1,7 +1,10 @@
 import React from 'react'
 import Tool from './Tool'
+import { useTranslations } from 'next-intl'
 
 export default function Section() {
+    const t = useTranslations();
+
     return (
         <div className="row justify-content-center text-center">
             <Tool link='/tools/stats' name='Stats' src={'https://res.cloudinary.com/elrioslab/image/upload/v1616513205/files/stats_flpgzu.jpg'} alt='Stats'/>
