@@ -118,26 +118,33 @@ export default function IgnoreDefense() {
                                                 <input type="number" value={value} className='form-control border-black' min='0' max='100' onChange={e => onChangeIgnoreDef(e, i)} />
                                             </div>
                                         ))}
-                                        <div className=" col-md-12 mt-2">
-                                            <button type='button' className='btn btn-success mr-1' value="Add" onClick={createIgnoreDefenseField}>
-                                                <FontAwesomeIcon icon={faPlus} />
-                                            </button>
-                                            <button type='button' className='btn btn-danger mr-1' value="Delete" onClick={removeIgnoreDefenseField}>
-                                                <FontAwesomeIcon icon={faTrash} />
-                                            </button>
-                                            <button type='button' className='btn btn-info' value="Reset" onClick={resetIgnoreDefenseField}>
-                                                <FontAwesomeIcon icon={faRedoAlt} />
-                                            </button>
+                                        <div className="col-12 mt-2">
+                                            <div className='ignore-defense-buttons'>
+                                                <button type='button' className='btn btn-success mr-1' value="Add" onClick={createIgnoreDefenseField}>
+                                                    <FontAwesomeIcon icon={faPlus} />
+                                                </button>
+                                                <button type='button' className='btn btn-danger mr-1' value="Delete" onClick={removeIgnoreDefenseField}>
+                                                    <FontAwesomeIcon icon={faTrash} />
+                                                </button>
+                                                <button type='button' className='btn btn-info' value="Reset" onClick={resetIgnoreDefenseField}>
+                                                    <FontAwesomeIcon icon={faRedoAlt} />
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="row my-2">
                                 <div className="col align-self-center">
-                                    <h2 className='font-weight-bold'>{t('total-ignore-defense')}: <span className='text-info'>{totalIgnoreDefense}%</span></h2>
-
-                                    <h2 className='font-weight-bold'>{t('remain-defense')}: <span className='text-info'>{remainDefense}%</span></h2>
-                                    <h2 className='font-weight-bold'>{t('damage-gained')}: <span className='text-info'>{damageGained}%</span></h2>
+                                    <span className='fw-bold d-block'>
+                                        {t('total-ignore-defense')}: <span className='text-info fw-bold'>{totalIgnoreDefense}%</span>
+                                    </span>
+                                    <span className='fw-bold d-block'>
+                                        {t('remain-defense')}: <span className='text-info fw-bold'>{remainDefense}%</span>
+                                    </span>
+                                    <span className='fw-bold d-block mt-4'>
+                                        {t('damage-gained')}: <span className='text-info'>{damageGained}%</span>
+                                    </span>
                                 </div>
                             </div>
                         </form>
