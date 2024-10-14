@@ -31,6 +31,9 @@ export default function Footer() {
                             <li>
                                 <Link href='/tools/el-search-party-collection' className='nav-link text-muted'>El Search Party Collection</Link>
                             </li>
+                            <li>
+                                <Link href='/tools/experiecne' className='nav-link text-muted'>Experience</Link>
+                            </li>
                         </ul>
                     </div>
                     <div className="col-2 align-self-start">
@@ -53,7 +56,7 @@ export default function Footer() {
                 </div>
                 <hr />
                 <div className='text-center'>
-                    &copy; 2022 ElriosLab 
+                    &copy; {new Date().getFullYear()} ElriosLab 
                 </div>
             </div>
         </footer>

@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <div>
             <Layout>
-                <div className="jumbotron mt-3">
+                <div className="jumbotron">
                     <div className="container">
                         <SocialMedia />
                         <div className="row justify-content-center">

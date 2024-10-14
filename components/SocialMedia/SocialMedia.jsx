@@ -4,7 +4,7 @@ import Donate from '../Donate/Donate'
 import SocialIcon from './SocialIcon'
 export default function SocialMedia() {
     return (
-        <div className='row justify-content-between mb-3'>
+        <div className='row justify-content-between align-items-center'>
             <div className="col">
                 <Donate />
             </div>
