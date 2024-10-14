@@ -406,3 +406,7 @@
 .navbar-nav .nav-item:last-child {
     margin-right: 0;
 }
+
+.ignore-defense-buttons button{
+    margin-right: .5rem;
+}
