@@ -1,0 +1,8 @@
+{
+    "defense-base": "Defense Base (Numeric)",
+    "defense-percentage": "Defense %",
+    "current-ignore": "Current Ignore Defense",
+    "total-ignore-defense":"Total Ignore Defense",
+    "remain-defense": "Enemy Remain Defense",
+    "damage-gained": "Damage Gained"
+}

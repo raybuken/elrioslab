@@ -6,18 +6,24 @@ import { CalcPercentages } from "../../components/Tools/Reforge/CalcPercentages"
 import PercentagesField from "../../components/Tools/Reforge/PercentagesField";
 import ServersField from "../../components/Tools/Reforge/ServersField";
 
-import { useRouter } from "next/router";
-import { english, spanish } from "../../translations/translations";
-
 import Head from "next/head";
 import Layout from "../../components/Layout/Layout";
 import ReforgeFeeField from "../../components/Tools/Reforge/ReforgeFeeField";
 
 import { ARMOR, REFORGE_STAGES, SERVERS } from '../../constants/constants'
+import { useTranslations } from "next-intl";
+import { getTranslationMessages } from "../../helpers/messageTranslationsHelpers";
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      messages: await getTranslationMessages(context, "reforge"),
+    },
+  };
+}
 
 export default function Reforge() {
-  const { locale } = useRouter();
-  const t = locale === "en" ? english.reforge : spanish.reforge;
+  const t = useTranslations()
   const [armor, setArmor] = useState(ARMOR.EXASCALE);
   const [server, setServer] = useState(SERVERS.KR);
   const [serverList, setServerList] = useState(Object.keys(REFORGE_STAGES[armor]))
@@ -101,7 +107,7 @@ export default function Reforge() {
   return (
     <div>
       <Head>
-        <title>{t.reforge}</title>
+        <title>{t('reforge')}</title>
         <meta name="description" content="Elsword Reforge Calculator" />
         <meta
           name="keywords"
@@ -114,12 +120,12 @@ export default function Reforge() {
         <div className="container my-3">
           <div className="jumbotron">
             <SocialMedia />
-            <h1 className="text-center">{t.reforge}</h1>
+            <h1 className="text-center">{t('reforge')}</h1>
             <hr />
             <div className="my-4">
               <div className=" row justify-content-between mb-3">
                 <div className="col-md-4 col-6">
-                  <label>{t.armor}</label>
+                  <label>{t('armor')}</label>
                   <select
                     name="armor"
                     className="form-control form-select select-field"
@@ -142,7 +148,7 @@ export default function Reforge() {
               <hr />
               <div className="row">
                 <div className="col-12 col-md-6 col-lg-3 mt-2">
-                  <label>{t.from}</label>
+                  <label>{t('from')}</label>
                   <select className="form-control form-select reforge-field" onChange={onFromStageChange} ref={fromStageSelect}>
                     {REFORGE_STAGES[armor][server].map((el, i) => (
                           <option key={i} value={el.stage - 1}>
@@ -153,7 +159,7 @@ export default function Reforge() {
                   </select>
                 </div>
                 <div className="col-12 col-md-6 col-lg-3 mt-2">
-                  <label>{t.to}</label>
+                  <label>{t('to')}</label>
                   <select className=" reforge-field form-select form-control" ref={toStageSelect} onChange={getCounts}>
                     {toStage.map((el, i) => (
                       <option key={i} value={el.stage}>
@@ -170,7 +176,7 @@ export default function Reforge() {
                   />
                 </div>
                 <div className="col-12 col-md-6 col-lg-3 mt-2">
-                  <label>{t.durability}</label>
+                  <label>{t('durability')}</label>
                   <input className="reforge-field form-control" type='number' min={0} max={100} defaultValue={durability} onChange={(e) => onChangeDurability(e)}/>
                 </div>
                 <ReforgeFeeField updateFeeAmount={updateFeeAmount}/>

@@ -1,10 +1,15 @@
 module.exports = {
     i18n: {
         locales: ['en', 'es'],
-        defaultLocale: 'es'
+        defaultLocale: 'en',
     },
     images:{
-        loader: 'cloudinary',
-        path: 'https://res.cloudinary.com/elrioslab/image/upload/'
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+                pathname: '/elrioslab/image/upload/**'
+            }
+        ]
     }
 }

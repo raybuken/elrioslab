@@ -15,7 +15,14 @@ const CollectionList = ({ collection, collectionData, removeFilters, filterEffec
         {
             collection.length !== collectionData.length && 
               <div className='collection-filter me-2' onClick={() => removeFilters()}>
-                <Image className='collection-filter-icon' src={encodeURI("v1673159305/files/tools/synergy/Effect/" + filterEffectSelected)} width={24} height={24} title={filterEffectSelected} alt={filterEffectSelected} />
+                <Image 
+                  className='collection-filter-icon' 
+                  src={encodeURI("https://res.cloudinary.com/elrioslab/image/upload/v1673159305/files/tools/synergy/Effect/" + filterEffectSelected)} 
+                  width={24} 
+                  height={24} 
+                  title={filterEffectSelected}
+                  alt={filterEffectSelected} 
+                />
                 <span className='collection-remove-button pointer'>X</span>
               </div>
         }

@@ -20,10 +20,10 @@ export default function ReforgeTable (props) {
                         REFORGE_STAGES[ARMOR.RIGOMOR][SERVERS.KR].map((stage,i) => (
                             <tr key={i}>
                                 <td>Stage {stage.stage}</td>
-                                <td>{stage.glaciem.toLocaleString()}</td>
+                                <td>{stage.glaciem.toLocaleString("en-US")}</td>
                                 <td>{stage.amethyst}</td>
-                                <td>{stage.crystal.toLocaleString()}</td>
-                                <td>{stage.ed.toLocaleString()}</td>
+                                <td>{stage.crystal.toLocaleString("en-US")}</td>
+                                <td>{stage.ed.toLocaleString("en-US")}</td>
                                 <td>{stage.effect}</td>
                                 <td>{stage.percentage}%</td>
                             </tr>

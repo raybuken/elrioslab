@@ -9,7 +9,7 @@ function CharacterSlot({character}) {
     const characterRef = useRef()
 
     const {classesSelected} = useContext(ESPCContext)
-    const src = `/v1616513276/files/tools/synergy/${character.character}/${character.alias}`
+    const src = `https://res.cloudinary.com/elrioslab/image/upload/v1616513276/files/tools/synergy/${character.character}/${character.alias}`
 
     const isOnSynergySlot = classesSelected.some(classSelected => classSelected && classSelected.alias === character.alias)
 
@@ -21,7 +21,15 @@ function CharacterSlot({character}) {
              onMouseLeave={() => setShow(false)} 
              className={`collection-slot ${isOnSynergySlot && 'collection-slot-selected'}`} 
             >
-                <Image className='collection-slot-image' src={src} alt={character.alias} title={character.class} width={300} height={300} layout={"responsive"} quality={20} />
+                <Image 
+                    className='collection-slot-image' 
+                    src={src} 
+                    alt={character.alias} 
+                    title={character.class} 
+                    width={300} 
+                    height={300}
+                    priority={75} 
+                    quality={40} />
             </div>
             <Overlay target={characterRef.current} show={show} placement="top">
                 {(props) => (
