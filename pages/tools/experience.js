@@ -26,8 +26,8 @@ function experience() {
         </Head>
         <Layout>
             <div className='jumbotron mb-0' style={{minHeight: '90vh'}}>
-                <SocialMedia />
-                <div className='container'>
+                <div className='container '>
+                    <SocialMedia />
                     <ExperienceCalculatorWrapper />
                 </div>
             </div>

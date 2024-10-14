@@ -49,7 +49,7 @@ function ExperienceCalculatorWrapper() {
     return (
         <div className='row'>
             <div className='col-12'>
-                <h1 className='text-center'>{t['experience-calculator']}</h1>
+                <h1 className='text-center'>{t('title')}</h1>
             </div>
             <div className='col-12'>
                 <MobExperienceContainer
