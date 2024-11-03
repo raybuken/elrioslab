@@ -11,5 +11,5 @@ module.exports = {
                 pathname: '/elrioslab/image/upload/**'
             }
         ]
-    }
+    },
 }

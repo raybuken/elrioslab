@@ -3,7 +3,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import AdaptMultiplier from './AdaptMultiplier'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
+
 export default function AdaptationFAQ() {
     const t = useTranslations("adaptation")
 

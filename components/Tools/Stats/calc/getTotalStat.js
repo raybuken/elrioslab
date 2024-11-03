@@ -32,8 +32,8 @@ const NormalizingTotalStat = (value, efficiency, normalize) => {
         newValue = value - normalize[i] //valor para agregar acumulado segun el valor que vaya iterando    
         
         if(newValue > normalizing){
-            let module = value - interval2
-            acum += ((newValue - module) /  currentEfficiency)
+            let numModule = value - interval2
+            acum += ((newValue - numModule) /  currentEfficiency)
         }else{
             acum+= (newValue/currentEfficiency)
             break;

@@ -6,3 +6,5 @@
 *.code-workspace
 /.vscode
 yarn.lock
+pnpm-lock.yaml
+/.vercel

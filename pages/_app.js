@@ -7,12 +7,11 @@ import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 config.autoAddCss = false
 
-
 export default function App ({Component, pageProps}){
     const router = useRouter()
 
     return(
-        <NextIntlClientProvider locale={router.locale} messages={pageProps.messages} timeZone='Etc/GMT-4'>
+        <NextIntlClientProvider locale={router.locale} messages={pageProps.messages} onError={err => console.log(err)} timeZone='Etc/GMT-4'>
             <Component {...pageProps}/>
         </NextIntlClientProvider>
     )
