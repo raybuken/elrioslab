@@ -61,11 +61,11 @@ export default function Body() {
                                 <div className="row align-items-center justify-content-lg-between">
                                     <div className="col-md-3 col-sm-6 col-lg-3">
                                         <label>Total %</label>
-                                        <input type="number" className=' form-control rounded border-black' name={stat} value={totalStats} placeholder={0} onChange={e => onTotalStatChange(e)} name={stat} />
+                                        <input type="number" className=' form-control rounded border-black' name={stat} value={totalStats} placeholder={0} onChange={e => onTotalStatChange(e)} />
                                     </div>
                                     <div className="col-md-3 col-sm-6 col-lg-3">
                                         <label>Actual %</label>
-                                        <input type="number" className=' form-control rounded border-black' name={stat} value={actualStats} placeholder={0} onChange={e => onActualStatChange(e)} name={stat} />
+                                        <input type="number" className=' form-control rounded border-black' name={stat} value={actualStats} placeholder={0} onChange={e => onActualStatChange(e)} />
                                     </div>
                                     <div className="col-md-3 col-sm-12 offset-lg-2">
                                         <div className="row justify-content-center align-items-center p-2 h-100">

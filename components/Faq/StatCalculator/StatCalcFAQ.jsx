@@ -38,9 +38,9 @@ export default function StatCalcFAQ() {
                         <h2>{t('q3.question')}</h2>
                         <p>{t('q3.answer.p1')}</p>
                         <ul>
-                            <li><span className="font-weight-bold">{t('q3.answer.p2.title')}</span> {t('q3.answer.p2.text"')}</li>
-                            <li><span className="font-weight-bold">{t('q3.answer.p3.title')}</span> {t('q3.answer.p3.text"')}</li>
-                            <li><span className="font-weight-bold">{t('q3.answer.p4.title')}</span> {t('q3.answer.p4.text"')}</li>
+                            <li><span className="font-weight-bold">{t('q3.answer.p2.title')}</span> {t('q3.answer.p2.text')}</li>
+                            <li><span className="font-weight-bold">{t('q3.answer.p3.title')}</span> {t('q3.answer.p3.text')}</li>
+                            <li><span className="font-weight-bold">{t('q3.answer.p4.title')}</span> {t('q3.answer.p4.text')}</li>
                         </ul>
                     </div>
                     <div>
