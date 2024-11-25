@@ -1,7 +1,7 @@
-import StatCalculator from '../../components/Tools/Stats/StatCalculator'
+import StatCalculator from '@/components/Tools/Stats/StatCalculator'
 import Head from 'next/head'
-import Layout from '../../components/Layout/Layout'
-import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
+import Layout from '@/components/Layout/Layout'
+import { getTranslationMessages } from '@/helpers/messageTranslationsHelpers'
 
 export async function getStaticProps(context) {
     return {
@@ -11,7 +11,6 @@ export async function getStaticProps(context) {
     }
 }
 
-
 export default function Stats () {
     return(
         <div>
@@ -20,7 +19,6 @@ export default function Stats () {
                 <meta charSet='UTF-8'/>
                 <meta name='description' content='Elsword Stat Calculator'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Socket Calculator'/>
-                <meta name='author' content='Raybuken'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Layout>

@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import { calcReforge } from "../../components/Tools/Reforge/CalcReforge";
-import ReforgeCounts from "../../components/Tools/Reforge/ReforgeCounts";
-import { CalcPercentages } from "../../components/Tools/Reforge/CalcPercentages";
-import PercentagesField from "../../components/Tools/Reforge/PercentagesField";
-import ServersField from "../../components/Tools/Reforge/ServersField";
+import SocialMedia from "@/components/SocialMedia/SocialMedia";
+import { calcReforge } from "@/components/Tools/Reforge/CalcReforge";
+import ReforgeCounts from "@/components/Tools/Reforge/ReforgeCounts";
+import { CalcPercentages } from "@/components/Tools/Reforge/CalcPercentages";
+import PercentagesField from "@/components/Tools/Reforge/PercentagesField";
+import ServersField from "@/components/Tools/Reforge/ServersField";
 
 import Head from "next/head";
-import Layout from "../../components/Layout/Layout";
-import ReforgeFeeField from "../../components/Tools/Reforge/ReforgeFeeField";
+import Layout from "@/components/Layout/Layout";
+import ReforgeFeeField from "@/components/Tools/Reforge/ReforgeFeeField";
 
-import { ARMOR, REFORGE_STAGES, SERVERS } from '../../constants/constants'
+import { ARMOR, REFORGE_STAGES, SERVERS } from '@/constants/constants'
 import { useTranslations } from "next-intl";
-import { getTranslationMessages } from "../../helpers/messageTranslationsHelpers";
+import { getTranslationMessages } from "@/helpers/messageTranslationsHelpers";
 
 export async function getStaticProps(context) {
   return {

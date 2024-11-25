@@ -26,8 +26,6 @@ export default function ElSearchPartyCollection() {
         setFilterEffectSelected(null)
     }
 
-
-
     return(
         <div className="espc-container">
             {

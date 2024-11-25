@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import DebuffField from "../../components/Tools/Adaptation/DebuffField";
-import AdaptationField from "../../components/Tools/Adaptation/AdaptationField";
-import { getAtkGain } from "../../components/Tools/Adaptation/getAtkGain";
+import SocialMedia from "@/components/SocialMedia/SocialMedia";
+import DebuffField from "@/components/Tools/Adaptation/DebuffField";
+import AdaptationField from "@/components/Tools/Adaptation/AdaptationField";
+import { getAtkGain } from "@/components/Tools/Adaptation/getAtkGain";
 import Head from "next/head";
-import Layout from "../../components/Layout/Layout";
-import { getTranslationMessages } from "../../helpers/messageTranslationsHelpers";
+import Layout from "@/components/Layout/Layout";
+import { getTranslationMessages } from "@/helpers/messageTranslationsHelpers";
 import { useTranslations } from "next-intl";
 
 export async function getStaticProps(context) {
@@ -51,7 +51,6 @@ export default function AdaptationCalculator() {
           name="keywords"
           content="Elsword, Raybuken, Elsword Adaptation Calculator"
         />
-        <meta name="author" content="Raybuken" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, shrink-to-fit=no"

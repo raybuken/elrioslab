@@ -3,6 +3,30 @@ import { faYoutube, faFacebook, faDiscord, faTwitch } from '@fortawesome/free-br
 import Donate from '../Donate/Donate'
 import SocialIcon from './SocialIcon'
 export default function SocialMedia() {
+    const socialIcons = [
+        {
+            id: 'discord',
+            src: 'https://discord.gg/j8Hg4VBN7J',
+            name: 'Go to Raybuken Discord Server',
+            icon: faDiscord,
+            color: 'cornflowerblue',
+        },
+        {
+            id: 'youtube',
+            src: 'https://www.youtube.com/Raybuken',
+            name: 'Go to Raybuken Youtube Channel',
+            icon: faYoutube,
+            color: 'red',
+        },
+        {
+            id: 'facebook',
+            src: 'https://www.facebook.com/RaybukenGamer',
+            name: 'Go to Raybuken Facebook Page',
+            icon: faFacebook,
+            color: '#385898',
+        },
+    ]
+
     return (
         <div className='row justify-content-between align-items-center'>
             <div className="col">
@@ -10,10 +34,16 @@ export default function SocialMedia() {
             </div>
             <div className="p-1 col col-auto">
                 <ul className='nav'>
-                    <SocialIcon src='https://discord.gg/j8Hg4VBN7J' icon={faDiscord} color='cornflowerblue'/>
-                    <SocialIcon src='https://www.youtube.com/Raybuken' icon={faYoutube} color='red'/>
-                    <SocialIcon src='https://www.twitch.tv/Raybuken' icon={faTwitch} color='#a970ff'/>
-                    <SocialIcon src='https://www.facebook.com/RaybukenGamer' icon={faFacebook} color='#385898'/>
+                    {
+                        socialIcons.map(socialIcon => 
+                            <SocialIcon 
+                                key={socialIcon.id} 
+                                name={socialIcon.name} 
+                                src={socialIcon.src} 
+                                icon={socialIcon.icon} 
+                                color={socialIcon.color}/>
+                        )
+                    }
                 </ul>
             </div>
         </div>

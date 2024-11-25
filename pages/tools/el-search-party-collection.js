@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Layout from '../../components/Layout/Layout'
-import ElSearchPartyCollection from '../../components/Tools/ElSearchPartyCollection/ElSearchPartyCollection'
-import ESPCContext from '../../components/Context/ESPCContext'
+import Layout from '@/components/Layout/Layout'
+import ElSearchPartyCollection from '@/components/Tools/ElSearchPartyCollection/ElSearchPartyCollection'
+import ESPCContext from '@/components/Context/ESPCContext'
 import { useEffect, useReducer, useState } from 'react'
-import {reducer, initialValue} from '../../scripts/reducers/espcReducer'
-import { getLastSessionSynergyData, parseClassesSelectedListToParam } from '../../components/Tools/ElSearchPartyCollection/utils/util'
-import AlertContext from '../../components/Context/AlertContext'
-import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
+import {reducer, initialValue} from '@/scripts/reducers/espcReducer'
+import { getLastSessionSynergyData, parseClassesSelectedListToParam } from '@/components/Tools/ElSearchPartyCollection/utils/util'
+import AlertContext from '@/components/Context/AlertContext'
+import { getTranslationMessages } from '@/helpers/messageTranslationsHelpers'
 
 export async function getStaticProps(context) {
     return {
@@ -61,7 +61,6 @@ export default function ESPC() {
                 <meta charSet='UTF-8'/>
                 <meta name='description' content='Elsword El Search Party Collection And Synergy'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword El Search Party Collection'/>
-                <meta name='author' content='Raybuken'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Layout>

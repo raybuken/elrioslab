@@ -1,5 +1,4 @@
-import { REFORGE_STAGES_MAPPING } from '../components/Tools/Reforge/reforgeStages'
-
+import { REFORGE_STAGES_MAPPING } from '@/components/Tools/Reforge/reforgeStages'
 
 export const COLLECTION = {
     TENACITY_DAMAGE: "Tenacity Skill Damage",

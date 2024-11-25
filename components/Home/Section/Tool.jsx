@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 export default function Tool(props) {
     const router = useRouter()
+
     return (
         <div className="col-lg-4 col-md-6 col-12">
             <h2 className='text-center fs-5 pointer'>{props.name}</h2>
@@ -14,8 +15,8 @@ export default function Tool(props) {
                     fill
                     sizes='400px'
                     alt={props.alt} 
-                    priority={true} 
-                    className='rounded img-cover img-auto' />
+                    className='rounded img-cover img-auto' 
+                    priority={true} />
             </figure>
         </div>
     )

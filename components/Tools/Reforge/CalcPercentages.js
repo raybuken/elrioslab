@@ -1,4 +1,4 @@
-import { REFORGE_STAGES } from '../../../constants/constants'
+import { REFORGE_STAGES } from '@/constants/constants'
 
 const CalcPercentages = (stage, armor, server) => {
     //List of possible percentages 

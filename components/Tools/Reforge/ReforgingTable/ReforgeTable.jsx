@@ -1,4 +1,4 @@
-import { ARMOR, REFORGE_STAGES, SERVERS } from '../../../../constants/constants'
+import { ARMOR, REFORGE_STAGES, SERVERS } from '@/constants/constants'
 
 export default function ReforgeTable (props) {
     return (

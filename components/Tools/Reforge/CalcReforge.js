@@ -1,5 +1,5 @@
 import {FilterByPercentages} from './FilterByPercentages'
-import { REFORGE_STAGES, SERVERS } from '../../../constants/constants'
+import { REFORGE_STAGES, SERVERS } from '@/constants/constants'
 
 
 const calcReforge = (fromStage,toStage,percentage, durability, feeAmount, armor, server) => {

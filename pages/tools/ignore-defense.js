@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { getDefBase, getDefPercentage, getTotalIgnoreDefense, getRemainDefense, getDamageGained } from '../../components/Tools/IgnoreDefense/calcDefense'
+import { getDefBase, getDefPercentage, getTotalIgnoreDefense, getRemainDefense, getDamageGained } from '@/components/Tools/IgnoreDefense/calcDefense'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPlus, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
 import Head from 'next/head'
-import Layout from '../../components/Layout/Layout'
-import SocialMedia from '../../components/SocialMedia/SocialMedia'
+import Layout from '@/components/Layout/Layout'
+import SocialMedia from '@/components/SocialMedia/SocialMedia'
 import { useTranslations } from 'next-intl'
-import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
+import { getTranslationMessages } from '@/helpers/messageTranslationsHelpers'
 
 export async function getStaticProps(context) {
     return {
@@ -91,7 +91,6 @@ export default function IgnoreDefense() {
                 <meta charSet='UTF-8'/>
                 <meta name='description' content='Elsword Ignore Defense Calculator'/>
                 <meta name='keywords' content='Elsword, Raybuken, Elsword Ignore Defense Calculator'/>
-                <meta name='author' content='Raybuken'/>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'/>
             </Head>
             <Layout>

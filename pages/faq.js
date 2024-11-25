@@ -1,11 +1,11 @@
 import React from "react";
-import SocialMedia from "../components/SocialMedia/SocialMedia";
-import StatCalcFAQ from "../components/Faq/StatCalculator/StatCalcFAQ";
-import ReforgeFAQ from "../components/Faq/Reforge/ReforgeFAQ";
-import AdaptationFAQ from "../components/Faq/Adaptation/AdaptationFAQ";
-import IgnoreDefenseFAQ from "../components/Faq/IgnoreDefense/IgnoreDefenseFAQ";
+import SocialMedia from "@/components/SocialMedia/SocialMedia";
+import StatCalcFAQ from "@/components/Faq/StatCalculator/StatCalcFAQ";
+import ReforgeFAQ from "@/components/Faq/Reforge/ReforgeFAQ";
+import AdaptationFAQ from "@/components/Faq/Adaptation/AdaptationFAQ";
+import IgnoreDefenseFAQ from "@/components/Faq/IgnoreDefense/IgnoreDefenseFAQ";
 import Head from "next/head";
-import Layout from "../components/Layout/Layout";
+import Layout from "@/components/Layout/Layout";
 import { useTranslations } from "next-intl";
 
 export async function getStaticProps(context) {
@@ -32,7 +32,6 @@ export default function Faq() {
         <meta charSet="UTF-8" />
         <meta name="description" content="Elsword Calculators" />
         <meta name="keywords" content="Elsword, Raybuken, Elsword Calculator" />
-        <meta name="author" content="Raybuken" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, shrink-to-fit=no"

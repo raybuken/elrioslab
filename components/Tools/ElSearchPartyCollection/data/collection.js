@@ -1,4 +1,4 @@
-import { COLLECTION, SYNERGY } from '../../../../constants/constants';
+import { COLLECTION, SYNERGY } from '@/constants/constants';
 
 const collection = [
     //Elsword

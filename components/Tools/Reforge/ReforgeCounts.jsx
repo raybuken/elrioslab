@@ -1,7 +1,7 @@
 
 
 import Image from 'next/image'
-import { REFORGE_MATERIAL_ASSETS } from '../../../constants/constants'
+import { REFORGE_MATERIAL_ASSETS } from '@/constants/constants'
 import { useTranslations } from 'next-intl'
 export default function ReforgeCounts(props) {
     const {result, armor} = props
