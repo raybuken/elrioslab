@@ -1,0 +1,28 @@
+.spot {
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.spotField {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 64px 64px;
+    height: fit-content;
+}
+
+.spotContainer {
+    position: relative;
+}
+
+.spotContainer:has(.spot:checked) {
+    border: 2px solid skyblue;
+}
+
+.circuitImg {
+    width: 100%;
+    aspect-ratio: 1 /1;
+}

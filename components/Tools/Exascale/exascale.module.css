@@ -1,0 +1,47 @@
+
+.exascale-circuit-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    gap: 1rem;
+}
+
+.circuit-board {
+    width: 300px;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    display: grid;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #2D3238, #5A6774);
+    padding: 0.5rem;
+    grid-auto-rows: 1fr;
+}
+
+.circuit-row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.circuit-cell {
+    border: 1px solid gray;
+    overflow: hidden;
+    position: relative;
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.circuit-empty {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.armor {
+    pointer-events: none;
+}
+
+.dragOver img{
+    opacity: .5;
+}

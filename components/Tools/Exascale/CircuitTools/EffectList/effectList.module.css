@@ -1,0 +1,44 @@
+.effectList{
+    background-color: #4b545a;
+    min-height: 400px;
+    color: white;
+
+    & ul {
+        list-style: none;
+        padding-left: 1rem;
+        padding-right: .5rem;
+    }
+
+    & h2 {
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        color: #2f89fe;
+        background-color: black;
+        position: relative;
+        display: inline-block;
+        width: 60%;
+        min-width: fit-content;
+
+    }
+
+    & h2::after{
+        content: "";
+        width: 32px;
+        height: 38px;
+        position: absolute;
+        right: -22px;
+        top: 4px;
+        transform: rotate(19deg);
+        background-color: #4b545a; 
+    }
+}
+
+.name {
+    font-size: 16px;
+}
+
+.total {
+    margin-left: auto;
+    display: block;
+    width: fit-content;
+}

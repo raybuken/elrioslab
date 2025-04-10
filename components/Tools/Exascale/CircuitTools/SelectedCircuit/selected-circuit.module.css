@@ -1,0 +1,17 @@
+.selectedCircuit {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.imageContainer {
+    cursor: pointer;
+    width: min-content;
+    margin: auto;
+    padding: .2rem;
+    border: 3px solid black;
+    background-color: gray;
+}
+
+.isInserting {  
+}

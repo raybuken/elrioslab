@@ -1,0 +1,17 @@
+.color {  
+    appearance: none;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &:checked {
+        border: 2px solid black;
+    }
+}
+
+.colorField {
+    display: flex;
+    gap: 0.3rem;
+}

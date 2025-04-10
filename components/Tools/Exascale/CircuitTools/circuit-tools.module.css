@@ -1,0 +1,13 @@
+.circuit-tools {
+    display: grid;
+    gap: 1rem;
+}
+
+
+.circuitImg {
+    width: 100%;
+    aspect-ratio: 1 /1;
+}
+
+
+

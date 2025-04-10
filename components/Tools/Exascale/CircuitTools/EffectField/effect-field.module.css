@@ -1,0 +1,10 @@
+.effectContainer {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: minmax(136px, 1fr);
+}
+
+.select{
+    border: 1px solid gray;
+    font-size: 0.75rem;
+}
