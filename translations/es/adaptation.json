@@ -1,6 +1,8 @@
 {
-    "title": "Adaptacion",
+    "title": "Adaptación",
     "debuff": "Debuff de Entorno",
     "adaptation": "Adaptación",
-    "stat-gained": "Daño ganado"
+    "hyper-adaptation": "Hiper Adaptación",
+    "stat-gained": "Daño ganado",
+    "remain-adaptation-debuff": "Debuff de Adaptación restante"
 }
