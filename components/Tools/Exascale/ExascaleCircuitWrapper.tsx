@@ -1,26 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react"
-import { DEFAULT_TOP_CIRCUIT_BOARD, Circuit, EXASCALE_COLORS, CircuitParts, CircuitTypes, EXASCALE_CIRCUIT_EFFECTS } from "./data/exascale"
+import { DEFAULT_TOP_CIRCUIT_BOARD, Circuit, EXASCALE_COLORS, CircuitParts, CircuitTypes, EXASCALE_CIRCUIT_EFFECTS, DEFAULT_BOTTOM_CIRCUIT_BOARD, DEFAULT_GLOVES_CIRCUIT_BOARD, DEFAULT_SHOES_CIRCUIT_BOARD } from "./data/exascale"
 import styles from './exascale.module.css';
-import ExascaleCell from "./ExascaleCell";
 import CircuitTools from "./CircuitTools/CircuitTools";
-import { getCircuitBonifications, getCircuitUrl } from "./utils/exascale";
+import { getCircuitBonifications } from "./utils/exascale";
 import DragAndDropContext from "../../Context/DragAndDropContext";
-import { CIRCUIT_BOARD_TOP_PRESET_1, CIRCUIT_BOARD_TOP_PRESET_5 } from "./data/presets";
 import EffectList from "./CircuitTools/EffectList/EffectList";
 import SelectedCircuit from "./CircuitTools/SelectedCircuit/SelectedCircuit";
+import ExascaleCircuitBoard from "./ExascaleCircuitBoard";
+import ExascalePresets from "./Presets/ExascalePresets";
 
-function ExascaleCircuitWrapper() {
+function ExascaleCircuitWrapper({ piece }: { piece: CircuitParts }) {
+    const defaultCircuitsBoard = {
+        [CircuitParts.TOP]: DEFAULT_TOP_CIRCUIT_BOARD,
+        [CircuitParts.BOTTOM]: DEFAULT_BOTTOM_CIRCUIT_BOARD,
+        [CircuitParts.GLOVES]: DEFAULT_GLOVES_CIRCUIT_BOARD,
+        [CircuitParts.SHOES]: DEFAULT_SHOES_CIRCUIT_BOARD
+    }
+
     const [circuitBonifications, setCircuitBonifications] = useState<{ name: string; total: number }[]>([])
-    const [circuitBoard, setCircuitBoard] = useState(DEFAULT_TOP_CIRCUIT_BOARD)
+    const [circuitBoard, setCircuitBoard] = useState(defaultCircuitsBoard[piece] || DEFAULT_TOP_CIRCUIT_BOARD)
     const [selectedCircuit, setSelectedCircuit] = useState<Circuit>({
         type: CircuitTypes.I,
         color: EXASCALE_COLORS.RED,
-        part: CircuitParts.TOP,
+        part: piece,
         spot: 1,
         effect: {
-            name: EXASCALE_CIRCUIT_EFFECTS.top[Object.keys(EXASCALE_CIRCUIT_EFFECTS.top)[0]].name,
-            value: EXASCALE_CIRCUIT_EFFECTS.top[Object.keys(EXASCALE_CIRCUIT_EFFECTS.top)[0]].values[0]
+            name: EXASCALE_CIRCUIT_EFFECTS[piece][Object.keys(EXASCALE_CIRCUIT_EFFECTS[piece])[0]].name,
+            value: EXASCALE_CIRCUIT_EFFECTS[piece][Object.keys(EXASCALE_CIRCUIT_EFFECTS[piece])[0]].values[0]
         }
     }) 
 
@@ -65,7 +72,6 @@ function ExascaleCircuitWrapper() {
 
     return (
         <div>
-            <h1 className="text-center">Exascale Circuit maker simulator</h1>
             <div className={styles['exascale-circuit-wrapper']}>
                 <CircuitTools selectedCircuit={selectedCircuit} setSelectedCircuit={setSelectedCircuit}  />
                 <div className="d-flex align-items-center flex-column gap-2">
@@ -76,22 +82,11 @@ function ExascaleCircuitWrapper() {
                         onDragSelectedCircuit={onDragSelectedCircuit}
                     />
 
-                    <div className={styles['circuit-board']}>
-                        {
-                            circuitBoard.map((row, rowIndex) => (
-                                <div key={rowIndex} className={styles['circuit-row']}>
-                                    {row.map((cell, cellIndex) => 
-                                        <ExascaleCell 
-                                            key={cellIndex} 
-                                            cell={cell} 
-                                            onClickCellConfirmation={(e) => onClickCellConfirmation(e, rowIndex, cellIndex)} 
-                                            handleOnDragCircuitLeave={(e) => handleOnDragCircuitLeave(e, rowIndex, cellIndex)}
-                                        /> 
-                                    )}
-                                </div>
-                            ))
-                        }
-                    </div>
+                    <ExascaleCircuitBoard
+                        circuitBoard={circuitBoard} 
+                        onClickCellConfirmation={onClickCellConfirmation} 
+                        handleOnDragCircuitLeave={handleOnDragCircuitLeave}
+                    />
                 </div>
                 <div>
                     <EffectList bonifications={circuitBonifications} />
@@ -103,13 +98,7 @@ function ExascaleCircuitWrapper() {
                 <i>For better experience you can drag the circuit and drop on the circuit board</i>
             </div>
 
-            <div>
-                presets
-
-                <button onClick={() => setCircuitBoard(CIRCUIT_BOARD_TOP_PRESET_1)}>H</button>
-                <br />
-                <button onClick={() => setCircuitBoard(CIRCUIT_BOARD_TOP_PRESET_5)}>T</button>
-            </div>
+            <ExascalePresets piece={piece} handleUpdateBoard={setCircuitBoard} />
         </div>
     )
 }

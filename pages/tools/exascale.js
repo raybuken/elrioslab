@@ -5,6 +5,7 @@ import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import ExascaleCircuitWrapper from '../../components/Tools/Exascale/ExascaleCircuitWrapper';
 import { getTranslationMessages } from '../../helpers/messageTranslationsHelpers'
 import DragAndDropProvider from '../../components/Provider/DragAndDropProvider'
+import ExascaleCircuitContainer from '../../components/Tools/Exascale/ExascaleCircuitContainer';
 
 export async function getStaticProps(context) {
     
@@ -28,7 +29,7 @@ function exascaleCircuits() {
                 <div className='container '>
                     <SocialMedia />
                     <DragAndDropProvider>
-                        <ExascaleCircuitWrapper />
+                        <ExascaleCircuitContainer/>
                     </DragAndDropProvider>
                 </div>
             </div>

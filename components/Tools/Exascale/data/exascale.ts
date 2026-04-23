@@ -2,6 +2,7 @@ export enum CircuitTypes {
     I = "I",
     L = "L",
     T = "T",
+    REPLICATED = "Replicated T",
 }
 export enum EXASCALE_COLORS {
     BLUE = "Cycle",
@@ -46,6 +47,12 @@ export const CIRCUIT_PATHS = {
         [[-1, 0], [0, -1], [1, 0]], // ┴
         [[0, 1], [1, 0], [0, -1]] // ├
     ],
+    [CircuitTypes.REPLICATED]: [
+        [[-1, 0], [1, 0], [0, 1]], // ┬
+        [[-1, 0], [0, 1], [0, -1]], // ┤
+        [[-1, 0], [0, -1], [1, 0]], // ┴
+        [[0, 1], [1, 0], [0, -1]] // ├
+    ],
     [EXASCALE_ARMORS.top.name]: [
         [[-1, 0],[0, -1]]
     ],
@@ -53,7 +60,7 @@ export const CIRCUIT_PATHS = {
         [[0, 1], [-1, 0]]
     ],
     [EXASCALE_ARMORS.gloves.name]: [
-        [[-1, 0], [0, 1]]
+        [[-1, 0], [0, -1]]
     ],
     [EXASCALE_ARMORS.shoes.name]: [
         [[1, 0], [0, 1]]
@@ -138,7 +145,8 @@ export enum effectNames {
     MPCost = "Reduced MP Consumption",
     PartyMovSpeed = "Buff - Movement Speed of Surrounding Party Members",
     PartyJumpSpeed = "Buff - Jump Speed of Surrounding Party Members",
-    PartyAS = "Buff - Action Speed of Surrounding Party Members"
+    PartyAS = "Buff - Action Speed of Surrounding Party Members",
+    ReplicatedT = "Replicated T",
 };
   
 const EXASCALE_COMMON_CIRCUIT_EFFECTS = {

@@ -1,0 +1,26 @@
+
+.exascale_tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav_item {
+    margin-right: 0;
+}
+ 
+.nav_item .nav_link {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 120px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #aaa;
+
+
+}
+
+.nav_item .nav_link:global(.active) {
+    background-color: #0099ff;
+    color: white;
+}

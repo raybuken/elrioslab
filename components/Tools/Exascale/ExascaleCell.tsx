@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useId, useRef, useState } from 'react'
-import { Circuit, EXASCALE_ARMORS, ExascaleArmor } from './data/exascale'
+import { Circuit, CircuitTypes, ExascaleArmor } from './data/exascale'
 import styles from './exascale.module.css';
 import { getCircuitUrl } from './utils/exascale';
 import Overlay from 'react-bootstrap/Overlay';
@@ -18,6 +18,11 @@ function ExascaleCell({ cell, onClickCellConfirmation, handleOnDragCircuitLeave 
     const cellRef = useRef(null)
     const cellId = useId()
 
+    const onDrop = (e) => {
+        handleOnDragCircuitLeave(e)
+        onDragEnd(e)
+    }
+
     const onDragOver = (e) => {
         e.preventDefault()
         setIsOnDragOver(true)
@@ -33,8 +38,10 @@ function ExascaleCell({ cell, onClickCellConfirmation, handleOnDragCircuitLeave 
         return (
             <div id={cellId} className={`${styles['circuit-cell']} ${styles['circuit-empty']}`} 
                 onClick={onClickCellConfirmation}
-                onDrop={handleOnDragCircuitLeave}
+                onDrop={onDrop}
                 onDragOver={onDragOver}
+                onDragLeave={onDragEnd}
+                onDragEnd={onDragEnd}
             >
                 <img src="/images/empty_circuit.png" alt="empty" />
             </div>
@@ -43,29 +50,41 @@ function ExascaleCell({ cell, onClickCellConfirmation, handleOnDragCircuitLeave 
 
     return (
         <>
-            <div 
-                id={cellId} 
-                ref={cellRef} 
-                className={`${styles['circuit-cell']} ${'type' in cell && !cell.type ? styles.armor : ''} ${isOnDragOver ? styles.dragOver : ''}`} 
-                onClick={onClickCellConfirmation}
-                onMouseEnter={() => setShowTooltip(true)} 
-                onMouseLeave={() => setShowTooltip(false)}
-                onDrop={(e) => {
-                    handleOnDragCircuitLeave(e)
-                    setIsOnDragOver(false)
-                }}
-                onDragOver={onDragOver}
-                onDragLeave={() => setIsOnDragOver(false)}
-                onDragEnd={() => setIsOnDragOver(false)}
-            >
-                <img src={'type' in cell && cell.type ? getCircuitUrl(cell) : EXASCALE_ARMORS.top.url} alt="armor" />
-            </div>
+            {'type' in cell && cell.type ? 
+                <div 
+                    id={cellId} 
+                    ref={cellRef} 
+                    className={`${styles['circuit-cell']} ${'type' in cell && !cell.type ? styles.armor : ''} ${isOnDragOver ? styles.dragOver : ''}`} 
+                    onClick={onClickCellConfirmation}
+                    onMouseEnter={() => setShowTooltip(true)} 
+                    onMouseLeave={() => setShowTooltip(false)}
+                    onDrop={onDrop}
+                    onDragOver={onDragOver}
+                    onDragLeave={onDragEnd}
+                    onDragEnd={onDragEnd}
+                >
+                    <img src={getCircuitUrl(cell)} alt="armor" />
+                </div>
+            
+                :
+                <div 
+                    id={cellId} 
+                    ref={cellRef} 
+                    className={`${styles['circuit-cell']} ${styles.armor} `} 
+                >
+                    <img src={'url' in cell ? cell.url : ''} alt="armor" />
+                </div>
+            }
+
             {'effect' in cell && cell.effect &&
                 <Overlay target={cellRef.current} show={showTooltip} placement="top">
                     {(props) => (
                         <Tooltip id={`tooltip-${cellId}`} {...props}>
                             <span>
-                                {cell.effect.name} +{cell.effect.value}%
+                                {cell.type === CircuitTypes.REPLICATED ? 
+                                    cell.effect.name  :
+                                    `${cell.effect.name} +${cell.effect.value}%`
+                                }
                             </span>
                         </Tooltip>
                     )}

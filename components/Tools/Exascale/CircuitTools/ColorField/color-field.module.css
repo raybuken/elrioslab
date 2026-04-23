@@ -5,10 +5,10 @@
     height: 32px;
     border-radius: 100%;
     cursor: pointer;
+}
 
-    &:checked {
-        border: 2px solid black;
-    }
+.color:checked {
+    border: 2px solid black;
 }
 
 .colorField {

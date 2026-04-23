@@ -1,7 +1,9 @@
-import {Circuit, CIRCUIT_PATHS, CircuitBoard, CircuitEffect, EXASCALE_ARMORS, ExascaleArmor} from '../data/exascale'
+import {Circuit, CIRCUIT_PATHS, CircuitBoard, CircuitEffect, CircuitTypes, effectNames, EXASCALE_ARMORS, ExascaleArmor} from '../data/exascale'
 
 export const getCircuitUrl = (circuit: Circuit) => {
-    return `/images/circuit-${circuit.type}${circuit.spot}-${circuit.color.toLowerCase()}-${circuit.part}.webp`
+    const isReplicated = circuit.type === CircuitTypes.REPLICATED
+
+    return `/images/circuit-${isReplicated ? CircuitTypes.T : circuit.type}${circuit.spot}-${circuit.color.toLowerCase()}-${circuit.part}.webp`
 }
 
 const getExaArmorByCircuitBoard = (circuitBoard: CircuitBoard) => {
@@ -92,7 +94,21 @@ const processCircuitConnection = (circuitBoard, circuitPaths, lastCircuitPositio
         }
         
         if ('effect' in currentCell && !positionHasBeenReaded) {
-            bonifications.push(currentCell.effect);
+            if(currentCell.effect.name === effectNames.ReplicatedT) {
+                console.log(currentCellPaths)
+                currentCellPaths.forEach((pt: number[]) => {
+                    const ptCell = getCellByCurrentPath(circuitBoard, pt, boardPosition)
+                    if (ptCell.cell && 'effect' in ptCell.cell && ptCell.cell.effect?.value) {
+                        
+                        console.log(ptCell.cell.effect, 'yes')
+                        const cEffect = {...ptCell.cell.effect}
+                        cEffect.value = cEffect.value / 2
+                        bonifications.push(cEffect);
+                    }
+                })
+            }else {
+                bonifications.push(currentCell.effect);
+            }
         }
 
         readedPositions.push(currentCellPosition)
@@ -105,7 +121,6 @@ const processCircuitConnection = (circuitBoard, circuitPaths, lastCircuitPositio
         bonifications: isValid ? bonifications : []
     }
 }
-
 
 export const getCircuitBonifications = (circuitBoard: CircuitBoard) => {
     const { armor, position } = getExaArmorByCircuitBoard(circuitBoard)
@@ -135,5 +150,4 @@ export const getCircuitBonifications = (circuitBoard: CircuitBoard) => {
     })
 
     return finalBonifications
-    
 }
