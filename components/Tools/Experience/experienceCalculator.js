@@ -54,5 +54,12 @@ export const getTotalReceivedEXP = (multipliers, dungeonField) => {
 
     if(!dungeon) return 0
 
+    //console.debug(`base exp for dung: ${getDungeonBaseEXP(4450527744, mobMultiplier, dungeonMultiplier, randomMission)}`)
+
     return (dungeon.baseExp * mobMultiplier * dungeonMultiplier * randomMission).toLocaleString('US')
+}
+
+//method to test the dungeon exp on release
+const getDungeonBaseEXP = (totalReceivedEXP, mobMultiplier, dungeonMultiplier, randomMission) => {
+    return (totalReceivedEXP / (mobMultiplier * dungeonMultiplier * randomMission)).toLocaleString('US')
 }
