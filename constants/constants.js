@@ -87,7 +87,8 @@ export const SYNERGY = {
 export const ARMOR = {
     RIGOMOR: "Rigomor",
     TENEBROUS: "Tenebrous",
-    EXASCALE: "Exascale"
+    EXASCALE: "Exascale",
+    NEBULON: "Nebulon"
 }
 
 export const SERVERS = {
@@ -98,17 +99,16 @@ export const SERVERS = {
 
 export const REFORGE_STAGES = {
     [ARMOR.RIGOMOR]: {
-        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesKR,
-        [SERVERS['Other servers']]: REFORGE_STAGES_MAPPING.stages,
-        [SERVERS.EU]: REFORGE_STAGES_MAPPING.stages
+        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesKR
     },
     [ARMOR.TENEBROUS]: {
-        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesTenebrousKR,
-        [SERVERS['Other servers']]: REFORGE_STAGES_MAPPING.stagesTenebrous,
-        [SERVERS.EU]: REFORGE_STAGES_MAPPING.stagesTenebrous
+        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesTenebrousKR
     },
     [ARMOR.EXASCALE]: {
         [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesExascale
+    },
+    [ARMOR.NEBULON]: {
+        [SERVERS.KR]: REFORGE_STAGES_MAPPING.stagesNebulon
     }
 }
 
@@ -141,6 +141,16 @@ export const REFORGE_MATERIAL_ASSETS = {
         amethyst: {
             src: 'https://res.cloudinary.com/elrioslab/image/upload/v1723353688/files/tools/reforge/invdd2pqrksoh9wsuqqx.png',
             alt: 'Purified Exikel'
+        }
+    },
+    [ARMOR.NEBULON]: {
+        glaciem: {
+            src: 'https://res.cloudinary.com/elrioslab/image/upload/v1788565764/files/tools/reforge/ebfc7imysshwjispcoe7.png',
+            alt: 'Metholone'
+        },
+        amethyst: {
+            src: 'https://res.cloudinary.com/elrioslab/image/upload/v1788565764/files/tools/reforge/lth02ogz4kttmk5vjazy.png',
+            alt: 'Methane Ampoule'
         }
     }
 }

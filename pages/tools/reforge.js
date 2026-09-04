@@ -24,7 +24,7 @@ export async function getStaticProps(context) {
 
 export default function Reforge() {
   const t = useTranslations()
-  const [armor, setArmor] = useState(ARMOR.EXASCALE);
+  const [armor, setArmor] = useState(ARMOR.NEBULON);
   const [server, setServer] = useState(SERVERS.KR);
   const [serverList, setServerList] = useState(Object.keys(REFORGE_STAGES[armor]))
 
