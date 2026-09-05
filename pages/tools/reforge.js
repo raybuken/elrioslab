@@ -130,7 +130,7 @@ export default function Reforge() {
                     name="armor"
                     className="form-control form-select select-field"
                     onChange={(e) => onChangeArmor(e)}
-                    defaultValue={ARMOR.EXASCALE}
+                    defaultValue={ARMOR.NEBULON}
                   >
                     {Object.keys(ARMOR).map((armor, key) => (
                         <option key={key} value={ARMOR[armor]}>{ARMOR[armor]}</option>
